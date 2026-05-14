@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Private Photos by privatepappa.in</title>
+  <meta name="description" content="Private Photos privacy policy. We do not collect, transmit or store any user data. Strictly offline, AES-256 encrypted." />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="canonical" href="https://privatepappa.in/privacy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Private Photos home">
+      <img src="assets/logo.png" alt="" />
+      <span>Private Photos</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html#download" class="btn btn-primary">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>The shortest, most accurate privacy policy we could write: <strong>we collect nothing.</strong></p>
+    <p class="meta">Last updated: <span id="upd">January 2025</span> &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="prose">
+
+      <div class="callout">
+        <p><strong>TL;DR —</strong> Private Photos has no servers, no accounts and no internet permission. It cannot collect, transmit, or store your data anywhere outside your own device.</p>
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>
+        “We,” “us,” and “the Developer” refer to <strong>privatepappa.in</strong>, the publisher
+        and developer of the Android application “Private Photos” (the “App”).
+        Our website is <a href="https://privatepappa.in">https://privatepappa.in</a>.
+        Questions about this policy can be sent to
+        <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>.
+      </p>
+
+      <h2>2. Information we collect</h2>
+      <p><strong>None.</strong> The App does not collect, transmit, sell, share or process any personal information, photos, or telemetry. Specifically:</p>
+      <ul>
+        <li>We do not collect your name, email, phone number, IP address, advertising ID, or any other identifier.</li>
+        <li>We do not collect your photos, videos, file names, EXIF data, or any metadata about them.</li>
+        <li>We do not use analytics SDKs (Firebase Analytics, Crashlytics, Mixpanel, etc.).</li>
+        <li>We do not use ad networks or tracking pixels.</li>
+        <li>We do not request the Android <code>INTERNET</code> permission. The App cannot open a network socket.</li>
+      </ul>
+
+      <h2>3. Information stored on your device</h2>
+      <p>The App stores the following <strong>only on your device</strong>, in its app-private storage area:</p>
+      <ul>
+        <li><strong>Encrypted photo blobs</strong> — the photos you choose to import, each encrypted byte-by-byte using AES-256-GCM with a key derived from your master password.</li>
+        <li><strong>An encrypted index</strong> — a small file mapping blobs back to thumbnails and ordering. It is encrypted with the same key.</li>
+        <li><strong>A password verifier</strong> — a non-reversible Argon2 / PBKDF2 hash used solely to check whether the password you typed is correct. The password itself is never stored.</li>
+        <li><strong>App preferences</strong> — theme, sort order, etc. No personal data.</li>
+      </ul>
+      <p>This data never leaves your device unless <em>you</em> deliberately export it via the App’s backup feature.</p>
+
+      <h2>4. Permissions explained</h2>
+      <ul>
+        <li><strong>Photos &amp; Media (<code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>)</strong> — needed to import photos from your gallery into the vault. Used only when you tap “Add photos.”</li>
+        <li><strong>Biometric (<code>USE_BIOMETRIC</code>)</strong> — optional, used only if you enable fingerprint / face unlock. Biometric data never leaves the system keystore.</li>
+        <li><strong>Storage (scoped, Android 11+)</strong> — used for backup export and restore, only when you initiate it.</li>
+      </ul>
+      <p>We do <em>not</em> request: Internet, location, contacts, microphone, camera (unless you tap Capture), background activity, or system overlays.</p>
+
+      <h2>5. Third-party services</h2>
+      <p>The App does not embed third-party SDKs that collect data. There are no advertising libraries, no analytics libraries, no remote-config libraries, no crash reporters that report off-device.</p>
+      <p>If we ever integrate an optional service in a future version (for example, an opt-in donation processor), it will be explicitly disclosed here before release, and you will be asked to consent before any data leaves your device.</p>
+
+      <h2>6. Children’s privacy</h2>
+      <p>The App is suitable for all ages and does not knowingly collect data from anyone, including children under 13. Since we collect nothing, no special procedures are required.</p>
+
+      <h2>7. Data retention &amp; deletion</h2>
+      <p>Since we don’t hold any data on our servers, there is nothing for us to retain or delete on our side. To delete data on your device, simply uninstall the App. Android will permanently wipe the App’s private storage — including the encrypted vault — as part of the uninstall.</p>
+
+      <h2>8. Security</h2>
+      <ul>
+        <li><strong>AES-256-GCM</strong> authenticated encryption on every file.</li>
+        <li><strong>Argon2 / PBKDF2</strong> key derivation with a high work factor to resist brute-force.</li>
+        <li><strong>Offline certificate pinning</strong> — the App verifies its own signing certificate on launch and refuses to run if the APK has been tampered with.</li>
+        <li><strong>Screen-capture protection</strong> via Android <code>FLAG_SECURE</code>.</li>
+        <li><strong>Sandboxed storage</strong> — the vault lives in app-private storage, inaccessible to other apps on a non-rooted device.</li>
+      </ul>
+
+      <h2>9. Your rights</h2>
+      <p>Under the EU GDPR, the California CCPA, India’s DPDP Act and most other privacy frameworks, you have the right to access, correct, port and delete your personal data held by a controller. Since we hold none of your personal data, these requests are honored by default — there is simply nothing to retrieve or erase on our side.</p>
+      <p>If you believe the App has somehow collected data from you, please email <a href="mailto:hello@privatepappa.in">hello@privatepappa.in</a> and we will investigate within 7 working days.</p>
+
+      <h2>10. Changes to this policy</h2>
+      <p>If our practices change — for example, if a future paid version uses an optional payment processor — we will update this page and bump the “Last updated” date. Material changes will also be announced inside the App on the next launch.</p>
+
+      <h2>11. Contact</h2>
+      <p>
+        privatepappa.in <br/>
+        Email: <a href="mailto:hello@privatepappa.in">hello@privatepappa.in</a> <br/>
+        Web: <a href="https://privatepappa.in">https://privatepappa.in</a>
+      </p>
+
+      <hr style="border:none; border-top:1px solid var(--border); margin: 56px 0;" />
+
+      <h2 id="terms">Terms of Use (Summary)</h2>
+      <p>
+        Private Photos is provided <strong>“as is” without any warranty</strong>, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall the Developer be liable for any claim, damages or other liability arising from your use of the App.
+      </p>
+      <p>
+        Because the App is end-to-end encrypted with a key derived only from your master password, the Developer <strong>cannot recover lost data, lost passwords, or corrupted backups</strong>. You are solely responsible for remembering your master password and for keeping verified copies of your backup files.
+      </p>
+      <p>
+        You agree to use the App only for lawful purposes and not to use it to store content that violates applicable law in your jurisdiction. The Developer does not monitor App usage and has no technical ability to do so.
+      </p>
+      <p>
+        This document constitutes the entire agreement between you and the Developer regarding the App. By installing or using the App, you accept these terms.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/logo.png" alt="" /><span>Private Photos</span></a>
+        <p>A strictly offline photo vault by <a href="https://privatepappa.in">privatepappa.in</a>. AES-256-GCM encryption, no cloud, no tracking.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="index.html#download">Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html#terms">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a></li>
+          <li><a href="https://privatepappa.in">privatepappa.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> privatepappa.in — All rights reserved.</span>
+      <span>Developed by <a href="https://privatepappa.in">privatepappa.in</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>

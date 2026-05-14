@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Private Photos by privatepappa.in</title>
+  <meta name="description" content="Frequently asked questions about Private Photos — the offline AES-256 photo vault. Passwords, backups, supported formats and more." />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="canonical" href="https://privatepappa.in/faq.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Does Private Photos require an internet connection?", "acceptedAnswer": { "@type": "Answer", "text": "No. The app does not request the INTERNET permission and cannot communicate with any server." }},
+      { "@type": "Question", "name": "What happens if I forget my master password?", "acceptedAnswer": { "@type": "Answer", "text": "Your password is the encryption key. We never store it and cannot recover it. Without it, the photos are mathematically unrecoverable." }},
+      { "@type": "Question", "name": "Is Private Photos free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the core app is free. There are no ads, no subscriptions and no in-app purchases at launch." }}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Private Photos home">
+      <img src="assets/logo.png" alt="" />
+      <span>Private Photos</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html#download" class="btn btn-primary">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <p>Short, honest answers. If you don’t find yours, write to <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="faq-list">
+
+      <details class="faq-item" open>
+        <summary>Does Private Photos require an internet connection?</summary>
+        <div class="faq-answer">
+          <p>No. The app does not request the <code>INTERNET</code> permission at all. It is mechanically incapable of opening a network socket. You can verify this in Android Settings › Apps › Private Photos › Permissions.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if I forget my master password?</summary>
+        <div class="faq-answer">
+          <p>Your master password is the encryption key. We never store it, and we have no “reset link” to send, because there is no server to send it from.</p>
+          <p><strong>Without the password, your photos are mathematically unrecoverable.</strong> Please choose a password you will remember, and consider writing it on paper kept in a safe place — the same way you would treat a house key.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where are my photos stored?</summary>
+        <div class="faq-answer">
+          <p>Inside the app’s private storage on your device — a sandboxed folder that no other app can read on a non-rooted phone. Each photo is split into encrypted blocks with a unique nonce per file, and the index that maps them back together is itself encrypted.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I back up the vault?</summary>
+        <div class="faq-answer">
+          <p>Yes. The app can export the entire vault as a single sealed file — still encrypted, still requiring your password to open. You can then copy that file to a USB drive, your computer, or any cloud service. The cloud only sees opaque bytes; it cannot read your photos.</p>
+          <p>To restore, install the app on the new device, choose <em>Restore from backup</em>, and enter your password.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What image and video formats are supported?</summary>
+        <div class="faq-answer">
+          <p>JPEG, PNG, HEIC/HEIF, WebP, GIF and TIFF are fully supported with EXIF preservation. Videos are encrypted as opaque files (you decrypt them to your gallery to play).</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is the app free? Are there ads or trackers?</summary>
+        <div class="faq-answer">
+          <p>The core app is free with no ads, no analytics SDKs, no trackers and no in-app purchases at launch. We may add an optional one-time pro upgrade later (e.g. unlimited backup slots), but the core privacy guarantees stay free forever.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is this different from a hidden folder or file locker?</summary>
+        <div class="faq-answer">
+          <p>Most “hidden folder” apps simply rename your files or move them — the bytes are still readable by any file manager. Private Photos encrypts the actual byte stream with AES-256-GCM. Even if someone copies the encrypted files off your phone, they cannot be opened without your password.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does the app prevent screenshots?</summary>
+        <div class="faq-answer">
+          <p>Yes. The vault enables Android’s <code>FLAG_SECURE</code> flag, which blocks screenshots, blocks screen recording on most devices, and hides the app preview in the recent-apps switcher.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will there be an iOS version?</summary>
+        <div class="faq-answer">
+          <p>Yes — we plan to release an iOS version with the same offline guarantees (sandboxed storage, on-device AES-256-GCM, Team ID pinning). Subscribe to updates by emailing <a href="mailto:hello@privatepappa.in">hello@privatepappa.in</a> with the subject “iOS waitlist.”</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who is behind this app?</summary>
+        <div class="faq-answer">
+          <p>Private Photos is developed by <a href="https://privatepappa.in"><strong>privatepappa.in</strong></a>, an independent team. We are not VC-funded and do not sell user data, because we don’t collect any.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I report a bug or request a feature?</summary>
+        <div class="faq-answer">
+          <p>Email <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>. We read every message. Please include screenshot of the bug, your phone model and Android version if reporting a bug.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/logo.png" alt="" /><span>Private Photos</span></a>
+        <p>A strictly offline photo vault by <a href="https://privatepappa.in">privatepappa.in</a>. AES-256-GCM encryption, no cloud, no tracking.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="index.html#download">Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html#terms">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@privatepappa.in">reply@privatepappa.in</a></li>
+          <li><a href="https://privatepappa.in">privatepappa.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> privatepappa.in — All rights reserved.</span>
+      <span>Developed by <a href="https://privatepappa.in">privatepappa.in</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>
