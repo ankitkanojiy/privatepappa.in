@@ -1,0 +1,4 @@
+# This file tells GitHub Pages to skip Jekyll processing.
+# Without it, files/folders starting with "_" are silently ignored
+# and certain edge cases (like trailing dots, unicode filenames) cause 404s.
+# Always include .nojekyll for plain static HTML/CSS/JS sites on GitHub Pages.
