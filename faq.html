@@ -4,683 +4,238 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FAQs - PrivateVault</title>
-
-<meta
-  http-equiv="Content-Security-Policy"
-  content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
-/>
-
-<style>
-:root {
-  --bg: #09090b;
-  --surface: #111217;
-  --surface-2: #151720;
-  --text: #f5f7fa;
-  --muted: #a6adbb;
-  --accent: #5b8cff;
-  --border: rgba(255,255,255,.07);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(91,140,255,.16), transparent 34%),
-    radial-gradient(circle at top right, rgba(122,215,200,.10), transparent 30%),
-    var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-  line-height: 1.7;
-}
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 28px;
-  background: rgba(9,9,11,.78);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
-
-.logo {
-  font-weight: 800;
-  letter-spacing: -.02em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  opacity: .82;
-  transition: opacity 140ms ease, transform 140ms ease;
-}
-
-.nav-links a:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.hero {
-  padding: 80px 24px 44px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: clamp(38px, 6vw, 72px);
-  margin: 0 0 16px;
-  letter-spacing: -.05em;
-}
-
-.hero p {
-  max-width: 780px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.container {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto 80px;
-}
-
-.search-box {
-  margin: 26px auto 28px;
-  max-width: 720px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 14px 18px;
-  color: var(--text);
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-}
-
-.category {
-  margin-top: 34px;
-}
-
-.category h2 {
-  font-size: 26px;
-  margin: 0 0 16px;
-  letter-spacing: -.03em;
-}
-
-.faq-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 16px;
-}
-
-.faq-card {
-  background: linear-gradient(180deg, rgba(255,255,255,.035), transparent), var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 22px;
-  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
-}
-
-.faq-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(91,140,255,.25);
-  background: var(--surface-2);
-}
-
-.faq-card h3 {
-  margin: 0 0 10px;
-  font-size: 17px;
-}
-
-.faq-card p,
-.faq-card li {
-  color: var(--muted);
-  margin: 0;
-}
-
-.faq-card ul {
-  margin: 8px 0 0;
-  padding-left: 20px;
-}
-
-.badge {
-  display: inline-flex;
-  margin-bottom: 12px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: rgba(91,140,255,.14);
-  color: #bcd0ff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.note {
-  margin-top: 34px;
-  padding: 24px;
-  border-radius: 24px;
-  background: rgba(91,140,255,.09);
-  border: 1px solid rgba(91,140,255,.20);
-  color: var(--muted);
-}
-
-footer {
-  padding: 36px 24px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-}
-
-@media (max-width: 720px) {
-  .navbar {
-    align-items: flex-start;
-    gap: 14px;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    gap: 12px;
-    font-size: 14px;
-  }
-
-  .hero {
-    padding-top: 54px;
-  }
-}
-</style>
+<meta name="description" content="PrivateVault is an offline-first encrypted vault app for securely storing personal photos, videos, documents, and files on your device." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" />
+<link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="./css/style.css" />
+<script src="./js/app.js" defer></script>
 </head>
-
 <body>
-
-<nav class="navbar">
-  <div class="logo">PrivateVault</div>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./faq.html">FAQ</a>
-    <a href="./privacy-policy.html">Privacy</a>
-    <a href="./terms.html">Terms</a>
-    <a href="./contact.html">Contact</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <h1>Frequently Asked Questions</h1>
-  <p>
-    Updated FAQ for PrivateVault’s latest offline vault, encryption, document editor,
-    media viewer, secure sharing, performance, and privacy features.
-  </p>
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" href="./index.html" aria-label="PrivateVault home">
+      <img src="./assets/app-icon.svg" alt="PrivateVault app icon" />
+      <span>PrivateVault</span>
+    </a>
+    <div class="nav-links" aria-label="Main navigation">
+      <a class="" href="./index.html">Home</a>
+      <a class="active" href="./faq.html">FAQs</a>
+      <a class="" href="./privacy-policy.html">Privacy</a>
+      <a class="" href="./terms.html">Terms</a>
+      <a class="" href="./contact.html">Contact</a>
+    </div>
+  </nav>
 </header>
+<main class="page">
+  <section class="page-title">
+    <h1>Frequently Asked Questions</h1>
+    <p>
+      Updated answers about PrivateVault's offline vault, encryption, permissions,
+      media tools, document workflows, sharing controls, privacy, and security design.
+    </p>
+    <div class="faq-tools">
+      <input class="search-input" data-faq-search type="search" placeholder="Search FAQs..." aria-label="Search FAQs" />
+    </div>
+  </section>
 
-<main class="container">
-
-<input
-  class="search-box"
-  type="search"
-  placeholder="Search FAQs..."
-  aria-label="Search FAQs"
-/>
-
-<section class="category">
-  <h2>Privacy & Offline Operation</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Offline-first</span>
+  <section class="faq-grid">
+    <article class="faq-card" data-faq-card>
+      <span class="label">Offline-first</span>
       <h3>Does PrivateVault require internet access?</h3>
-      <p>
-        No. PrivateVault is designed as an offline-first encrypted vault. Core vault
-        features are intended to work locally on your device without internet access.
-      </p>
+      <p>No. PrivateVault is designed as an offline-first encrypted vault. Core vault features are intended to work locally on your device without internet access.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">No cloud by default</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">No cloud by default</span>
       <h3>Does PrivateVault upload my files to cloud storage?</h3>
-      <p>
-        No. Vault files remain local unless you manually export or share them outside
-        the app.
-      </p>
+      <p>No. Vault files remain local unless you manually export or share them outside the app.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Local processing</span>
-      <h3>Are thumbnails, search, document previews, and OCR processed locally?</h3>
-      <p>
-        Yes. The app is designed to process thumbnails, indexing, previews, scanning,
-        and organization locally without sending your vault content to external servers.
-      </p>
+<article class="faq-card" data-faq-card>
+      <span class="label">Local processing</span>
+      <h3>Are thumbnails, previews, and search processed locally?</h3>
+      <p>Yes. The app is designed to process thumbnails, indexing, previews, scanning, and organization locally without sending vault content to external servers.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Permissions</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Minimal permissions</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Permissions</span>
       <h3>Which permissions does the app use?</h3>
-      <p>
-        PrivateVault uses only permissions required for selected features, such as
-        reading user-selected images, videos, audio, documents, and optional camera
-        capture when you use the camera feature.
-      </p>
+      <p>PrivateVault uses only permissions required for selected features, such as reading user-selected images, videos, audio, documents, and optional camera capture when you use camera features.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Camera</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Camera</span>
       <h3>When is camera permission requested?</h3>
-      <p>
-        Camera permission is requested only when you use direct camera capture or
-        document scanning features.
-      </p>
+      <p>Camera permission is requested only when you use direct camera capture or document scanning features.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">No internet core</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">No internet core</span>
       <h3>Does the vault need INTERNET permission?</h3>
-      <p>
-        The core offline vault does not require internet permission. This helps reduce
-        data-leak risk.
-      </p>
+      <p>The core offline vault does not require internet permission. This helps reduce data-leak risk.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Encryption & Vault Security</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Encryption</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Encryption</span>
       <h3>How are files protected?</h3>
-      <p>
-        Files are stored in encrypted form inside the vault. The app is designed around
-        AES-256 encryption, secure local storage, integrity checks, and protected vault
-        sessions.
-      </p>
+      <p>Files are stored in encrypted form inside the vault. The app is designed around AES-256 encryption, secure local storage, integrity checks, and protected vault sessions.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Password</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Password</span>
       <h3>Does the app support long vault passwords?</h3>
-      <p>
-        Yes. The vault design supports strong passwords up to 127 characters.
-      </p>
+      <p>Yes. The vault design supports strong passwords up to 127 characters.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Screenshots</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Screenshots</span>
       <h3>Are screenshots blocked?</h3>
-      <p>
-        Yes. Screenshot and screen-recording protection is enabled for sensitive vault
-        screens in the secure production build.
-      </p>
+      <p>Yes. Screenshot and screen-recording protection is enabled for sensitive vault screens in the secure production build.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Integrity</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Integrity</span>
       <h3>How does PrivateVault reduce corruption risk?</h3>
-      <p>
-        The app includes layered integrity validation, transactional writes, metadata
-        recovery, chunk checks, restore validation, and corruption-resistant encrypted
-        file handling.
-      </p>
+      <p>The app includes layered integrity validation, transactional writes, metadata recovery, chunk checks, restore validation, and corruption-resistant encrypted file handling.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>File Import, Export & Sharing</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Import</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Import</span>
       <h3>Can I import many file types?</h3>
-      <p>
-        Yes. PrivateVault supports importing common media, documents, code files,
-        archives, and other user-selected files into the encrypted vault.
-      </p>
+      <p>Yes. PrivateVault supports importing common media, documents, code files, archives, and other user-selected files into the encrypted vault.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Export</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Export</span>
       <h3>Can I export decrypted files?</h3>
-      <p>
-        Yes. Files can be exported in decrypted form only when you explicitly choose
-        to export them to a selected location.
-      </p>
+      <p>Yes. Files can be exported in decrypted form only when you explicitly choose to export them to a selected location.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Share toggle</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Share toggle</span>
       <h3>Can file sharing be disabled?</h3>
-      <p>
-        Yes. Settings include a toggle to enable or disable external file sharing.
-        When disabled, decrypted file sharing outside the app is blocked.
-      </p>
+      <p>Yes. Settings include a toggle to enable or disable external file sharing. When disabled, decrypted file sharing outside the app is blocked.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Safe sharing</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Safe sharing</span>
       <h3>How does secure sharing work?</h3>
-      <p>
-        Shared files are prepared as temporary decrypted copies, passed to the selected
-        app, and cleaned up after the sharing session.
-      </p>
+      <p>Shared files are prepared as temporary decrypted copies, passed to the selected app, and cleaned up after the sharing session.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Documents, Office Files & Code Editing</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Office-style editor</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Documents</span>
       <h3>Can I edit Word, Excel, PowerPoint, and PDF-related files?</h3>
-      <p>
-        The app includes a compact Office-style editing architecture with formatting
-        toolbars, spreadsheet grid support, presentation layout support, document
-        zooming, search, and conversion/export workflows.
-      </p>
+      <p>The app includes a compact Office-style editing architecture with formatting toolbars, spreadsheet grid support, presentation layout support, document zooming, search, and export workflows where supported.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Formatting</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Formatting</span>
       <h3>What formatting tools are available?</h3>
-      <p>
-        Formatting support includes bold, italic, underline, strike, font sizing,
-        color, alignment, lists, tables, cells, media embeds, links, and document
-        presets.
-      </p>
+      <p>Formatting support includes bold, italic, underline, strike, font sizing, color, alignment, lists, tables, cells, media embeds, links, and document presets.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Find</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Find</span>
       <h3>Can I search inside opened documents or code files?</h3>
-      <p>
-        Yes. A Find button is available for text-based documents and code files in
-        both viewer and editor modes. It is not shown for image or video files.
-      </p>
+      <p>Yes. A Find button is available for text-based documents and code files in viewer and editor modes. It is not shown for image or video files.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Code files</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Code files</span>
       <h3>Can I open and edit coding files?</h3>
-      <p>
-        Yes. The app supports editing common code formats such as JavaScript,
-        TypeScript, C, C++, Java, PHP, Python, Kotlin, Swift, HTML, CSS, JSON, XML,
-        YAML, and more. APK files are inspectable but not executable.
-      </p>
+      <p>Yes. The app supports editing common code formats such as JavaScript, TypeScript, C, C++, Java, PHP, Python, Kotlin, Swift, HTML, CSS, JSON, XML, YAML, and more.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Conversion, Save As & Protected Files</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Convert</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Conversion</span>
       <h3>Can documents be converted to other formats?</h3>
-      <p>
-        Yes. PrivateVault includes a unified Save As and Export system for converting
-        supported documents, spreadsheets, presentations, PDFs, images, and text
-        formats.
-      </p>
+      <p>Yes. PrivateVault includes a Save As and Export system for converting supported documents, spreadsheets, presentations, PDFs, images, and text formats where supported.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Legacy formats</span>
-      <h3>Does the app support old document formats?</h3>
-      <p>
-        The compatibility system includes support pathways for modern and older
-        formats such as DOC, DOCX, XLS, XLSX, PPT, PPTX, RTF, TXT, CSV, ODT, ODS,
-        ODP, PDF, and image formats.
-      </p>
-    </article>
-
-    <article class="faq-card">
-      <span class="badge">Password files</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Password files</span>
       <h3>Can I open password-protected files?</h3>
-      <p>
-        Yes. Supported password-protected documents and archives can be opened after
-        entering their password. Password handling includes retry limiting, session
-        isolation, and temporary buffer cleanup.
-      </p>
+      <p>Supported password-protected documents and archives can be opened after entering their password, with retry limiting, session isolation, and temporary buffer cleanup.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Save As</span>
-      <h3>Can I save documents in newer or older formats?</h3>
-      <p>
-        Yes. The Save As system is designed to offer compatible output formats,
-        including modern and legacy document formats where supported.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Media, Photo Editor & Video Player</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Images</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Images</span>
       <h3>Can I view and edit images?</h3>
-      <p>
-        Yes. The app supports image viewing, zooming, panning, resizing, saving as a
-        new image, filters, and basic image editing tools.
-      </p>
+      <p>Yes. The app supports image viewing, zooming, panning, resizing, saving as a new image, filters, and basic image editing tools.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Video</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Video</span>
       <h3>Can videos play in portrait and landscape?</h3>
-      <p>
-        Yes. The video player supports dynamic rotation according to device rotation
-        without forcing horizontal orientation.
-      </p>
+      <p>Yes. The video player supports dynamic rotation according to device rotation without forcing horizontal orientation.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Zoom</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Zoom</span>
       <h3>Does media support double-tap and pinch zoom?</h3>
-      <p>
-        Yes. Images and videos support double-tap zoom and pinch zoom with premium
-        edge resistance and controlled panning.
-      </p>
+      <p>Yes. Images and videos support double-tap zoom and pinch zoom with edge resistance and controlled panning.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Playback</span>
-      <h3>Are video controls optimized?</h3>
-      <p>
-        Yes. The player includes precise scrubbing, auto-hiding controls, rotation-aware
-        layouts, responsive gestures, and smoother seek behavior.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Camera Scan, OCR & Archives</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Scanner</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Scanner</span>
       <h3>Can I scan documents with the camera?</h3>
-      <p>
-        Yes. The app includes camera document scanning with edge detection, perspective
-        correction, OCR isolation, and multi-format export support.
-      </p>
+      <p>Yes. The app includes camera document scanning with edge detection, perspective correction, OCR isolation, and multi-format export support where available.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">OCR</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">OCR</span>
       <h3>Is OCR handled securely?</h3>
-      <p>
-        OCR is designed to run locally with sandboxing, input sanitization, language
-        pack validation, and memory controls.
-      </p>
+      <p>OCR is designed to run locally with sandboxing, input sanitization, language pack validation, and memory controls.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Archives</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Archives</span>
       <h3>Can I create or unzip compressed files?</h3>
-      <p>
-        Yes. PrivateVault supports archive creation and extraction workflows, including
-        encrypted archive handling, integrity verification, and protection against
-        archive-bomb and path-traversal attacks.
-      </p>
+      <p>Yes. PrivateVault supports archive creation and extraction workflows, including encrypted archive handling, integrity verification, and protection against archive-bomb and path-traversal attacks.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Clipboard & Data Control</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Clipboard toggle</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Clipboard</span>
       <h3>Can I restrict copied vault data to stay inside the app?</h3>
-      <p>
-        Yes. Settings allow clipboard behavior to be internal-only or system-allowed,
-        depending on your chosen policy.
-      </p>
+      <p>Yes. Settings allow clipboard behavior to be internal-only or system-allowed depending on your chosen policy.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Auto-clear</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Auto-clear</span>
       <h3>Does clipboard data expire?</h3>
-      <p>
-        Yes. Clipboard content can be auto-cleared after a timeout or when sensitive
-        sessions are backgrounded.
-      </p>
+      <p>Yes. Clipboard content can be auto-cleared after a timeout or when sensitive sessions are backgrounded.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Performance & Device Optimization</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Low-end devices</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Performance</span>
       <h3>Is PrivateVault optimized for budget phones?</h3>
-      <p>
-        Yes. The app includes low-end mode, preview downscaling, lightweight transitions,
-        reduced effects, memory trimming, and background workload limits.
-      </p>
+      <p>Yes. The app includes low-end mode, preview downscaling, lightweight transitions, reduced effects, memory trimming, and background workload limits.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Mid-range devices</span>
-      <h3>Does the app provide flagship-like smoothness on mid-range devices?</h3>
-      <p>
-        Yes. Mid-range optimization includes touch prediction, render-cache fusion,
-        GPU burst control, frame stability boosting, and thermal-aware scaling.
-      </p>
-    </article>
-
-    <article class="faq-card">
-      <span class="badge">High-end devices</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">High refresh</span>
       <h3>Are high-refresh displays supported?</h3>
-      <p>
-        Yes. High-end optimization includes 90Hz/120Hz+ rendering paths, low-latency
-        input, advanced animations, texture residency, and multicore workload distribution.
-      </p>
+      <p>Yes. High-end optimization includes 90Hz/120Hz+ rendering paths, low-latency input, advanced animations, texture residency, and multicore workload distribution.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Battery</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Battery</span>
       <h3>Does the app optimize battery usage?</h3>
-      <p>
-        Yes. Battery-aware systems reduce background work, animation intensity,
-        rendering load, and heavy encryption tasks when needed.
-      </p>
+      <p>Yes. Battery-aware systems reduce background work, animation intensity, rendering load, and heavy encryption tasks when needed.</p>
     </article>
-
-  </div>
-</section>
-
-<section class="category">
-  <h2>Security Hardening</h2>
-  <div class="faq-grid">
-
-    <article class="faq-card">
-      <span class="badge">Sandboxing</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Sandboxing</span>
       <h3>How are risky files handled?</h3>
-      <p>
-        High-risk operations such as PDF parsing, archive extraction, OCR, thumbnails,
-        font rendering, and media decoding are designed with sandboxing and capability
-        restrictions.
-      </p>
+      <p>High-risk operations such as PDF parsing, archive extraction, OCR, thumbnails, font rendering, and media decoding are designed with sandboxing and capability restrictions.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Macros</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Macros</span>
       <h3>Are document macros allowed?</h3>
-      <p>
-        No. Macro execution and active document content are blocked to reduce malicious
-        document risk.
-      </p>
+      <p>No. Macro execution and active document content are blocked to reduce malicious document risk.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">APK files</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">APK files</span>
       <h3>Can APK files be run inside the app?</h3>
-      <p>
-        No. APK files can be inspected in read-only mode, but they cannot be executed
-        or installed by the vault.
-      </p>
+      <p>No. APK files can be inspected in read-only mode, but they cannot be executed or installed by the vault.</p>
     </article>
-
-    <article class="faq-card">
-      <span class="badge">Tamper defense</span>
+<article class="faq-card" data-faq-card>
+      <span class="label">Tamper defense</span>
       <h3>Does the app include runtime hardening?</h3>
+      <p>The architecture includes anti-tamper awareness, debugger detection, hook detection, emulator heuristics, screenshot blocking, secure session cleanup, and hardware-backed key enforcement where supported.</p>
+    </article>
+  </section>
+
+  <section class="content-stack" style="padding-top: 18px;">
+    <article class="policy-card notice">
+      <h2>Feature Availability Note</h2>
       <p>
-        The architecture includes anti-tamper awareness, debugger detection, hook
-        detection, emulator heuristics, screenshot blocking, secure session cleanup,
-        and hardware-backed key enforcement where supported.
+        Some advanced document conversion, editing, OCR, sandboxing, archive handling,
+        and hardware-backed security behavior may depend on Android version, device
+        capabilities, supported file type, and production build configuration.
       </p>
     </article>
-
-  </div>
-</section>
-
-<div class="note">
-  <strong>Note:</strong>
-  Some advanced document conversion, editing, OCR, sandboxing, and hardware-backed
-  security behavior may depend on device capabilities, Android version, supported
-  file type, and build configuration.
-</div>
-
+  </section>
 </main>
-
-<footer>
-  © 2026 PrivateVault. Offline-first encrypted vault.
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 PrivateVault. Offline-first encrypted vault.</span>
+    <span>
+      <a href="./privacy-policy.html">Privacy Policy</a> ·
+      <a href="./terms.html">Terms</a> ·
+      <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>
+    </span>
+  </div>
 </footer>
-
 </body>
 </html>
