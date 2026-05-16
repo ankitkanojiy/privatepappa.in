@@ -1,42 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PrivateVault</title>
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/animations.css">
-<link rel="stylesheet" href="./css/responsive.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PrivateVault - Offline Encrypted Vault</title>
+<meta name="description" content="PrivateVault is an offline-first encrypted vault app for securely storing personal photos, videos, documents, and files on your device." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" />
+<link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="./css/style.css" />
+
 </head>
 <body>
-<header class="hero">
-<nav class="navbar">
-<div class="logo">PrivateVault</div>
-<div class="nav-links">
-<a href="./index.html">Home</a>
-<a href="./faq.html">FAQ</a>
-<a href="./privacy-policy.html">Privacy</a>
-<a href="./terms.html">Terms</a>
-<a href="./contact.html">Contact</a>
-</div>
-</nav>
-<div class="hero-content">
-<h1>PrivateVault</h1>
-<p>Secure flagship-grade encrypted offline vault.</p>
-<a class="primary-btn" href="#screenshots">View Screenshots</a>
-</div>
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" href="./index.html" aria-label="PrivateVault home">
+      <img src="./assets/app-icon.svg" alt="PrivateVault app icon" />
+      <span>PrivateVault</span>
+    </a>
+    <div class="nav-links" aria-label="Main navigation">
+      <a class="active" href="./index.html">Home</a>
+      <a class="" href="./faq.html">FAQs</a>
+      <a class="" href="./privacy-policy.html">Privacy</a>
+      <a class="" href="./terms.html">Terms</a>
+      <a class="" href="./contact.html">Contact</a>
+    </div>
+  </nav>
 </header>
-<section id="screenshots" class="gallery-section">
-<h2>App Screenshots</h2>
-<div class="gallery-grid">
-<div class="card"><img src="./assets/screenshots/dashboard.png"><h3>Dashboard</h3></div>
-<div class="card"><img src="./assets/screenshots/editor.png"><h3>Editor</h3></div>
-<div class="card"><img src="./assets/screenshots/player.png"><h3>Player</h3></div>
-</div>
-</section>
-<footer>© 2026 PrivateVault</footer>
-<script src="./js/app.js"></script>
-<script src="./js/animations.js"></script>
-<script src="./js/security.js"></script>
+<main class="page">
+  <section class="hero">
+    <div>
+      <div class="badge-row">
+        <span class="badge">Offline-first</span>
+        <span class="badge">Encrypted vault</span>
+        <span class="badge">No cloud by default</span>
+      </div>
+      <h1>PrivateVault</h1>
+      <p>
+        PrivateVault is a modern offline encrypted vault app for protecting personal photos,
+        videos, documents, notes, code files, and private media on your device. It is
+        designed for users who want local-first privacy, strong vault protection, and a
+        clean professional file-management experience without mandatory cloud upload.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#" aria-disabled="true">
+          Google Play Download <span class="coming-soon">Coming soon</span>
+        </a>
+        <a class="btn btn-secondary" href="./privacy-policy.html">Read Privacy Policy</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <img class="app-icon-large" src="./assets/app-icon.svg" alt="PrivateVault icon" />
+      <h2>Private files stay private.</h2>
+      <p>
+        Import selected files, encrypt them locally, preview supported content,
+        organize your vault, export only when you choose, and keep sensitive screens protected.
+      </p>
+      <div class="badge-row">
+        <span class="badge">AES-256 design</span>
+        <span class="badge">Secure previews</span>
+        <span class="badge">Screenshot protection</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section">
+    <h2>What this app does</h2>
+    <p class="section-lead">
+      PrivateVault helps you keep important personal files organized and protected in an encrypted local vault.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <div class="feature-icon">🔐</div>
+        <h3>Encrypted file vault</h3>
+        <p>Protect personal photos, videos, documents, code files, and other selected files with local encrypted storage.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">📁</div>
+        <h3>Smart local organization</h3>
+        <p>Organize files by type, preview supported content, search locally, and keep private files easier to manage.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Privacy-focused by design</h3>
+        <p>No required cloud account, no mandatory analytics, no ads SDK, and no internet permission for core vault use.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">🖼️</div>
+        <h3>Media previews</h3>
+        <p>View images and videos inside the vault with secure preview workflows and protected sensitive screens.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">📝</div>
+        <h3>Document workflows</h3>
+        <p>Open, preview, edit, and export supported text, office-style, PDF-related, and code-file formats where supported.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">📤</div>
+        <h3>User-controlled export</h3>
+        <p>Files leave the vault only when you explicitly export or share them to a location or app you choose.</p>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 PrivateVault. Offline-first encrypted vault.</span>
+    <span>
+      <a href="./privacy-policy.html">Privacy Policy</a> ·
+      <a href="./terms.html">Terms</a> ·
+      <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>
+    </span>
+  </div>
+</footer>
 </body>
 </html>
