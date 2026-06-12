@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PrivateVault - Offline Encrypted Vault</title>
-<meta name="description" content="PrivateVault is an offline-first encrypted vault app for securely storing personal photos, videos, documents, and files on your device." />
+<meta name="description" content="PrivateVault is an offline encrypted vault app for storing and managing personal files locally on your Android device." />
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" />
 <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="./css/style.css" />
@@ -32,14 +32,14 @@
       <div class="badge-row">
         <span class="badge">Offline-first</span>
         <span class="badge">Encrypted vault</span>
-        <span class="badge">No cloud by default</span>
+        <span class="badge">No cloud required</span>
       </div>
       <h1>PrivateVault</h1>
       <p>
-        PrivateVault is a modern offline encrypted vault app for protecting personal photos,
-        videos, documents, notes, code files, and private media on your device. It is
-        designed for users who want local-first privacy, strong vault protection, and a
-        clean professional file-management experience without mandatory cloud upload.
+        PrivateVault is an offline encrypted vault app for Android designed to help you
+        store and manage personal files locally on your device. It focuses on local privacy,
+        file organization, and secure viewing without cloud accounts, internet access,
+        telemetry, or online file viewers.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#" aria-disabled="true">
@@ -53,11 +53,12 @@
       <img class="app-icon-large" src="./assets/app-icon.svg" alt="PrivateVault icon" />
       <h2>Private files stay private.</h2>
       <p>
-        Import selected files, encrypt them locally, preview supported content,
-        organize your vault, export only when you choose, and keep sensitive screens protected.
+        Import personal files, encrypt them locally, preview supported content,
+        organize your vault, and export only when you choose. Screenshot protection
+        keeps sensitive screens private.
       </p>
       <div class="badge-row">
-        <span class="badge">AES-256 design</span>
+        <span class="badge">Local encryption</span>
         <span class="badge">Secure previews</span>
         <span class="badge">Screenshot protection</span>
       </div>
@@ -65,35 +66,35 @@
   </section>
 
   <section class="section">
-    <h2>What this app does</h2>
+    <h2>What this app provides</h2>
     <p class="section-lead">
-      PrivateVault helps you keep important personal files organized and protected in an encrypted local vault.
+      PrivateVault helps you keep personal files organized and protected in an encrypted local vault.
     </p>
     <div class="grid">
       <article class="card">
         <div class="feature-icon">🔐</div>
         <h3>Encrypted file vault</h3>
-        <p>Protect personal photos, videos, documents, code files, and other selected files with local encrypted storage.</p>
+        <p>Protect personal photos, videos, documents, and other selected files with local encrypted storage.</p>
       </article>
       <article class="card">
         <div class="feature-icon">📁</div>
-        <h3>Smart local organization</h3>
-        <p>Organize files by type, preview supported content, search locally, and keep private files easier to manage.</p>
+        <h3>Local organization</h3>
+        <p>Organize files by folders, preview supported content, search locally, and manage your vault easily.</p>
       </article>
       <article class="card">
         <div class="feature-icon">🛡️</div>
-        <h3>Privacy-focused by design</h3>
-        <p>No required cloud account, no mandatory analytics, no ads SDK, and no internet permission for core vault use.</p>
+        <h3>Privacy-focused</h3>
+        <p>No cloud account required, no telemetry or analytics, no internet permission for core vault use.</p>
       </article>
       <article class="card">
         <div class="feature-icon">🖼️</div>
         <h3>Media previews</h3>
-        <p>View images and videos inside the vault with secure preview workflows and protected sensitive screens.</p>
+        <p>View supported images, videos, and audio inside the vault with secure preview and screenshot protection.</p>
       </article>
       <article class="card">
-        <div class="feature-icon">📝</div>
-        <h3>Document workflows</h3>
-        <p>Open, preview, edit, and export supported text, office-style, PDF-related, and code-file formats where supported.</p>
+        <div class="feature-icon">📄</div>
+        <h3>PDF and document viewing</h3>
+        <p>Open and view supported PDFs and documents. Some features depend on bundled native components such as PDFium, Tesseract OCR, and OpenCV.</p>
       </article>
       <article class="card">
         <div class="feature-icon">📤</div>
@@ -102,10 +103,28 @@
       </article>
     </div>
   </section>
+
+  <section class="section">
+    <h2>Limitations</h2>
+    <p class="section-lead">
+      PrivateVault cannot guarantee that every file type will preview or render perfectly.
+      Unsupported, corrupted, extremely large, unusual, encrypted, or password-protected files
+      may fail to open, preview, or process.
+    </p>
+    <p class="section-lead">
+      OCR and scan-related features may be imperfect and depend on image quality, language data,
+      lighting, document angle, and supported native components.
+    </p>
+    <p class="section-lead">
+      No software can guarantee that encrypted files will never become corrupted. Users should
+      maintain independent backups of important files. If a vault password is forgotten or lost,
+      encrypted files may be permanently inaccessible.
+    </p>
+  </section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
-    <span>© 2026 PrivateVault. Offline-first encrypted vault.</span>
+    <span>© 2026 PrivateVault. Offline encrypted vault.</span>
     <span>
       <a href="./privacy-policy.html">Privacy Policy</a> ·
       <a href="./terms.html">Terms</a> ·
