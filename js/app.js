@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const betaBtn = document.getElementById("beta-submit");
+  if (betaBtn) {
+    betaBtn.addEventListener("click", requestBeta);
+  }
 });
 
 function requestBeta() {
