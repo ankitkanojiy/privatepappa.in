@@ -27,47 +27,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function requestBeta() {
-  const emailInput = document.getElementById("beta-email");
-  const msg = document.getElementById("beta-msg");
-  const btn = document.getElementById("beta-submit");
-  const email = emailInput.value.trim();
+  var emailInput = document.getElementById("beta-email");
+  var msg = document.getElementById("beta-msg");
+  var btn = document.getElementById("beta-submit");
+  var email = emailInput.value.trim();
 
   if (!email) {
     msg.style.color = "#f66";
     msg.textContent = "Please enter an email address.";
     return;
   }
-  if (!email.endsWith("@gmail.com") && !email.endsWith("@googlemail.com")) {
+  if (email.indexOf("@gmail.com") === -1 && email.indexOf("@googlemail.com") === -1) {
     msg.style.color = "#f66";
     msg.textContent = "Please enter a valid Gmail address (ending with @gmail.com).";
     return;
   }
 
-  // Disable button during submission
   btn.disabled = true;
   btn.textContent = "Submitting…";
   msg.style.color = "#5aa5ff";
+  msg.textContent = "Sending request…";
 
-  // Try to save via mailto as primary method (always works, no backend needed)
-  const subject = encodeURIComponent("PrivateVault Beta Access — " + email);
-  const body = encodeURIComponent("Please add this email to the PrivateVault closed beta tester list:\n\n" + email + "\n\nThank you.");
-  window.open("mailto:reply@privatepappa.in?subject=" + subject + "&body=" + body, "_blank");
+  // Open mailto link
+  var mailLink = "mailto:reply@privatepappa.in?subject=" + encodeURIComponent("PrivateVault Beta Access - " + email) + "&body=" + encodeURIComponent("Please add this email to the PrivateVault closed beta tester list:\n\n" + email + "\n\nThank you.");
+  var a = document.createElement("a");
+  a.href = mailLink;
+  a.target = "_blank";
+  a.click();
 
-  // Show success and redirect
   msg.style.color = "#4c4";
-  msg.innerHTML = "&#x2705; <strong>" + email + "</strong> added! You'll get Play Store access within 1-2 hours. Redirecting…";
-
+  msg.innerHTML = "\u2705 <strong>" + email + "</strong> added! You'll get Play Store access within 1-2 hours. Redirecting…";
   btn.textContent = "Done!";
-  btn.style.background = "#3a3";
 
+  // Redirect to Play Store
   setTimeout(function () {
-    window.open("https://play.google.com/store/apps/details?id=com.privatepappa.privatevault", "_blank");
-  }, 1500);
-
-  // Re-enable after a few seconds
-  setTimeout(function () {
-    btn.disabled = false;
-    btn.textContent = "Request Beta Access →";
-    btn.style.background = "#5aa5ff";
-  }, 4000);
+    window.location.href = "https://play.google.com/store/apps/details?id=com.privatepappa.privatevault";
+  }, 2000);
 }
