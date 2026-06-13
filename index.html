@@ -43,14 +43,8 @@
         file organization, and secure viewing without cloud accounts, internet access,
         telemetry, or online file viewers.
       </p>
-      <div class="beta-notice" style="background: linear-gradient(135deg, rgba(90,165,255,0.12), rgba(90,165,255,0.04)); border: 1px solid rgba(90,165,255,0.3); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px;">
-        <p style="margin: 0 0 6px 0; color: #5aa5ff; font-size: 16px; font-weight: 700;">&#x1F512; Closed Beta — Request Access</p>
-        <p style="margin: 0 0 16px 0; color: #c0c0d0; font-size: 14px;">PrivateVault is in closed beta testing. Enter your Google email to join the tester list. You'll get Play Store access within 1-2 hours.</p>
-        <div class="beta-form" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-          <input type="email" id="beta-email" placeholder="yourname@gmail.com" style="flex: 1; min-width: 220px; padding: 14px 18px; border: 2px solid rgba(90,165,255,0.35); border-radius: 8px; background: rgba(10,10,16,0.8); color: #fff; font-size: 15px; outline: none;" />
-          <button id="beta-submit" style="padding: 14px 28px; background: #5aa5ff; color: #0a0a10; border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; white-space: nowrap;">Request Beta Access &#x2192;</button>
-        </div>
-        <p id="beta-msg" style="margin: 12px 0 0 0; font-size: 14px; min-height: 20px;"></p>
+      <div style="max-width: 680px; margin: 0 auto 16px auto;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfJrkWkthrGKbDxKLusnEHBOO_jhuvCU_HgNthyuoTC0g0eg/viewform?embedded=true" width="100%" height="1040" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.privatepappa.privatevault" target="_blank" rel="noopener">
@@ -146,8 +140,5 @@
     </span>
   </div>
 </footer>
-<script>
-(function(){var b=document.getElementById("beta-submit");if(!b)return;b.addEventListener("click",function(){var e=document.getElementById("beta-email"),m=document.getElementById("beta-msg"),v=e.value.trim();if(!v){m.style.color="#f66";m.textContent="Please enter an email address.";return}if(v.indexOf("@gmail.com")===-1&&v.indexOf("@googlemail.com")===-1){m.style.color="#f66";m.textContent="Please enter a valid Gmail address.";return}b.disabled=true;b.textContent="Submitting\u2026";m.style.color="#5aa5ff";m.textContent="Sending request\u2026";var a=document.createElement("a");a.href="mailto:reply@privatepappa.in?subject="+encodeURIComponent("PrivateVault Beta Access - "+v)+"&body="+encodeURIComponent("Please add this email to beta tester list:\n\n"+v);a.click();m.style.color="#4c4";m.innerHTML="\u2705 <strong>"+v+"</strong> added! You'll get Play Store access within 1-2 hours. Redirecting\u2026";b.textContent="Done!";setTimeout(function(){window.location.href="https://play.google.com/store/apps/details?id=com.privatepappa.privatevault"},2000)});document.getElementById("beta-email").addEventListener("keydown",function(k){if(k.key==="Enter")b.click()})})();
-</script>
 </body>
 </html>
