@@ -9,6 +9,7 @@
 <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 <link rel="icon" href="./assets/favicon.png" type="image/png" />
 <link rel="stylesheet" href="./css/style.css" />
+<script src="./js/app.js" defer></script>
 
 </head>
 <body>
@@ -42,14 +43,14 @@
         file organization, and secure viewing without cloud accounts, internet access,
         telemetry, or online file viewers.
       </p>
-      <div class="beta-notice" style="background: rgba(90,165,255,0.1); border: 1px solid rgba(90,165,255,0.3); border-radius: 8px; padding: 16px 20px; margin-bottom: 14px;">
-        <p style="margin: 0 0 10px 0; color: #5aa5ff; font-size: 14px; font-weight: 600;">&#x1F512; PrivateVault is currently in closed beta testing.</p>
-        <p style="margin: 0 0 12px 0; color: #aaa; font-size: 13px;">Enter your Google email below to request access. You'll be added to the tester list and redirected to the Play Store.</p>
-        <div class="beta-form" style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <input type="email" id="beta-email" placeholder="yourname@gmail.com" style="flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid rgba(90,165,255,0.4); border-radius: 6px; background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; outline: none;" />
-          <button id="beta-submit" style="padding: 10px 20px; background: #5aa5ff; color: #0a0a0f; border: none; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap;">Request Beta Access</button>
+      <div class="beta-notice" style="background: linear-gradient(135deg, rgba(90,165,255,0.12), rgba(90,165,255,0.04)); border: 1px solid rgba(90,165,255,0.3); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px;">
+        <p style="margin: 0 0 6px 0; color: #5aa5ff; font-size: 16px; font-weight: 700;">&#x1F512; Closed Beta — Request Access</p>
+        <p style="margin: 0 0 16px 0; color: #c0c0d0; font-size: 14px;">PrivateVault is in closed beta testing. Enter your Google email to join the tester list. You'll get Play Store access within 1-2 hours.</p>
+        <div class="beta-form" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+          <input type="email" id="beta-email" placeholder="yourname@gmail.com" style="flex: 1; min-width: 220px; padding: 14px 18px; border: 2px solid rgba(90,165,255,0.35); border-radius: 8px; background: rgba(10,10,16,0.8); color: #fff; font-size: 15px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#5aa5ff'" onblur="this.style.borderColor='rgba(90,165,255,0.35)'" />
+          <button id="beta-submit" style="padding: 14px 28px; background: #5aa5ff; color: #0a0a10; border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; white-space: nowrap; transition: background 0.2s;" onmouseover="this.style.background='#7ab8ff'" onmouseout="this.style.background='#5aa5ff'">Request Beta Access &#x2192;</button>
         </div>
-        <p id="beta-msg" style="margin: 8px 0 0 0; font-size: 12px; color: #6a6;"></p>
+        <p id="beta-msg" style="margin: 12px 0 0 0; font-size: 14px; min-height: 20px;"></p>
       </div>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.privatepappa.privatevault" target="_blank" rel="noopener">

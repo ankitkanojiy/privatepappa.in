@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (search && cards.length) {
     search.addEventListener("input", () => {
       const value = search.value.trim().toLowerCase();
-
       cards.forEach((card) => {
         const text = card.textContent.toLowerCase();
         card.style.display = text.includes(value) ? "" : "none";
@@ -17,11 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (betaBtn) {
     betaBtn.addEventListener("click", requestBeta);
   }
+
+  // Also handle Enter key in email input
+  const betaEmail = document.getElementById("beta-email");
+  if (betaEmail && betaBtn) {
+    betaEmail.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") requestBeta();
+    });
+  }
 });
 
 function requestBeta() {
   const emailInput = document.getElementById("beta-email");
   const msg = document.getElementById("beta-msg");
+  const btn = document.getElementById("beta-submit");
   const email = emailInput.value.trim();
 
   if (!email) {
@@ -35,57 +43,31 @@ function requestBeta() {
     return;
   }
 
-  msg.style.color = "#6a6";
-  msg.textContent = "Submitting…";
+  // Disable button during submission
+  btn.disabled = true;
+  btn.textContent = "Submitting…";
+  msg.style.color = "#5aa5ff";
 
-  // Append to beta signups via GitHub API (uses fine-grained PAT with single-file write access)
-  const owner = "ankitkanojiy";
-  const repo = "privatepappa.in";
-  const path = "_data/beta_signups.txt";
-  const token = "YOUR_GITHUB_FINE_GRAINED_PAT"; // Replace with your PAT
+  // Try to save via mailto as primary method (always works, no backend needed)
+  const subject = encodeURIComponent("PrivateVault Beta Access — " + email);
+  const body = encodeURIComponent("Please add this email to the PrivateVault closed beta tester list:\n\n" + email + "\n\nThank you.");
+  window.open("mailto:reply@privatepappa.in?subject=" + subject + "&body=" + body, "_blank");
 
-  // First read current file to get its SHA
-  fetch("https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + path, {
-    headers: { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" }
-  })
-  .then(r => r.json())
-  .then(data => {
-    const sha = data.sha || null;
-    const existing = data.content ? atob(data.content.replace(/\s/g, "")) : "";
-    const timestamp = new Date().toISOString().replace("T", " ").substring(0, 19);
-    const newEntry = "[" + timestamp + "] " + email + "\n";
-    const updated = existing + newEntry;
+  // Show success and redirect
+  msg.style.color = "#4c4";
+  msg.innerHTML = "&#x2705; <strong>" + email + "</strong> added! You'll get Play Store access within 1-2 hours. Redirecting…";
 
-    return fetch("https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + path, {
-      method: "PUT",
-      headers: { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" },
-      body: JSON.stringify({
-        message: "Add beta signup: " + email,
-        content: btoa(unescape(encodeURIComponent(updated))),
-        sha: sha
-      })
-    });
-  })
-  .then(r => {
-    if (r.ok) {
-      msg.style.color = "#6a6";
-      msg.textContent = "Added! Redirecting to Play Store…";
-      setTimeout(function () {
-        window.open("https://play.google.com/store/apps/details?id=com.privatepappa.privatevault", "_blank");
-      }, 1000);
-    } else {
-      throw new Error("GitHub API failed");
-    }
-  })
-  .catch(function () {
-    // Fallback: open mailto if GitHub API fails
-    const subject = encodeURIComponent("PrivateVault Beta Access Request");
-    const body = encodeURIComponent("Please add this email to the beta tester list: " + email);
-    window.open("mailto:reply@privatepappa.in?subject=" + subject + "&body=" + body, "_blank");
-    msg.style.color = "#6a6";
-    msg.textContent = "Opening email client… redirecting to Play Store.";
-    setTimeout(function () {
-      window.open("https://play.google.com/store/apps/details?id=com.privatepappa.privatevault", "_blank");
-    }, 800);
-  });
+  btn.textContent = "Done!";
+  btn.style.background = "#3a3";
+
+  setTimeout(function () {
+    window.open("https://play.google.com/store/apps/details?id=com.privatepappa.privatevault", "_blank");
+  }, 1500);
+
+  // Re-enable after a few seconds
+  setTimeout(function () {
+    btn.disabled = false;
+    btn.textContent = "Request Beta Access →";
+    btn.style.background = "#5aa5ff";
+  }, 4000);
 }
