@@ -73,7 +73,7 @@
     <article class="faq-card" data-faq-card>
       <span class="label">Encryption</span>
       <h3>How are files protected?</h3>
-      <p>Files are stored in encrypted form inside the vault. The app uses AES-256 encryption, secure local storage, integrity checks, and protected vault sessions.</p>
+      <p>Files are stored in encrypted form inside the vault. The app uses AES-256-GCM encryption with PBKDF2 key derivation, SHA-256 integrity hashing, protected vault sessions, and chunk-level authentication. All encryption and decryption happens locally on your device.</p>
     </article>
     <article class="faq-card" data-faq-card>
       <span class="label">Password</span>
