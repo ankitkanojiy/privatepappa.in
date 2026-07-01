@@ -390,10 +390,21 @@ code {
   .hero {
     grid-template-columns: 1fr;
     padding-top: 52px;
+    gap: 28px;
+  }
+
+  .hero p,
+  .page-title p {
+    font-size: 16px;
   }
 
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .app-icon-large {
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -401,10 +412,45 @@ code {
   .navbar {
     align-items: flex-start;
     flex-direction: column;
+    padding: 12px 0;
+    gap: 12px;
   }
 
   .nav-links {
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+
+  .page-title {
+    padding: 36px 0 16px;
+  }
+
+  .hero {
+    padding: 36px 0 32px;
+    gap: 24px;
+  }
+
+  .hero h1,
+  .page-title h1 {
+    font-size: clamp(34px, 10vw, 52px);
+  }
+
+  .hero p,
+  .page-title p {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 28px 0;
+  }
+
+  .section h2 {
+    font-size: clamp(24px, 6vw, 36px);
   }
 
   .grid {
@@ -412,7 +458,15 @@ code {
   }
 
   .hero-card {
-    border-radius: 28px;
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .app-icon-large {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+    margin-bottom: 16px;
   }
 
   .cta-row {
@@ -421,6 +475,38 @@ code {
 
   .btn {
     width: 100%;
+    min-height: 52px;
+    font-size: 15px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .comparison-card {
+    padding: 20px 16px;
+  }
+
+  .comparison-list li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    font-size: 15px;
+    padding: 14px 14px;
+  }
+
+  .faq-card {
+    padding: 16px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 0;
+    font-size: 13px;
   }
 }
 
