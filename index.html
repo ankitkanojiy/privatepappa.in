@@ -234,17 +234,17 @@
     <h2>Limitations</h2>
     <p class="section-lead">
       PrivateVault does not guarantee that every file type will preview or render perfectly.
-      Unsupported, corrupted, extremely large, unusual, encrypted, or password-protected files
-      may fail to open, preview, or process.
+      Unsupported, corrupted, extremely large, or password-protected files may fail to open or process.
+      Scan-to-PDF quality depends on image quality, lighting, document angle, and device capabilities.
     </p>
     <p class="section-lead">
-      Scan-to-PDF quality may depend on image quality, lighting,
-      document angle, and device limitations.
+      Encryption itself does not damage files. The real risk is an interrupted or incomplete write — caused by the phone powering off, storage running out, the app being force-closed, or cleaner apps modifying vault data. PrivateVault uses authenticated encryption, which means even one altered byte will cause the app to block access to that file. This is a safety feature, not a flaw.
     </p>
     <p class="section-lead">
-      No software can guarantee that encrypted files will never become corrupted. Users should
-      maintain independent backups of important files. If a vault password is forgotten or lost,
-      encrypted files may be permanently inaccessible — at least no person on Earth will be able to recover those files without the correct password.
+      If a file is only partially written and the original has already been deleted, recovery may not be possible. Keep your device charged, ensure sufficient storage, and never manually move or modify PrivateVault's internal files. Always use the app's built-in import, export, backup, and restore tools.
+    </p>
+    <p class="section-lead">
+      If a vault password is forgotten or lost, encrypted files may be permanently inaccessible. No server-side recovery exists. Maintain independent backups of important files and keep your backup password safe.
     </p>
   </section>
 </main>

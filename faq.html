@@ -214,6 +214,66 @@
       <h3>Is PrivateVault optimised for budget phones?</h3>
       <p>Yes. The app is optimized well to handle most of its processes in most low-budget Android devices too, but some features may be limited according to available RAM and processor. This optimization is active in both PRO and Free versions.</p>
     </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Can encryption damage my files?</h3>
+      <p>No. Encryption itself does not randomly damage files. PrivateVault uses encryption as a mathematical process — when the original file, password, encryption key, and saved encrypted data are all correct, the file can be safely unlocked again. The real risk is an interrupted or incomplete file-writing process, not encryption itself.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>What can cause file corruption during encryption?</h3>
+      <p>Corruption can occur if the app is interrupted while writing a file. Common causes include: phone powering off or battery dying, storage running out, app being force-stopped or crashing, app data or vault files being deleted, cleaner apps or file managers modifying data, storage errors (SD card or internal), or a file being overwritten unsafely. In short, corruption happens when files are only partly written or altered outside the app.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Why does a small error break the whole file?</h3>
+      <p>PrivateVault uses authenticated encryption, which checks data integrity before opening a file. If even one byte is damaged, the app may refuse to open the file. This is a safety feature to prevent showing corrupted or unsafe data — it is designed to protect you, not a flaw.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Are encrypted files more likely to corrupt?</h3>
+      <p>No. Regular files may still open partially when damaged. Encrypted files cannot — if data is incomplete, they usually cannot be recovered. Encryption makes damage easier to detect, not more likely to occur.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Can PrivateVault recover a file if encryption was interrupted?</h3>
+      <p>In many cases, if the original file is still available, the safest solution is to import or encrypt it again. However, if the original was deleted and only a partially written encrypted file remains, recovery may not be possible. Authenticated encryption is designed to reject incomplete or modified data. This is why safe writing, verification, and avoiding early deletion of originals are very important.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>What should I do while encrypting large files?</h3>
+      <p>For best safety during large imports: keep your phone charged, do not force-close the app, avoid restarting the phone during encryption, make sure enough storage is available, avoid using aggressive cleaner or booster apps, do not manually edit or move PrivateVault's internal app files, and wait until the operation clearly finishes. No app can safely finish writing data if the device shuts down or storage becomes unavailable at the wrong moment.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Can low storage cause corruption?</h3>
+      <p>Yes. If storage runs out, files may not be fully written and cannot be decrypted. Always ensure enough free space before importing or encrypting files, especially large ones.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Can changing my password corrupt my files?</h3>
+      <p>Changing a password should not damage files if the operation completes correctly. The risk is similar to encryption: if the app must update encryption metadata or re-protect keys and the process is interrupted, access problems can occur. Password-related operations should be completed carefully, without force-closing the app or shutting down the device.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Can I open or edit PrivateVault files using another file manager?</h3>
+      <p>No. You should not manually open, rename, move, clean, edit, or delete PrivateVault's internal encrypted files. External file managers or cleaner apps may not understand the vault structure and may accidentally remove files or metadata needed for decryption. Use PrivateVault's built-in import, export, delete, backup, and restore options instead.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Why can't a file be opened even if it exists?</h3>
+      <p>The file may exist but be incomplete or altered. PrivateVault verifies data before opening. If verification fails, it blocks access to prevent showing corrupted or unsafe content. This strict behavior is part of secure authenticated encryption.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>Is PrivateVault Free less safe than PRO?</h3>
+      <p>No. Both versions use the same encryption. PRO adds extra features like better file viewing and file management tools — not stronger encryption. Your files are equally protected in both versions.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Data safety</span>
+      <h3>What is most important to understand about file safety?</h3>
+      <p>Encryption does not destroy files. The real risks are interruptions during writing, storage issues, or manual changes to vault files outside the app. PrivateVault detects damaged data and blocks unsafe access. This strict behavior is part of secure encryption and is designed to protect your data at all times.</p>
+    </article>
   </section>
 
   <section class="content-stack" style="padding-top: 18px;">
