@@ -7,8 +7,8 @@ Complete static website package.
 - index.html
 - faq.html
 - privacy-policy.html
-- terms.html
-- contact.html
+- terms-of-service.html
+- contact-us.html
 - css/style.css
 - js/app.js
 - assets/app-icon.svg
