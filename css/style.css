@@ -153,7 +153,7 @@ img, svg {
 
 /* ─── Hero ──────────────────────────────────────────────────── */
 .hero {
-  padding: 96px 0 64px;
+  padding: 48px 0 64px;
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 56px;
@@ -437,7 +437,7 @@ img, svg {
 
 /* ─── Page title (inner pages) ──────────────────────────────── */
 .page-title {
-  padding: 72px 0 32px;
+  padding: 36px 0 32px;
 }
 
 .page-title p {
@@ -660,7 +660,7 @@ code {
 @media (max-width: 920px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 56px;
+    padding-top: 28px;
     gap: 28px;
   }
 
@@ -703,11 +703,11 @@ code {
   }
 
   .page-title {
-    padding: 40px 0 18px;
+    padding: 20px 0 18px;
   }
 
   .hero {
-    padding: 40px 0 32px;
+    padding: 20px 0 32px;
     gap: 24px;
   }
 
