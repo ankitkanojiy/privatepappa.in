@@ -74,3 +74,59 @@ curl.exe -I https://privatepappa.in/sitemap.xml
 * **All redirecting variants** must return a `301 Moved Permanently` or `308 Permanent Redirect` status code leading directly to `https://privatepappa.in/`.
 * **No redirect chains** exceeding 1-2 hops.
 * **`robots.txt`** and **`sitemap.xml`** must return `200 OK`.
+
+---
+
+## F. Favicon / Search Console logo fix
+
+### Correct Favicon Source Used
+* Vector brand logo asset: `assets/app-icon.svg` (containing high-resolution base64 PNG data).
+
+### Favicon Files Generated/Updated
+The following files were generated/updated and placed at the domain root:
+* `/favicon.ico` (includes multi-size icons: 16x16, 32x32, 48x48)
+* `/favicon-48x48.png` (48x48 PNG)
+* `/favicon-96x96.png` (96x96 PNG)
+* `/favicon-192x192.png` (192x192 PNG)
+* `/favicon-512x512.png` (512x512 PNG)
+* `/apple-touch-icon.png` (180x180 PNG)
+* `/site.webmanifest` (references 192x192 and 512x512 icons)
+
+### HTML Pages Updated
+The `<head>` of all public HTML pages was updated to replace old favicon references with:
+```html
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+```
+Pages updated:
+* `index.html`
+* `faq.html`
+* `privacy-policy.html`
+* `terms-of-service.html`
+* `contact-us.html`
+
+### Live URLs to Test
+Run these PowerShell verification commands:
+```powershell
+curl.exe -I https://privatepappa.in/favicon.ico
+curl.exe -I https://privatepappa.in/favicon-48x48.png
+curl.exe -I https://privatepappa.in/favicon-96x96.png
+curl.exe -I https://privatepappa.in/favicon-192x192.png
+curl.exe -I https://privatepappa.in/favicon-512x512.png
+curl.exe -I https://privatepappa.in/apple-touch-icon.png
+curl.exe -I https://privatepappa.in/
+curl.exe -I -L --max-redirs 10 https://www.privatepappa.in/
+```
+
+### Expected Results
+* All favicon/icon URLs must return `200 OK`.
+* The canonical homepage must return `200 OK`.
+* `www` must redirect to `https://privatepappa.in/`.
+
+> [!NOTE]
+> Google Search Console properties, browsers, and devices aggressively cache favicons and site manifest settings. Property icons in GSC may take some time (from several days to a few weeks) to refresh even after the live favicon files are deployed and return `200 OK` correctly.
+
