@@ -80,10 +80,7 @@
         online file viewers.
       </p>
       <p>
-        PrivateVault PRO &amp; PrivateVault can import personal files into an encrypted vault, organize files and folders,
-        show supported thumbnails and previews, view supported images, videos, audio, PDFs, and
-        supported documents, and provide local search, file details, backup/restore, and
-        activity/history features where available.
+        Both apps utilize industry-standard AES-256 encryption in GCM mode (Galois/Counter Mode) to ensure that imported files cannot be read or misused without proper local authentication. Encryption keys are generated and stored securely on your device using key derivation functions like PBKDF2 or Argon2. This local-only architecture means your files are never transmitted to external servers, protecting them against cloud leaks or unauthorized network access.
       </p>
       <p>
         Some advanced viewing, scanning, and document features depend on bundled native
@@ -130,7 +127,10 @@
         permanently inaccessible.
       </p>
       <p>
-        Encryption itself does not damage files. The real risk is an interrupted or incomplete write — caused by the phone powering off, storage running out, the app being force-closed, or cleaner apps modifying vault data. If a vault password is forgotten or lost, encrypted files may be permanently inaccessible. No server-side recovery exists. You can maintain independent encrypted backups of important files and copy them to a safe cloud or local storage, but you will still need your backup password to restore that backup.
+        Encryption itself does not damage files. The real risk is an interrupted or incomplete write — caused by the phone powering off, storage running out, the app being force-closed, or cleaner apps modifying vault data. PrivateVault uses authenticated encryption, which means even one altered byte will cause the app to block access to that file as a safety feature.
+      </p>
+      <p>
+        For technical accuracy, Android's built-in Privacy Dashboard and permissions indicators track resource access but do not determine the intent behind data transfers. While Android continues to improve security, local offline encryption remains a critical layer of protection once permissions are granted.
       </p>
     </article>
 

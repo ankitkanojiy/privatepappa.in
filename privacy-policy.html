@@ -102,7 +102,7 @@
         <li><code>CAMERA</code> may be requested only when you choose direct camera capture or document scan features.</li>
       </ul>
       <p>
-        Core vault operation is designed not to require internet permission.
+        Core vault operation is designed strictly not to require internet permission. While some apps combine file or media access with internet permissions (which can create a risk of data being transferred outside your device under the guise of syncing or backups), PrivateVault's lack of internet access removes this risk entirely.
       </p>
     </article>
 
@@ -130,10 +130,13 @@
     <article class="policy-card">
       <h2>Security</h2>
       <p>
-        The app is designed with local encryption, secure vault sessions, protected previews,
-        screenshot blocking on sensitive screens, temporary file cleanup, and Android platform
-        security features where supported. No app can guarantee absolute security in every
-        environment, so users should keep their devices updated and use strong passwords.
+        The app uses strong, industry-standard AES-256 symmetric encryption (with 256-bit keys) applied in secure modes like AES-GCM (Galois/Counter Mode). This provides both confidentiality and integrity protection, allowing the system to detect and reject any unauthorized tampering with encrypted data.
+      </p>
+      <p>
+        Encryption keys are derived locally using hardened key derivation functions such as PBKDF2 or Argon2, incorporating salting and multiple hashing iterations to resist brute-force and dictionary attacks. All encryption, decryption, and key storage happen entirely on your device.
+      </p>
+      <p>
+        Other security layers include secure vault sessions, protected previews, screenshot blocking on sensitive screens, and temporary file cleanup. For technical accuracy, while Android provides privacy indicators and dashboards for permissions, they only track when access occurs, not how data is processed afterward. Local, offline encryption remains a critical defense layer once permissions are granted.
       </p>
     </article>
 

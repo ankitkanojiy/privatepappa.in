@@ -135,9 +135,29 @@
       <p>No. The core offline vault does not require internet permission. This helps reduce data-leak risk. This secure offline policy is active in both PRO and Free versions.</p>
     </article>
     <article class="faq-card" data-faq-card>
+      <span class="label">No internet</span>
+      <h3>Why do permissions combined with internet access pose a risk to my privacy?</h3>
+      <p>Permissions alone cannot guarantee privacy. While apps may request access to your files, camera, microphone, or location for legitimate reasons, the real risk arises when these permissions are combined with internet access. An app that can access your files and connect to the internet can potentially transfer data outside your device. To the system, this can look like normal activity such as syncing or backup, even if it is not what you intended. Because PrivateVault is fully offline and does not request internet access, this entire category of risk is removed.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Permissions</span>
+      <h3>How does Android's Privacy Dashboard compare to true encryption and offline storage?</h3>
+      <p>Android's privacy indicators and Privacy Dashboard are useful, but they primarily show when access to a resource (like files, camera, or location) occurs — not always why or how the data is used afterward. Once an app has a permission, it is difficult for the system to distinguish between expected behavior and unwanted data transfer. True offline encryption, like that used in PrivateVault, ensures that your files are secured mathematically on your device, and because the app has no internet connection, no data can be transferred outside your device in the first place.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
       <span class="label">Encryption</span>
       <h3>How are files protected?</h3>
       <p>Files are stored in encrypted form inside the vault. The app uses AES-256-GCM encryption with PBKDF2 key derivation, SHA-256 integrity hashing, protected vault sessions, and chunk-level authentication. All encryption and decryption happens locally on your device. This complete security is available in both PRO and Free versions.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Encryption</span>
+      <h3>What specific encryption algorithms and modes are used?</h3>
+      <p>PrivateVault and PrivateVault PRO use AES-256 (Advanced Encryption Standard with 256-bit keys), a symmetric encryption algorithm widely trusted by governments, financial institutions, and security professionals worldwide. It is applied using secure modes such as AES-GCM (Galois/Counter Mode), which provides both confidentiality and integrity. This ensures that if any encrypted file is modified or tampered with without authorization, the system detects it and rejects the data as invalid.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Encryption</span>
+      <h3>How are encryption keys derived and hardened?</h3>
+      <p>Encryption keys are derived from your password using secure, hardened key derivation functions such as PBKDF2 or Argon2. These methods convert your password or authentication input into a strong cryptographic key, resisting brute-force and dictionary attacks through techniques like salting and multiple hashing iterations. This ensures that even weak passwords are significantly hardened before being used for encryption. All keys are generated and stored securely on your device, and are never transmitted over a network.</p>
     </article>
     <article class="faq-card" data-faq-card>
       <span class="label">Password</span>
