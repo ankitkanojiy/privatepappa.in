@@ -114,7 +114,7 @@ img, svg {
 
 .brand-name {
   color: var(--text);
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: var(--text-md);
   font-weight: var(--fw-bold);
   letter-spacing: -.025em;
@@ -123,6 +123,7 @@ img, svg {
 
 .brand-name:hover {
   color: var(--accent-light);
+  text-decoration: none !important;
 }
 
 .brand img {
