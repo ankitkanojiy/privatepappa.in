@@ -105,12 +105,24 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
   font-size: var(--text-md);
   font-weight: var(--fw-bold);
   letter-spacing: -.025em;
   color: var(--text);
   flex-shrink: 0;
+}
+
+.brand-name {
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--text-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: -.025em;
+  transition: color .15s ease;
+}
+
+.brand-name:hover {
+  color: var(--accent-light);
 }
 
 .brand img {
