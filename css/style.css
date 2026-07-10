@@ -48,28 +48,47 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   height: 100%;
+  /* Solid page bg — gradients live in body::before */
+  background: #07080c;
 }
 
 /* ─── Base ──────────────────────────────────────────────────── */
+/* ── P1 FIX: Gradient background on a fixed compositor layer ──
+   background-attachment:fixed forces CPU repaint on every scroll.
+   Moving gradients to body::before with position:fixed paints once
+   as a GPU layer, eliminating desktop scroll lag.                 */
 body {
   margin: 0;
   color: var(--text);
-  background:
-    radial-gradient(ellipse 60% 50% at 10% -10%, rgba(109,141,255,.28), transparent),
-    radial-gradient(ellipse 50% 40% at 90% 5%,  rgba(22,199,165,.18), transparent),
-    radial-gradient(ellipse 40% 30% at 50% 110%,rgba(162,109,255,.12), transparent),
-    var(--bg);
-  background-attachment: fixed;
+  background: transparent; /* gradients now in body::before */
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   font-size: var(--text-base);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  /* P3 FIX: text-rendering moved to headings only (see below) */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   text-align: left;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% -10%, rgba(109,141,255,.28), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 5%,  rgba(22,199,165,.18), transparent),
+    radial-gradient(ellipse 40% 30% at 50% 110%,rgba(162,109,255,.12), transparent),
+    var(--bg);
+  pointer-events: none;
+}
+
+/* P3 FIX: text-rendering only on headings where it matters */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -85,9 +104,11 @@ img, svg {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(7,8,12,.82);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(7,8,12,.88);
+  /* P2 FIX: Reduced blur from 24px→12px — high blur forces expensive
+     real-time compositing pass on every scroll frame on desktop */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -212,6 +233,8 @@ img, svg {
   box-shadow: var(--shadow), var(--shadow-accent);
   position: relative;
   overflow: hidden;
+  /* P4 FIX: own compositor layer for shadow/transform animations */
+  will-change: transform;
 }
 
 .hero-card::before {
@@ -313,6 +336,8 @@ img, svg {
   white-space: nowrap;
   gap: 8px;
   flex-shrink: 0;
+  /* P4 FIX: promote to own compositor layer for smooth hover animation */
+  will-change: transform;
 }
 
 .btn:hover {
