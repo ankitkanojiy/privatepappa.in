@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /fk1_poc_ultra.html
+Disallow: /fk2_poc.html
 
 Sitemap: https://privatepappa.in/sitemap.xml
