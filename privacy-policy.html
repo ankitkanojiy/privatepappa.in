@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>Privacy Policy - PrivateVault | Privatepappa</title>
-<meta name="description" content="PrivateVault PRO and PrivateVault are offline encrypted secure storage applications for safely storing and managing personal files on your Android device without cloud or internet access requirement." />
+<meta name="description" content="PrivateVault PRO is a fully offline encrypted vault for Android. PrivateVault (Free) is ad-supported and uses the network only to show ads; in both, your files stay encrypted on your device." />
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="PrivateVault PRO &amp; PrivateVault" />
 <meta property="og:url" content="https://privatepappa.in/privacy-policy.html" />
 <meta property="og:title" content="Privacy Policy - PrivateVault | Privatepappa" />
-<meta property="og:description" content="PrivateVault PRO and PrivateVault are offline encrypted secure storage applications for safely storing and managing personal files on your Android device without cloud or internet access requirement." />
+<meta property="og:description" content="PrivateVault PRO is a fully offline encrypted vault for Android. PrivateVault (Free) is ad-supported and uses the network only to show ads; in both, your files stay encrypted on your device." />
 <meta property="og:image" content="https://privatepappa.in/assets/logo.png" />
 <meta property="og:image:width" content="512" />
 <meta property="og:image:height" content="512" />
@@ -37,7 +37,7 @@
   "name": "PrivateVault PRO & PrivateVault",
   "url": "https://privatepappa.in",
   "logo": "https://privatepappa.in/assets/logo.png",
-  "description": "PrivateVault PRO and PrivateVault are offline encrypted secure storage applications for safely storing and managing personal files on your Android device without cloud or internet access requirement."
+  "description": "PrivateVault PRO is a fully offline encrypted vault for Android. PrivateVault (Free) is ad-supported and uses the network only to show ads; in both, your files stay encrypted on your device."
 }
 </script>
  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926854774624965"
@@ -64,7 +64,7 @@
 <main class="page legal-page">
   <section class="page-title">
     <h1>Privacy Policy</h1>
-    <p>Last updated: July 6, 2026</p>
+    <p>Last updated: October 11, 2026</p>
   </section>
 
   <!-- Table of Contents -->
@@ -77,6 +77,7 @@
         <li><a href="#permissions">Permissions and File Access</a></li>
         <li><a href="#data-usage">How Data Is Used?</a></li>
         <li><a href="#sharing">Sharing and Disclosure</a></li>
+        <li><a href="#advertising">Advertising (Free edition)</a></li>
         <li><a href="#security">Security</a></li>
         <li><a href="#children">Children's Privacy</a></li>
         <li><a href="#summary">Data Safety Summary</a></li>
@@ -90,25 +91,33 @@
     <article class="policy-card" id="overview">
       <h2>Overview</h2>
       <p>
-        PrivateVault PRO &amp; PrivateVault are designed as offline encrypted vault apps. The apps are intended
-        to protect files locally on your device and do not intentionally collect, sell,
-        transmit, upload, or share your personal vault contents.
+        PrivateVault PRO is a fully offline encrypted vault app. PrivateVault (Free) is the same
+        vault with ads that support development; the Free edition uses network access only to
+        deliver those ads. In both apps, your personal vault contents are encrypted and managed
+        locally on your device and are never collected, sold, uploaded, or shared.
       </p>
     </article>
 
     <article class="policy-card" id="data-collection">
       <h2>Data Collection</h2>
       <p>
-        In the intended offline production configuration, PrivateVault PRO &amp; PrivateVault do not collect user
-        data through analytics, advertising SDKs, tracking SDKs, cloud sync, or remote servers.
+        PrivateVault PRO collects no user data: it has no analytics, advertising, or tracking
+        SDKs, no cloud sync, and no network permission.
       </p>
-      <p>The app does not intentionally collect:</p>
+      <p>
+        PrivateVault (Free) includes the Google AdMob advertising SDK to show ads. To deliver ads,
+        AdMob may collect your device's advertising ID, approximate (coarse) location derived from
+        your IP address, and limited device and ad-interaction information, and shares this with
+        Google. The app requests non-personalized ads. This advertising data is unrelated to, and
+        separate from, your vault.
+      </p>
+      <p>Neither app collects:</p>
       <ul>
         <li>Photos, videos, audio, or documents stored in your vault</li>
         <li>Vault passwords or encryption keys</li>
-        <li>Contacts, messages, call logs, or location</li>
-        <li>Advertising identifiers or behavioral analytics</li>
-        <li>Usage tracking or crash analytics</li>
+        <li>Contacts, messages, or call logs</li>
+        <li>Precise location</li>
+        <li>Behavioral analytics, usage tracking, or crash analytics</li>
       </ul>
     </article>
 
@@ -120,14 +129,12 @@
         export, or manage files that you choose.
       </p>
       <ul>
-        <li><code>READ_MEDIA_IMAGES</code> may be used for selected image imports and previews.</li>
-        <li><code>READ_MEDIA_VIDEO</code> may be used for selected video imports and previews.</li>
-        <li><code>READ_MEDIA_AUDIO</code> may be used for selected audio imports and previews where enabled.</li>
-        <li>Android file picker access may be used so you can choose documents or folders.</li>
-        <li><code>CAMERA</code> may be requested only when you choose direct camera capture or document scan features.</li>
+        <li>File and folder import uses Android's Storage Access Framework (the system document/folder picker), so no broad media or storage read permissions are requested.</li>
+        <li><code>CAMERA</code> and microphone are requested only when you choose in-app capture or document scanning.</li>
+        <li><code>INTERNET</code> and network-state access are present in PrivateVault (Free) only, and are used solely to deliver ads. PrivateVault PRO requests no network permission.</li>
       </ul>
       <p>
-        Core vault operation is designed strictly not to require internet permission. While some apps combine file or media access with internet permissions (which can create a risk of data being transferred outside your device under the guise of syncing or backups), PrivateVault's lack of internet access removes this risk entirely.
+        PrivateVault PRO requires no internet permission, so vault data cannot be transferred off your device. In PrivateVault (Free), network access is used only to load ads; your encrypted vault contents are never transmitted.
       </p>
     </article>
 
@@ -139,16 +146,40 @@
         organization.
       </p>
       <p>
-        Vault data is not sent to the developer by the app in the intended offline configuration.
+        Vault data is never sent to the developer or to any server. In PrivateVault (Free), the only
+        information that leaves your device is the advertising data described above, used by Google to
+        deliver ads, limit how often you see them, and prevent fraud.
       </p>
     </article>
 
     <article class="policy-card" id="sharing">
       <h2>Sharing and Disclosure</h2>
       <p>
-        PrivateVault PRO &amp; PrivateVault do not intentionally share your vault contents with third parties.
-        Files may leave the app only when you explicitly export or share decrypted files
-        using your device's storage picker or Android share sheet.
+        We never share your vault contents with third parties. Files leave the app only when you
+        explicitly export or share decrypted files using your device's storage picker or the
+        Android share sheet.
+      </p>
+      <p>
+        PrivateVault (Free) shares advertising data (advertising ID, coarse IP-based location, and
+        ad-interaction data) with Google to deliver ads. See
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
+        and
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">how Google uses data from apps that use its services</a>.
+        PrivateVault PRO shares no data.
+      </p>
+    </article>
+
+    <article class="policy-card" id="advertising">
+      <h2>Advertising (Free edition)</h2>
+      <p>
+        PrivateVault (Free) shows ads through Google AdMob to support development. PrivateVault PRO
+        contains no ads and makes no network connections.
+      </p>
+      <p>
+        The app requests non-personalized ads. For users in the European Economic Area, the UK, and
+        Switzerland, a Google consent message is presented in line with Google's EU user consent
+        policy before ads are served. You can limit ad personalization at any time in your device's
+        Google settings (Ads), and choosing PrivateVault PRO removes ads entirely.
       </p>
     </article>
 
@@ -177,10 +208,10 @@
       <h2>Data Safety Summary</h2>
       <ul>
         <li>Data sold: No</li>
-        <li>Data shared by default: No</li>
-        <li>Data collected by developer servers: No, in the intended offline configuration</li>
-        <li>Cloud sync: No mandatory cloud sync</li>
-        <li>Ads or tracking SDKs: Not intentionally included in the offline vault configuration</li>
+        <li>Vault contents shared: No &mdash; never transmitted off your device</li>
+        <li>Data collected by developer servers: No</li>
+        <li>Cloud sync: None</li>
+        <li>Ads: PrivateVault (Free) uses Google AdMob and shares advertising identifiers with Google for ad delivery; PrivateVault PRO has no ads and is fully offline</li>
       </ul>
     </article>
 
