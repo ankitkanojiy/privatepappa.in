@@ -12,6 +12,9 @@
   --accent: #6d8dff;
   --accent-light: #9db4ff;
   --accent-2: #16c7a5;
+  /* App-accent defaults (overridden per app by .app--vault / .app--pro / .app--habits) */
+  --app-accent: #6d8dff;
+  --app-accent-2: #9db4ff;
   --warning: #ffcf66;
   --danger: #ff7d7d;
   --border: rgba(255,255,255,0.09);
@@ -994,4 +997,362 @@ code {
 .toc-nav a:hover {
   color: var(--text);
   text-decoration: underline;
+}
+
+/* ─── Multi-app Home Showcase ───────────────────────────────── */
+.showcase-intro {
+  padding: 52px 0 8px;
+}
+
+.showcase-intro .eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 14px;
+}
+
+.showcase-intro h1 {
+  margin: 0 0 .35em;
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: var(--fw-extrabold);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  max-width: 20ch;
+  text-wrap: balance;
+  background: linear-gradient(140deg, #fff 30%, rgba(180,196,255,.80) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.showcase-intro p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  max-width: 62ch;
+}
+
+.app-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 24px 0 8px;
+}
+
+.app-card {
+  --app-accent: var(--accent);
+  --app-accent-2: var(--accent-light);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(165deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.025) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+
+.app-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--app-accent), var(--app-accent-2));
+  opacity: .9;
+}
+
+.app-card::after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--app-accent) 26%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.app-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--app-accent) 45%, var(--border-strong));
+  box-shadow: 0 16px 52px rgba(0,0,0,.30);
+}
+
+.app-card__head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.app-card__icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.12);
+  object-fit: cover;
+}
+
+.app-card__name {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: -.02em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.app-card__kind {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--app-accent-2);
+  background: color-mix(in srgb, var(--app-accent) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--app-accent) 30%, transparent);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+.app-card__desc {
+  margin: 0 0 16px;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
+.app-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.app-card__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: auto;
+}
+
+/* App-accent primary button (used on showcase + app pages) */
+.btn-app {
+  background: linear-gradient(135deg, var(--app-accent) 0%, var(--app-accent-2) 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 22px color-mix(in srgb, var(--app-accent) 42%, transparent), inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.btn-app:hover {
+  filter: brightness(1.07);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--app-accent) 55%, transparent), inset 0 1px 0 rgba(255,255,255,.22);
+}
+
+.btn-soon {
+  background: rgba(255,255,255,.05);
+  color: var(--muted);
+  border: 1px dashed var(--border-strong);
+  cursor: default;
+}
+
+.btn-soon:hover {
+  transform: none;
+}
+
+/* App accent palettes */
+.app--vault  { --app-accent: #6d8dff; --app-accent-2: #9db4ff; }
+.app--pro    { --app-accent: #9b5fff; --app-accent-2: #c89bff; }
+.app--habits { --app-accent: #7c4dff; --app-accent-2: #ff7a45; }
+
+/* ─── Dedicated app page hero ───────────────────────────────── */
+/* --app-accent / --app-accent-2 are inherited from the .app--* class
+   placed on <main> (or <body>), so the hero follows the app palette. */
+.app-page-hero {
+  padding: 44px 0 10px;
+}
+
+.app-page-hero .app-hero-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.app-page-hero .hero-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 34px color-mix(in srgb, var(--app-accent) 32%, transparent), 0 2px 8px rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.14);
+  object-fit: cover;
+}
+
+.app-page-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -.035em;
+  line-height: 1.05;
+  background: linear-gradient(130deg, #fff 25%, var(--app-accent-2) 115%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-page-hero .hero-kind {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--app-accent-2);
+  background: color-mix(in srgb, var(--app-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--app-accent) 32%, transparent);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.app-page-hero .hero-lead {
+  margin: 18px 0 0;
+  color: var(--text-secondary);
+  font-size: var(--text-md);
+  line-height: 1.7;
+  max-width: 70ch;
+}
+
+.app-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.app-cta-row .btn {
+  width: auto;
+  min-width: 220px;
+}
+
+/* App-accent feature icon + card hover */
+.app-scope .feature-icon {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--app-accent) 24%, transparent), color-mix(in srgb, var(--app-accent) 7%, transparent));
+  border-color: color-mix(in srgb, var(--app-accent) 22%, transparent);
+}
+
+.app-scope .section h2 {
+  background: linear-gradient(135deg, var(--text) 0%, var(--app-accent-2) 130%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Other apps cross-links ────────────────────────────────── */
+.other-apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.mini-app {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,.02) 100%);
+  text-decoration: none;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.mini-app:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: 0 10px 30px rgba(0,0,0,.26);
+}
+
+.mini-app img {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.mini-app__name {
+  display: block;
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+  font-size: var(--text-base);
+  letter-spacing: -.01em;
+}
+
+.mini-app__tag {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--text-xs);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 920px) {
+  .app-showcase {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase-intro {
+    padding: 28px 0 4px;
+  }
+
+  .app-page-hero {
+    padding: 24px 0 6px;
+  }
+
+  .app-page-hero .hero-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+  }
+
+  .app-page-hero .app-hero-top {
+    gap: 16px;
+  }
+
+  /* Stack every button row full-width on phones, even the inline-styled ones */
+  .cta-row,
+  .app-cta-row {
+    flex-direction: column !important;
+  }
+
+  .cta-row .btn,
+  .app-cta-row .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .app-card {
+    padding: 24px 20px;
+  }
+
+  .other-apps {
+    grid-template-columns: 1fr;
+  }
 }

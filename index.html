@@ -3,348 +3,210 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; frame-src https://docs.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<!-- P5 FIX: Reduced from 5 weights (400;500;600;700;800) to 3 — fewer font files fetched -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-<title>Privatepappa</title>
-<meta name="description" content="PrivateVault PRO is a fully offline encrypted vault for Android. PrivateVault (Free) is ad-supported and uses the network only to show ads; in both, your files stay encrypted on your device." />
+<title>Privatepappain</title>
+<meta name="description" content="Privatepappain builds privacy-first Android apps: PrivateVault and PrivateVault PRO (offline encrypted file vaults) and Habits Assistant (an offline-first habit tracker). Browse all apps and download from Google Play." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="./css/style.css" />
-<script src="./js/app.js" defer></script>
+<link rel="stylesheet" href="/css/style.css" />
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="PrivateVault PRO &amp; PrivateVault" />
+<meta property="og:site_name" content="Privatepappain" />
 <meta property="og:url" content="https://privatepappa.in/" />
-<meta property="og:title" content="PrivateVault PRO &amp; PrivateVault - Offline Encrypted Vault" />
-<meta property="og:description" content="PrivateVault PRO is a fully offline encrypted vault for Android. PrivateVault (Free) is ad-supported and uses the network only to show ads; in both, your files stay encrypted on your device." />
+<meta property="og:title" content="Privatepappain — Privacy-first Android apps" />
+<meta property="og:description" content="PrivateVault and PrivateVault PRO (offline encrypted file vaults) and Habits Assistant (an offline-first habit tracker), from one independent developer." />
 <meta property="og:image" content="https://privatepappa.in/assets/logo.png" />
 <meta property="og:image:width" content="512" />
 <meta property="og:image:height" content="512" />
 <meta property="og:image:type" content="image/png" />
-<meta property="og:image:alt" content="PrivateVault app icon" />
+<meta property="og:image:alt" content="Privatepappain logo" />
 <!-- Canonical -->
 <link rel="canonical" href="https://privatepappa.in/" />
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "PrivateVault PRO & PrivateVault",
+  "@type": "Organization",
+  "name": "Privatepappain",
   "url": "https://privatepappa.in",
   "logo": "https://privatepappa.in/assets/logo.png",
-  "description": "PrivateVault PRO is a fully offline encrypted vault for Android. PrivateVault (Free) is ad-supported and uses the network only to show ads; in both, your files stay encrypted on your device."
+  "description": "Independent Android developer building privacy-first apps: PrivateVault, PrivateVault PRO, and Habits Assistant.",
+  "sameAs": ["https://play.google.com/store/apps/dev?id=5408184378487018251"]
 }
 </script>
 <meta name="google-site-verification" content="xJtdVeTV1AvSoJhAOPh_YrKg8Kxdz2RV0wTcuHZiU80" />
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18250508271"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-18250508271');
 </script>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926854774624965"
-     crossorigin="anonymous"></script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926854774624965"
+   crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
   <nav class="navbar">
     <div class="brand">
       <a href="/" aria-label="Privatepappain home">
-      <!-- P6 FIX: explicit width/height prevents layout shift -->
-        <img src="./assets/logo.png" alt="Privatepappain logo" width="34" height="34" />
+        <img src="/assets/logo.png" alt="Privatepappain logo" width="34" height="34" />
       </a>
-      <a class="brand-name" href="https://play.google.com/store/apps/dev?id=5408184378487018251" target="_blank" rel="noopener noreferrer" aria-label="Privatepappain on Google Play">Privatepappain</a>
+      <a class="brand-name" href="/" aria-label="Privatepappain home">Privatepappain</a>
     </div>
     <div class="nav-links" aria-label="Main navigation">
       <a class="active" href="/">Home</a>
-      <a class="" href="./faq.html">FAQs</a>
-      <a class="" href="./privacy-policy.html">Privacy Policy</a>
-      <a class="" href="./terms-of-service.html">Terms of Service</a>
-      <a class="" href="./contact-us.html">Contact Us</a>
+      <a href="/faq.html">FAQs</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms-of-service.html">Terms</a>
+      <a href="/contact-us.html">Contact</a>
     </div>
   </nav>
 </header>
+
 <main class="page">
-  <section class="hero">
-    <div>
-      <div class="badge-row">
-        <span class="badge">Offline</span>
+  <section class="showcase-intro">
+    <span class="eyebrow">Independent Android developer</span>
+    <h1>Privacy-first apps, built by one developer.</h1>
+    <p>
+      Privatepappain makes focused, privacy-respecting Android apps. Nothing phones home with your
+      personal content: your files and your habits stay on your device. Explore the apps below and
+      download them from Google Play.
+    </p>
+    <div class="badge-row">
+      <span class="badge">On-device first</span>
+      <span class="badge">No trackers</span>
+      <span class="badge">You control your data</span>
+    </div>
+  </section>
+
+  <section class="app-showcase" aria-label="Apps by Privatepappain">
+    <!-- PrivateVault (Free) -->
+    <article class="app-card app--vault">
+      <div class="app-card__head">
+        <img class="app-card__icon" src="/assets/privatevault-icon.png" alt="PrivateVault icon" width="68" height="68" />
+        <div>
+          <h2 class="app-card__name">PrivateVault</h2>
+          <span class="app-card__kind">Free · Ad-supported</span>
+        </div>
+      </div>
+      <p class="app-card__desc">
+        An offline encrypted file vault. Import photos, videos, and documents, lock them with
+        AES-256-GCM encryption, and keep them on your device. Free, supported by ads.
+      </p>
+      <div class="app-card__badges">
         <span class="badge">Encrypted vault</span>
-        <span class="badge">No cloud dependency</span>
+        <span class="badge">Image viewer</span>
+        <span class="badge">Biometric unlock</span>
       </div>
-      <h1>PrivateVault PRO &amp; PrivateVault</h1>
-      <p>
-        PrivateVault PRO &amp; PrivateVault are offline encrypted vault apps for protecting personal files on your device. PrivateVault PRO is the paid upgrade with advanced file viewing, editing, and organisational capabilities. PrivateVault is the free encrypted vault with essential features including image viewing. Import files into your private vault, unlock with your password or biometrics, and keep full control of your data — no cloud accounts or online storage required.
-      </p>
-      
-    </div>
-
-    <aside class="hero-card">
-      <!-- P7 FIX: replaced fake SVG (embedded base64 PNG) with direct PNG -->
-      <img class="app-icon-large" src="./assets/app-icon.png" alt="PrivateVault icon" width="128" height="128" />
-      <h2>Private files stay private.</h2>
-      <p>
-        Import personal files, encrypt them locally, preview supported content,
-        organize your vault, and export only when you choose. Screenshot protection
-        keeps sensitive screens private.
-      </p>
-      <div class="badge-row">
-        <span class="badge">AES-256-GCM encryption</span>
-        <span class="badge">Secure file previews</span>
-        <span class="badge">Screenshot protection</span>
-      </div>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.privatepappain.privatevault" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466 511.98" width="18" height="18" style="vertical-align: middle; margin-right: 8px;">
+      <div class="app-card__cta">
+        <a class="btn btn-app" href="https://play.google.com/store/apps/details?id=com.privatepappain.privatevault" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466 511.98" width="18" height="18" aria-hidden="true">
             <g fill-rule="nonzero">
               <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
               <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
               <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
               <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
             </g>
-          </svg>Download PrivateVault
+          </svg>Get it on Google Play
         </a>
-        <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.privatepappain.privatevault.pro" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466 511.98" width="18" height="18" style="vertical-align: middle; margin-right: 8px;">
+        <a class="btn btn-secondary" href="/privatevault/home.html">Learn more →</a>
+      </div>
+    </article>
+
+    <!-- PrivateVault PRO -->
+    <article class="app-card app--pro">
+      <div class="app-card__head">
+        <img class="app-card__icon" src="/assets/pvpro-icon.png" alt="PrivateVault PRO icon" width="68" height="68" />
+        <div>
+          <h2 class="app-card__name">PrivateVault PRO</h2>
+          <span class="app-card__kind">Paid · 100% Offline</span>
+        </div>
+      </div>
+      <p class="app-card__desc">
+        The paid upgrade: the same encrypted vault with no ads and no network permission at all,
+        plus in-app viewers for video, audio, PDF, documents and code, scan-to-PDF, and folders.
+      </p>
+      <div class="app-card__badges">
+        <span class="badge">Ad-free</span>
+        <span class="badge">No network</span>
+        <span class="badge">All file viewers</span>
+      </div>
+      <div class="app-card__cta">
+        <a class="btn btn-app" href="https://play.google.com/store/apps/details?id=com.privatepappain.privatevault.pro" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466 511.98" width="18" height="18" aria-hidden="true">
             <g fill-rule="nonzero">
               <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
               <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
               <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
               <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
             </g>
-          </svg>Get PrivateVault PRO
+          </svg>Get it on Google Play
         </a>
+        <a class="btn btn-secondary" href="/pvpro/home.html">Learn more →</a>
       </div>
+    </article>
 
-    </aside>
-  </section>
-
-  <section class="section">
-    <h2>Why Offline Encryption Apps Matter?</h2>
-    <p class="section-lead">
-      Your phone holds personal photos, videos, documents, voice notes, backups, and sensitive files. Protecting this data is not only about locking access — it is about making sure your files remain unreadable if someone gains access without permission. That is why encryption matters.
-    </p>
-    <p class="section-lead">
-      Encryption converts your files into a protected format that cannot be easily read, copied, or misused without proper authorization. Without encryption, sensitive files may be exposed or transferred without your knowledge.
-    </p>
-    <p class="section-lead">
-      Permissions alone cannot guarantee privacy. Some apps need access to files, camera, microphone, or storage for normal use, but the risk increases when those permissions are combined with internet access. An app that can access your data and connect online may send files outside your device, sometimes appearing as normal syncing or backup activity.
-    </p>
-    <p class="section-lead">
-      Android privacy tools can show when access happens, but they may not clearly explain how data is used afterward. This creates pressure for users to trust apps with broad permissions.
-    </p>
-    <p class="section-lead">
-      PrivateVault and PrivateVault PRO are built around a safer, local-first model. They provide an encrypted local vault where your private files stay secure directly on your Android device. Protecting your data never requires cloud sync, servers, or external systems. PrivateVault PRO needs no internet access at all; PrivateVault (Free) connects only to show ads, never to handle your files.
-    </p>
-    <div style="margin: 24px 0;">
-      <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-2);">✔</span> Files are encrypted on your device</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-2);">✔</span> Data stays local and under your control</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-2);">✔</span> No internet is needed for the vault (PRO is fully offline; Free uses the network only for ads)</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-2);">✔</span> Private files are not sent to any server</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-2);">✔</span> Security does not depend on cloud services</li>
-      </ul>
-    </div>
-    <p class="section-lead">
-      By combining strong encryption with a local-first design — PrivateVault PRO fully offline, and PrivateVault (Free) connecting only to show ads — the apps help reduce the risk of data leaks, unauthorized transfers, and hidden syncing. Your private information stays where it belongs — with you.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>How PrivateVault &amp; PrivateVault PRO Protect Your Data?</h2>
-    <p class="section-lead">
-      PrivateVault and PrivateVault PRO use a privacy-first, local-first architecture designed to reduce exposure and keep sensitive files under your control. Both apps protect your data with real cryptographic encryption, not basic hiding, renaming, or folder obfuscation.
-    </p>
-    <p class="section-lead">
-      Files are encrypted locally on your Android device before they are stored in the vault. The apps use AES-256, a widely trusted encryption standard used across government, financial, and security systems. AES-256 is highly resistant to brute-force attacks when implemented correctly with strong keys.
-    </p>
-    <p class="section-lead">
-      Encryption is applied using secure modes such as AES-GCM, which protects both confidentiality and integrity. This means your files are encrypted, and unauthorized modification can be detected. If encrypted data is altered or damaged, it can be rejected instead of silently opening unsafe content.
-    </p>
-    <p class="section-lead">
-      Encryption keys are derived using hardened key derivation functions such as PBKDF2 or Argon2. These methods strengthen password-based protection using salting and repeated computation to reduce brute-force and dictionary attack risks.
-    </p>
-    <p class="section-lead">
-      All encryption and decryption happen on your device. Your files, keys, and private content are not processed on external servers, transmitted over a network, or dependent on cloud systems. Because your vault never connects to a network — PrivateVault PRO is fully offline, and PrivateVault (Free) connects only to load ads — there is no background syncing, hidden uploads, remote processing, API exposure, or server-side storage risk for your files.
-    </p>
-    <p class="section-lead">
-      PrivateVault PRO extends the same offline encrypted foundation with advanced management tools for users who need more control, organization, and flexibility.
-    </p>
-    <div style="margin: 24px 0;">
-      <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-light);">✦</span> Files are encrypted before storage</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-light);">✦</span> AES-256 provides strong cryptographic protection</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-light);">✦</span> AES-GCM helps detect tampering</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-light);">✦</span> PBKDF2 or Argon2 strengthens password-derived keys</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-light);">✦</span> Files stay isolated inside a secure local vault</li>
-        <li style="position: relative; padding-left: 24px; color: var(--text-secondary); font-size: var(--text-base);"><span style="position: absolute; left: 0; color: var(--accent-light);">✦</span> No server or cloud is used; PRO needs no internet access (Free uses it only for ads)</li>
-      </ul>
-    </div>
-    <article class="policy-card notice" style="margin-top: 24px;">
-      <h3 style="margin-top: 0; margin-bottom: 8px; font-size: var(--text-base); color: var(--text);">Technical Accuracy Note</h3>
-      <p style="margin: 0; font-size: var(--text-sm); color: var(--muted);">
-        Android privacy tools can show when sensitive permissions are used, but they may not always explain what happens to data afterward. Offline encryption adds a stronger layer of protection after permissions are granted.
+    <!-- Habits Assistant -->
+    <article class="app-card app--habits">
+      <div class="app-card__head">
+        <img class="app-card__icon" src="/assets/habitsassistant-icon.png" alt="Habits Assistant icon" width="68" height="68" />
+        <div>
+          <h2 class="app-card__name">Habits Assistant</h2>
+          <span class="app-card__kind">Free · Habit tracker</span>
+        </div>
+      </div>
+      <p class="app-card__desc">
+        An offline-first habit tracker with streaks, a calendar log, daily notes, reminders,
+        progress charts, and a home-screen widget. Optional Google sign-in adds cloud backup.
       </p>
+      <div class="app-card__badges">
+        <span class="badge">Streaks</span>
+        <span class="badge">Reminders</span>
+        <span class="badge">Home widget</span>
+      </div>
+      <div class="app-card__cta">
+        <span class="btn btn-soon" aria-disabled="true">Coming soon on Google Play</span>
+        <a class="btn btn-secondary" href="/habitsassistant/home.html">Learn more →</a>
+      </div>
     </article>
   </section>
 
-  <section class="section">
-    <h2>What these apps provide</h2>
+  <section class="section" style="border-top: none; padding-top: 2.5rem;">
+    <h2>One developer, one standard of privacy</h2>
     <p class="section-lead">
-      PrivateVault PRO &amp; PrivateVault helps you keep personal files organized and protected in an encrypted & locked local vault like storage.
+      Every Privatepappain app follows the same principles: collect as little as possible, keep your
+      personal content on your device, and never sell your data. PrivateVault PRO uses no internet
+      permission at all; PrivateVault (Free) connects only to show ads; Habits Assistant keeps your
+      habit records on-device and uses the network only for optional Google sign-in, cloud backup,
+      and ads. You can read each app's own privacy policy, terms, and FAQ from its page.
     </p>
-    <div class="grid">
-      <article class="card">
-        <div class="feature-icon">🔐</div>
-        <h3>Encrypted file vault</h3>
-        <p>Protect personal photos, videos, documents, and other selected files with local encrypted storage.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">📁</div>
-        <h3>Local organization</h3>
-        <p>Organize files by folders, preview supported content, search locally, and manage your vault easily.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">🛡️</div>
-        <h3>Privacy-focused</h3>
-        <p>No cloud account required and no telemetry or analytics. PrivateVault PRO uses no internet permission; PrivateVault (Free) uses it only to show ads.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">🖼️</div>
-        <h3>Media previews</h3>
-        <p>View supported images, videos, and audio inside the vault with secure preview and screenshot protection.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">📄</div>
-        <h3>PDF and document viewing</h3>
-        <p>Open and view supported PDFs and documents.</p>
-      </article>
-      <article class="card">
-        <div class="feature-icon">📤</div>
-        <h3>User-controlled export</h3>
-        <p>Files leave the vault only when you explicitly export or share them to a location or app you choose.</p>
-      </article>
+    <div class="cta-row" style="flex-direction: row; flex-wrap: wrap; gap: 12px; margin-top: 8px;">
+      <a class="btn btn-secondary" style="width:auto; min-width:200px;" href="https://play.google.com/store/apps/dev?id=5408184378487018251" target="_blank" rel="noopener">View developer on Google Play</a>
+      <a class="btn btn-secondary" style="width:auto; min-width:160px;" href="/contact-us.html">Contact support</a>
     </div>
-  </section>
-
-  <section class="section">
-    <h2>PrivateVault vs PrivateVault PRO</h2>
-    <p class="section-lead">
-      Start with PrivateVault for the essential offline encrypted vault experience. Choose PrivateVault PRO when you want in-app secure viewing, organization, scan to pdf, and maintenance tools.
-    </p>
-    <div class="comparison-grid">
-      <div class="comparison-card">
-        <h3>Always free in PrivateVault</h3>
-        <ul class="comparison-list">
-          <li>AES-256-GCM encrypted vault (works offline; shows ads to keep it free)</li>
-          <li>Import and encrypt files</li>
-          <li>Export and decrypt your files when needed</li>
-          <li>Password unlock</li>
-          <li>Biometric unlock</li>
-          <li>File selection and backup/delete/export</li>
-          <li>Delete files from the vault</li>
-          <li>Search, sort, and organize the file list</li>
-          <li>List view with file thumbnails</li>
-          <li>In-app secure image viewer</li>
-          <li>Activity Logs</li>
-          <li>Change password</li>
-          <li>Vault reset</li>
-          <li>Auto lock</li>
-          <li>Share files directly from the vault</li>
-          <li>Open files with another app of your choice</li>
-          <li>Create password-protected encrypted backups</li>
-          <li>Create backups to move your data to PrivateVault PRO</li>
-        </ul>
-      </div>
-      <div class="comparison-card pro-card">
-        <h3>Extra features in PrivateVault PRO</h3>
-        <ul class="comparison-list">
-          <li>Completely ad-free and fully offline (no network permission)</li>
-          <li>Open and view files securely with in-app offline trusted viewer</li>
-          <li>Image, video, audio, PDF, document, archive, and code/text in-app offline viewing supported</li>
-          <li>Scan-to-PDF tools</li>
-          <li>Create folders</li>
-          <li>Move files</li>
-          <li>Rename files/folders</li>
-          <li>Star and unstar files</li>
-          <li>Restore backups</li>
-          <li>Encrypted Files Health / Vault Health Check</li>
-          <li>Dark and Auto theme support</li>
-          <li>Preserve Originals while Editing and Restore later</li>
-          <li>Text/code files editing supported with autosave</li>
-          <li>Panic Lock</li>
-          <li>Tile view/ List view</li>
-          <li>Share files directly from the vault</li>
-          <li>Open files with another app of your choice</li>
-          <li>Advanced file details actions</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="text-align: center;">
-    <h2>&#x1F4E5; Upgrading from PrivateVault to PrivateVault PRO &#x1F451;</h2>
-    <div class="comparison-card" style="max-width: 800px; margin: 24px auto 0; text-align: left; background: linear-gradient(180deg, rgba(109, 141, 255, 0.08), rgba(255, 255, 255, 0.02)); border-color: rgba(109, 141, 255, 0.2);">
-      <p style="font-size: 16px; line-height: 1.8; color: var(--muted); margin: 0 0 28px 0;">
-        To move your vault data to PrivateVault PRO, create a password-protected encrypted backup in PrivateVault and save it to a location of your choice on your device. Then open PrivateVault PRO, choose Restore, select that backup file, and enter the same backup password. Your data remains fully offline, encrypted, and in your control throughout the process with no cloud transfer required.
-      </p>
-      <div style="display: flex; flex-direction: column; align-items: center; padding-top: 20px; border-top: 1px solid rgba(109, 141, 255, 0.15);">
-        <a href="https://play.google.com/store/apps/details?id=com.privatepappain.privatevault.pro" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; transition: opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          <img src="./assets/app-icon.svg" alt="PrivateVault PRO icon" style="width: 36px; height: 36px; border-radius: 8px;" />
-          <span style="font-size: 15px; color: var(--muted); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466 511.98" width="16" height="16" style="vertical-align: middle;">
-              <g fill-rule="nonzero">
-                <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
-                <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
-                <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
-                <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
-              </g>
-            </svg>
-            Get PrivateVault PRO
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Limitations</h2>
-    <p class="section-lead">
-      PrivateVault or PrivateVault PRO apps does not guarantee that every file type will preview or render perfectly.
-      Unsupported, corrupted, extremely large, or password-protected files may fail to open or process.
-      Scan-to-PDF quality depends on image quality, lighting, document angle, and device capabilities.
-    </p>
-    <p class="section-lead">
-      Encryption itself does not damage files. The real risk is an interrupted or incomplete write — caused by the phone powering off, storage running out, the app being force-closed, or cleaner apps modifying vault data. PrivateVault uses authenticated encryption, which means even one altered byte will cause the app to block access to that file. This is a safety feature, not a flaw.
-    </p>
-    <p class="section-lead">
-      If a file is only partially written and the original has already been deleted, recovery may not be possible. Keep your device charged, ensure sufficient storage, and never manually move or modify PrivateVault's internal files. Always use the app's built-in import, export, backup, and restore tools.
-    </p>
-    <p class="section-lead">
-      If a vault password is forgotten or lost, encrypted files may be permanently inaccessible. No server-side recovery exists. You can maintain independent encrypted backups of important files and copy them to a safe cloud or local storage, but you will still need your backup password to restore that backup.
-    </p>
   </section>
 </main>
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <span>© 2026 privatepappa.in</span>
+    <span>© 2026 privatepappa.in · Developer: Privatepappain</span>
     <span>
-      <a href="./privacy-policy.html">PrivateVault Privacy</a> ·
-      <a href="./habitsassistant/privacy.html">Habits Assistant Privacy</a> ·
-      <a href="./terms-of-service.html">Terms of Service</a> ·
-      <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>
+      <a href="/privatevault/home.html">PrivateVault</a> ·
+      <a href="/pvpro/home.html">PrivateVault PRO</a> ·
+      <a href="/habitsassistant/home.html">Habits Assistant</a> ·
+      <a href="/privacy-policy.html">Privacy</a> ·
+      <a href="/terms-of-service.html">Terms</a> ·
+      <a href="/faq.html">FAQs</a> ·
+      <a href="mailto:reply@privatepappa.in">Contact</a>
     </span>
   </div>
 </footer>
