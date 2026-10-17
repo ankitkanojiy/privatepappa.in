@@ -89,7 +89,7 @@
           <span>•</span>
           <span>Google Play ID: <a class="brand-dev-link" href="https://play.google.com/store/apps/dev?id=5408184378487018251" target="_blank" rel="noopener noreferrer">5408184378487018251</a></span>
           <span>•</span>
-          <span>Last updated: October 14, 2026</span>
+          <span>Last updated: October 17, 2026</span>
         </div>
       </div>
     </div>
@@ -128,7 +128,7 @@
       </p>
       <ul>
         <li>Why your habit tracking records and daily notes stay strictly on your local device.</li>
-        <li>Exactly which Google Account details are processed when you choose to sign in, and why they are used solely for account authentication and optional cloud backup.</li>
+        <li>Exactly which Google Account details are processed when you choose to sign in, and why they are used solely for account authentication and the optional on-device backup.</li>
         <li>Precisely what data Google AdMob collects to serve ads, and how that advertising telemetry is kept strictly separate from your personal habits.</li>
         <li>How you maintain 100% control over your data, permissions, and privacy choices.</li>
       </ul>
@@ -141,7 +141,7 @@
     <article class="policy-card" id="local-data">
       <h2><span class="section-icon">📱</span> 2. On-Device Habit Data &amp; Daily Notes (Offline-First)</h2>
       <p>
-        At its core, Habits Assistant is architected as an <strong>offline-first</strong> application. All your habit information is saved directly in an encrypted/sandboxed SQLite database on your device (using Android's Room persistence library).
+        At its core, Habits Assistant is architected as an <strong>offline-first</strong> application. All your habit information is saved directly on your device, in a data file kept inside the app's own private storage area, which Android isolates from every other installed app.
       </p>
       <p>This on-device information includes:</p>
       <ul>
@@ -177,36 +177,36 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Email Address</strong></td>
-              <td>Received from Google Credential Manager token; stored locally in secure app preferences.</td>
-              <td>Acts as your unique account identifier to isolate your cloud backups and restore them if you switch devices.</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Google Account Data Field"><strong>Email Address</strong></td>
+              <td data-label="How It Is Processed">Received from Google Credential Manager token; stored locally in secure app preferences.</td>
+              <td data-label="Specific Purpose">Acts as your unique account identifier, so each account's backup is kept separate and can be offered back to you when you sign in again.</td>
+              <td data-label="Shared With 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
             </tr>
             <tr>
-              <td><strong>Display Name</strong></td>
-              <td>Received from your Google profile; saved in local app preferences.</td>
-              <td>Displayed in the user account dialog to personalize your greeting (e.g., "Welcome back, John").</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Google Account Data Field"><strong>Display Name</strong></td>
+              <td data-label="How It Is Processed">Received from your Google profile; saved in local app preferences.</td>
+              <td data-label="Specific Purpose">Displayed in the user account dialog to personalize your greeting (e.g., "Welcome back, John").</td>
+              <td data-label="Shared With 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
             </tr>
             <tr>
-              <td><strong>Profile Picture URL</strong></td>
-              <td>Google-hosted avatar link; rendered dynamically inside the app's top app bar.</td>
-              <td>Visual account indicator inside the app's header. The raw image is fetched directly from Google's CDN.</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Google Account Data Field"><strong>Profile Picture URL</strong></td>
+              <td data-label="How It Is Processed">Google-hosted avatar link; rendered dynamically inside the app's top app bar.</td>
+              <td data-label="Specific Purpose">Visual account indicator inside the app's header. The raw image is fetched directly from Google's CDN.</td>
+              <td data-label="Shared With 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
             </tr>
             <tr>
-              <td><strong>Google User ID &amp; ID Token</strong></td>
-              <td>Cryptographic JSON Web Token (JWT) issued by Google.</td>
-              <td>Authenticates that you are the legitimate owner of the Google Account without the app ever seeing or storing your Google password.</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Google Account Data Field"><strong>Google User ID &amp; ID Token</strong></td>
+              <td data-label="How It Is Processed">Cryptographic JSON Web Token (JWT) issued by Google.</td>
+              <td data-label="Specific Purpose">Authenticates that you are the legitimate owner of the Google Account without the app ever seeing or storing your Google password.</td>
+              <td data-label="Shared With 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p><strong>How Cloud Backups Work When Signed In:</strong></p>
+      <p><strong>How Account Backups Work When Signed In:</strong></p>
       <p>
-        When you are signed in and have cloud backup enabled, Habits Assistant creates an encrypted snapshot of your habit configurations, streaks, and date notes. This backup is mapped strictly to your sanitized Google User ID so that only your authenticated account can retrieve and restore your habits.
+        When you are signed in, Habits Assistant keeps a snapshot of your habit configurations, streaks and date notes, filed under your sanitized Google User ID so that each account's backup stays separate. <strong>This snapshot is stored in the app's private storage on your device and is not uploaded to Google or to us</strong> &mdash; it is what lets you recover your habits after signing out and back in, or after resetting your habit list, and it does not travel to another phone. You choose how often it is refreshed (as changes happen, daily, weekly, monthly, or only when you ask), and whenever a backup already exists the app asks whether to merge it with what is on the device, replace the device's habits with it, or keep the device's habits.
       </p>
 
       <p><strong>Strict Privacy Guarantees for Google Account Data:</strong></p>
@@ -240,28 +240,28 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Mobile Advertising Identifier (GAID / AAID)</strong></td>
-              <td>Google AdMob SDK</td>
-              <td>Enables ad serving, frequency capping (preventing the same ad from showing repeatedly), and ad attribution.</td>
-              <td>You can reset or completely delete your Advertising ID in <em>Android Settings &rarr; Google &rarr; Ads</em>.</td>
+              <td data-label="Ad Data Collected"><strong>Mobile Advertising Identifier (GAID / AAID)</strong></td>
+              <td data-label="Collected By">Google AdMob SDK</td>
+              <td data-label="Exact Advertising Purpose">Enables ad serving, frequency capping (preventing the same ad from showing repeatedly), and ad attribution.</td>
+              <td data-label="User Control">You can reset or completely delete your Advertising ID in <em>Android Settings &rarr; Google &rarr; Ads</em>.</td>
             </tr>
             <tr>
-              <td><strong>IP Address &amp; Approximate Location</strong></td>
-              <td>Google AdMob SDK</td>
-              <td>Coarse, non-precise geographic region (city or country level) inferred from IP for localized ad compliance and invalid click fraud detection.</td>
-              <td>Habits Assistant never requests or accesses precise GPS location permissions.</td>
+              <td data-label="Ad Data Collected"><strong>IP Address &amp; Approximate Location</strong></td>
+              <td data-label="Collected By">Google AdMob SDK</td>
+              <td data-label="Exact Advertising Purpose">Coarse, non-precise geographic region (city or country level) inferred from IP for localized ad compliance and invalid click fraud detection.</td>
+              <td data-label="User Control">Habits Assistant never requests or accesses precise GPS location permissions.</td>
             </tr>
             <tr>
-              <td><strong>Device &amp; Hardware Telemetry</strong></td>
-              <td>Google AdMob SDK</td>
-              <td>Device manufacturer, model, OS version, screen resolution, mobile carrier, and active network connection type.</td>
-              <td>Used to format banner ads correctly for your screen dimensions and adjust quality for network speed.</td>
+              <td data-label="Ad Data Collected"><strong>Device &amp; Hardware Telemetry</strong></td>
+              <td data-label="Collected By">Google AdMob SDK</td>
+              <td data-label="Exact Advertising Purpose">Device manufacturer, model, OS version, screen resolution, mobile carrier, and active network connection type.</td>
+              <td data-label="User Control">Used to format banner ads correctly for your screen dimensions and adjust quality for network speed.</td>
             </tr>
             <tr>
-              <td><strong>Ad Interactions &amp; Diagnostics</strong></td>
-              <td>Google AdMob SDK</td>
-              <td>Ad impressions, user click events, ad load latencies, and crash logs related to ad rendering.</td>
-              <td>Used to detect automated bots, prevent fraudulent ad clicks, and verify billing with ad sponsors.</td>
+              <td data-label="Ad Data Collected"><strong>Ad Interactions &amp; Diagnostics</strong></td>
+              <td data-label="Collected By">Google AdMob SDK</td>
+              <td data-label="Exact Advertising Purpose">Ad impressions, user click events, ad load latencies, and crash logs related to ad rendering.</td>
+              <td data-label="User Control">Used to detect automated bots, prevent fraudulent ad clicks, and verify billing with ad sponsors.</td>
             </tr>
           </tbody>
         </table>
@@ -295,29 +295,29 @@
           </thead>
           <tbody>
             <tr>
-              <td><code>android.permission.INTERNET</code></td>
-              <td>Normal</td>
-              <td>Required to communicate with Google servers for Sign in with Google, cloud backup sync, and loading AdMob ads.</td>
+              <td data-label="Permission Name"><code>android.permission.INTERNET</code></td>
+              <td data-label="Android Level">Normal</td>
+              <td data-label="Exact Technical Function">Required to communicate with Google servers for Sign in with Google, loading your Google profile picture, and loading AdMob ads. Backups need no network - they are written on the device.</td>
             </tr>
             <tr>
-              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
-              <td>Normal</td>
-              <td>Allows the app to check whether an active Wi-Fi or mobile data connection exists before attempting network operations.</td>
+              <td data-label="Permission Name"><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td data-label="Android Level">Normal</td>
+              <td data-label="Exact Technical Function">Allows the app to check whether an active Wi-Fi or mobile data connection exists before attempting network operations.</td>
             </tr>
             <tr>
-              <td><code>android.permission.POST_NOTIFICATIONS</code></td>
-              <td>Runtime (Android 13+)</td>
-              <td>Requested only if you choose to enable daily habit reminder alarms. If denied, reminders are silenced but habit tracking continues to work normally.</td>
+              <td data-label="Permission Name"><code>android.permission.POST_NOTIFICATIONS</code></td>
+              <td data-label="Android Level">Runtime (Android 13+)</td>
+              <td data-label="Exact Technical Function">Requested only if you choose to enable daily habit reminder alarms. If denied, reminders are silenced but habit tracking continues to work normally.</td>
             </tr>
             <tr>
-              <td><code>android.permission.RECEIVE_BOOT_COMPLETED</code></td>
-              <td>Normal</td>
-              <td>Allows the app's broadcast receiver to reschedule your configured local alarms after your phone is restarted (since Android clears pending alarms on reboot).</td>
+              <td data-label="Permission Name"><code>android.permission.RECEIVE_BOOT_COMPLETED</code></td>
+              <td data-label="Android Level">Normal</td>
+              <td data-label="Exact Technical Function">Allows the app's broadcast receiver to reschedule your configured local alarms after your phone is restarted (since Android clears pending alarms on reboot).</td>
             </tr>
             <tr>
-              <td><code>android.permission.VIBRATE</code></td>
-              <td>Normal</td>
-              <td>Provides subtle tactile haptic feedback when you hold or long-press a calendar date to mark a habit as completed.</td>
+              <td data-label="Permission Name"><code>android.permission.VIBRATE</code></td>
+              <td data-label="Android Level">Normal</td>
+              <td data-label="Exact Technical Function">Provides subtle tactile haptic feedback when you hold or long-press a calendar date to mark a habit as completed.</td>
             </tr>
           </tbody>
         </table>
@@ -365,7 +365,7 @@
       <ul>
         <li><strong>Local Data Deletion:</strong> You can delete any individual habit, check-in, or date note directly within the app. Clearing app storage in <em>Android Settings &rarr; Apps &rarr; Habits Assistant &rarr; Storage &rarr; Clear Data</em> or uninstalling the app permanently deletes all locally stored habits and notes from your device.</li>
         <li><strong>Google Account Logout:</strong> Tapping your profile avatar and selecting "Sign Out" removes all cached profile tokens and account identifiers from your device immediately.</li>
-        <li><strong>Cloud Backup Deletion:</strong> If you have cloud backup enabled and wish to permanently erase your backup snapshot, you can toggle sync off, delete your habits in-app, or send an email request to <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>. All backup records associated with your account will be promptly and permanently deleted.</li>
+        <li><strong>Backup Deletion:</strong> The account backup lives in the app's private storage on your device, so it is yours to remove: clearing the app's storage or uninstalling the app deletes it along with everything else. Because we never receive a copy, there is nothing for us to delete on our side and no request you need to send us.</li>
       </ul>
     </article>
 
@@ -414,46 +414,46 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Personal Habits &amp; Notes</strong></td>
-              <td>Stored Locally</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
-              <td>Core App Functionality (Habit Tracking)</td>
-              <td>N/A (Stored On-Device)</td>
+              <td data-label="Data Type"><strong>Personal Habits &amp; Notes</strong></td>
+              <td data-label="Collected?">Stored Locally</td>
+              <td data-label="Shared with 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Primary Purpose">Core App Functionality (Habit Tracking)</td>
+              <td data-label="Encrypted in Transit?">N/A (Stored On-Device)</td>
             </tr>
             <tr>
-              <td><strong>Name &amp; Email</strong></td>
-              <td>Optional (When Signed In)</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
-              <td>Account Management &amp; Cloud Backup</td>
-              <td><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+              <td data-label="Data Type"><strong>Name &amp; Email</strong></td>
+              <td data-label="Collected?">Optional (When Signed In)</td>
+              <td data-label="Shared with 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Primary Purpose">Account Management &amp; On-Device Backup</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
             <tr>
-              <td><strong>Google User ID</strong></td>
-              <td>Optional (When Signed In)</td>
-              <td><span class="data-tag data-tag-green">Never Shared</span></td>
-              <td>Authentication &amp; Account Protection</td>
-              <td><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+              <td data-label="Data Type"><strong>Google User ID</strong></td>
+              <td data-label="Collected?">Optional (When Signed In)</td>
+              <td data-label="Shared with 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Primary Purpose">Authentication &amp; Account Protection</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
             <tr>
-              <td><strong>Device or other IDs (GAID)</strong></td>
-              <td>Yes (via Google AdMob)</td>
-              <td>Shared with Google LLC</td>
-              <td>Advertising, Frequency Capping &amp; Fraud Prevention</td>
-              <td><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+              <td data-label="Data Type"><strong>Device or other IDs (GAID)</strong></td>
+              <td data-label="Collected?">Yes (via Google AdMob)</td>
+              <td data-label="Shared with 3rd Parties?">Shared with Google LLC</td>
+              <td data-label="Primary Purpose">Advertising, Frequency Capping &amp; Fraud Prevention</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
             <tr>
-              <td><strong>Approximate Location (IP)</strong></td>
-              <td>Yes (via Google AdMob)</td>
-              <td>Shared with Google LLC</td>
-              <td>Advertising &amp; Fraud Prevention</td>
-              <td><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+              <td data-label="Data Type"><strong>Approximate Location (IP)</strong></td>
+              <td data-label="Collected?">Yes (via Google AdMob)</td>
+              <td data-label="Shared with 3rd Parties?">Shared with Google LLC</td>
+              <td data-label="Primary Purpose">Advertising &amp; Fraud Prevention</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
             <tr>
-              <td><strong>Ad Performance &amp; Diagnostics</strong></td>
-              <td>Yes (via Google AdMob)</td>
-              <td>Shared with Google LLC</td>
-              <td>Ad Analytics &amp; Fraud Prevention</td>
-              <td><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+              <td data-label="Data Type"><strong>Ad Performance &amp; Diagnostics</strong></td>
+              <td data-label="Collected?">Yes (via Google AdMob)</td>
+              <td data-label="Shared with 3rd Parties?">Shared with Google LLC</td>
+              <td data-label="Primary Purpose">Ad Analytics &amp; Fraud Prevention</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
           </tbody>
         </table>
@@ -461,7 +461,7 @@
 
       <ul>
         <li><strong>Data Sold:</strong> No. Personal data is never sold to any party.</li>
-        <li><strong>Data Deletion Mechanism:</strong> Users can delete all local data directly by clearing app data or request cloud backup deletion via email.</li>
+        <li><strong>Data Deletion Mechanism:</strong> Users delete everything, habits and account backup alike, by clearing the app's data or uninstalling it. No copy reaches us, so there is nothing to request.</li>
       </ul>
     </article>
 

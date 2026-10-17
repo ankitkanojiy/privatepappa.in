@@ -621,6 +621,17 @@ code {
   padding: 2px 7px;
   border-radius: 6px;
   font-size: .875em;
+  /* OAuth client ids and permission names have no spaces to break at, and on a phone
+     a single one of them is wider than the screen. Without this the whole page gains a
+     horizontal scrollbar and the body text runs off the right edge. */
+  overflow-wrap: anywhere;
+}
+
+/* Same hazard in prose: bare long URLs and ids inside legal copy. */
+.policy-card a,
+.faq-card a,
+.legal-page a {
+  overflow-wrap: anywhere;
 }
 
 /* ─── Comparison section ────────────────────────────────────── */
@@ -814,6 +825,14 @@ code {
 
   .faq-card {
     padding: 16px 18px;
+  }
+
+  /* .faq-card was already reduced here but .policy-card was not, and the legal pages
+     raise it again to 2.5rem 2rem - which leaves roughly 256px of usable width on a
+     360px screen once the page's own 20px gutters are taken off. */
+  .policy-card,
+  .legal-page .policy-card {
+    padding: 18px 16px;
   }
 
   .footer-inner {

@@ -214,3 +214,106 @@ body::before {
   border-color: rgba(124, 77, 255, 0.45);
   box-shadow: 0 4px 20px rgba(124, 77, 255, 0.15);
 }
+
+/* ─── Phones and small tablets ──────────────────────────────────
+   The privacy policy carries four data tables, one of them five columns wide. Left as
+   a table there is nowhere for them to go on a phone: they either spill out of the
+   page or sit in a sideways-scrolling strip a few words wide. Below this width each
+   row becomes its own card and every cell is introduced by its column heading, taken
+   from the data-label attribute, so the table reads top to bottom with nothing hidden
+   and nothing to scroll sideways.                                                   */
+@media (max-width: 760px) {
+  .data-table-container {
+    /* The card borders come from the rows now. */
+    overflow-x: visible;
+    border: 0;
+    background: none;
+    border-radius: 0;
+    margin: 14px 0;
+  }
+
+  .data-table,
+  .data-table tbody,
+  .data-table tr,
+  .data-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Column headings move into each cell, so the header row is redundant. */
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table tr {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 12px;
+  }
+
+  .data-table tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Overrides the desktop rule, which only clears the last row's rules. */
+  .data-table tr td:last-child {
+    border-bottom: none;
+  }
+
+  .data-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text);
+    opacity: 0.68;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-hero-header {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .app-icon-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+  }
+
+  .app-meta-pill {
+    /* Holds the 19-digit Play Store developer id, which has nothing to break at. */
+    display: flex;
+    gap: 4px 8px;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+
+  /* A heading is a flex row with the icon, so it needs room to wrap beside it. */
+  .policy-card h2 {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .section-icon {
+    width: 27px;
+    height: 27px;
+    border-radius: 7px;
+    font-size: 14px;
+  }
+
+  .callout-box {
+    padding: 13px 15px;
+    border-radius: 10px;
+  }
+}
