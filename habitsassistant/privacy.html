@@ -104,14 +104,15 @@
         <li><a href="#local-data">2. On-Device Habit Data &amp; Daily Notes (Offline-First)</a></li>
         <li><a href="#google-account">3. Google Account Login &amp; Authentication Data</a></li>
         <li><a href="#advertising-data">4. Advertising Data (Google AdMob Only)</a></li>
-        <li><a href="#permissions">5. Android System Permissions &amp; Purpose</a></li>
-        <li><a href="#third-party">6. Third-Party Services &amp; Data Processors</a></li>
-        <li><a href="#data-retention">7. Data Retention &amp; User Deletion Rights</a></li>
-        <li><a href="#security">8. Security Safeguards</a></li>
-        <li><a href="#children">9. Children's Privacy</a></li>
-        <li><a href="#data-safety">10. Google Play Data Safety Summary</a></li>
-        <li><a href="#policy-updates">11. Policy Updates</a></li>
-        <li><a href="#contact">12. Contact &amp; Developer Support</a></li>
+        <li><a href="#ai-features">5. AI Features &amp; What They Send</a></li>
+        <li><a href="#permissions">6. Android System Permissions &amp; Purpose</a></li>
+        <li><a href="#third-party">7. Third-Party Services &amp; Data Processors</a></li>
+        <li><a href="#data-retention">8. Data Retention &amp; User Deletion Rights</a></li>
+        <li><a href="#security">9. Security Safeguards</a></li>
+        <li><a href="#children">10. Children's Privacy</a></li>
+        <li><a href="#data-safety">11. Google Play Data Safety Summary</a></li>
+        <li><a href="#policy-updates">12. Policy Updates</a></li>
+        <li><a href="#contact">13. Contact &amp; Developer Support</a></li>
       </ul>
     </nav>
   </article>
@@ -206,7 +207,7 @@
 
       <p><strong>How Account Backups Work When Signed In:</strong></p>
       <p>
-        When you are signed in, Habits Assistant keeps a snapshot of your habit configurations, streaks and date notes, filed under your sanitized Google User ID so that each account's backup stays separate. <strong>This snapshot is stored in the app's private storage on your device and is not uploaded to Google or to us</strong> &mdash; it is what lets you recover your habits after signing out and back in, or after resetting your habit list, and it does not travel to another phone. You choose how often it is refreshed (as changes happen, daily, weekly, monthly, or only when you ask), and whenever a backup already exists the app asks whether to merge it with what is on the device, replace the device's habits with it, or keep the device's habits.
+        When you are signed in, Habits Assistant keeps a snapshot of your habit configurations, streaks and date notes, filed under your sanitized Google User ID so that each account's backup stays separate. <strong>This snapshot is stored in the app's private storage on your device; your habits, check-ins and notes are never uploaded to Google or to us</strong> (the one thing that does leave your device is described in section 5, and it is never your habit data) &mdash; it is what lets you recover your habits after signing out and back in, or after resetting your habit list, and it does not travel to another phone. You choose how often it is refreshed (as changes happen, daily, weekly, monthly, or only when you ask), and whenever a backup already exists the app asks whether to merge it with what is on the device, replace the device's habits with it, or keep the device's habits.
       </p>
 
       <p><strong>Strict Privacy Guarantees for Google Account Data:</strong></p>
@@ -277,9 +278,69 @@
       </p>
     </article>
 
-    <!-- 5. Android Permissions -->
+    <!-- 5. AI Features -->
+    <article class="policy-card" id="ai-features">
+      <h2><span class="section-icon">âœ¨</span> 5. AI Features &amp; What They Send</h2>
+      <p>
+        Habits Assistant has a few optional features that use Google's Gemini models to turn what you write into a habit suggestion. They are the only part of the app that sends anything off your device, and they only ever run when you use them &mdash; there is no background AI processing, and no AI feature touches your habit history.
+      </p>
+
+      <p><strong>Exactly what is sent, and when:</strong></p>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>What Leaves Your Device</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Feature"><strong>Describe a habit in words</strong></td>
+              <td data-label="What Leaves Your Device">Only the sentence you type into that field, for example "save from salary every 1st".</td>
+              <td data-label="When">When you tap to fill the form.</td>
+            </tr>
+            <tr>
+              <td data-label="Feature"><strong>Start from a goal</strong></td>
+              <td data-label="What Leaves Your Device">Only the goal you type, for example "get fit before summer".</td>
+              <td data-label="When">When you tap to get suggestions.</td>
+            </tr>
+            <tr>
+              <td data-label="Feature"><strong>Suggest more habit ideas</strong></td>
+              <td data-label="What Leaves Your Device">The <em>names</em> of habits you already track, so suggestions don't repeat them. No check-in dates, no streaks, no notes.</td>
+              <td data-label="When">Only when you tap "Suggest ideas for me".</td>
+            </tr>
+            <tr>
+              <td data-label="Feature"><strong>Daily encouragement line</strong></td>
+              <td data-label="What Leaves Your Device">A short count-only summary, for example "2 of 5 habits done today, best current streak 12 periods". No habit names, no dates, no notes.</td>
+              <td data-label="When">At most once a day, and only while you have habits.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>What is never sent:</strong></p>
+      <ul>
+        <li>Your habit list, check-in dates, streak history or calendar logs (apart from the habit <em>names</em> in the one feature named above, and the counts in the encouragement line).</li>
+        <li>Your daily date notes or reminder notes.</li>
+        <li>Your account backup, which stays in the app's private storage on your device.</li>
+        <li>Your name, email address, Google ID or profile picture. AI requests are not tied to your identity.</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>Who processes it:</strong> requests go to Google through <strong>Firebase AI Logic</strong>, which passes them to the Gemini API. Google processes them as a data processor for us under the <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer">Firebase data processing terms</a>, and their handling of the request is covered by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>. We do not keep a copy of what you type, and we do not use it to train anything.</p>
+      </div>
+
+      <div class="callout-box orange">
+        <p><strong>Suggestions are suggestions:</strong> an AI suggestion only fills in a form or offers a tile. Nothing is saved to your habits until you accept it, and you can edit every detail first. Generated text can occasionally be wrong or unhelpful &mdash; if a suggestion is offensive, the "Report" button beside it opens an email to <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a> so we can look into it.</p>
+      </div>
+
+      <p><strong>Turning it off:</strong> these features are only ever triggered by you, so simply not using them means nothing is sent. They also require a network connection and are unavailable offline, in which case the app falls back to its own built-in habit templates and encouragement.</p>
+    </article>
+    <!-- 6. Android Permissions -->
     <article class="policy-card" id="permissions">
-      <h2><span class="section-icon">⚙️</span> 5. Android System Permissions &amp; Purpose</h2>
+      <h2><span class="section-icon">⚙️</span> 6. Android System Permissions &amp; Purpose</h2>
       <p>
         Habits Assistant adheres to Android's principle of least privilege. We request only the minimal permissions necessary for core app features:
       </p>
@@ -335,9 +396,9 @@
       </ul>
     </article>
 
-    <!-- 6. Third-Party Services -->
+    <!-- 7. Third-Party Services -->
     <article class="policy-card" id="third-party">
-      <h2><span class="section-icon">🔗</span> 6. Third-Party Services &amp; Data Processors</h2>
+      <h2><span class="section-icon">🔗</span> 7. Third-Party Services &amp; Data Processors</h2>
       <p>
         The only third-party services integrated into Habits Assistant are provided by <strong>Google LLC</strong>:
       </p>
@@ -356,9 +417,9 @@
       </p>
     </article>
 
-    <!-- 7. Data Retention & Deletion Rights -->
+    <!-- 8. Data Retention & Deletion Rights -->
     <article class="policy-card" id="data-retention">
-      <h2><span class="section-icon">🗑️</span> 7. Data Retention &amp; User Deletion Rights</h2>
+      <h2><span class="section-icon">🗑️</span> 8. Data Retention &amp; User Deletion Rights</h2>
       <p>
         You have complete ownership over your data at all times:
       </p>
@@ -369,9 +430,9 @@
       </ul>
     </article>
 
-    <!-- 8. Security Safeguards -->
+    <!-- 9. Security Safeguards -->
     <article class="policy-card" id="security">
-      <h2><span class="section-icon">🛡️</span> 8. Security Safeguards</h2>
+      <h2><span class="section-icon">🛡️</span> 9. Security Safeguards</h2>
       <p>
         We implement rigorous industry-standard security safeguards to protect your information:
       </p>
@@ -383,9 +444,9 @@
       </ul>
     </article>
 
-    <!-- 9. Children's Privacy -->
+    <!-- 10. Children's Privacy -->
     <article class="policy-card" id="children">
-      <h2><span class="section-icon">👶</span> 9. Children's Privacy</h2>
+      <h2><span class="section-icon">👶</span> 10. Children's Privacy</h2>
       <p>
         Habits Assistant is a general audience productivity tool and is not directed towards children under the age of 13 (or under the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal identifiable information from children.
       </p>
@@ -394,9 +455,9 @@
       </p>
     </article>
 
-    <!-- 10. Data Safety Summary -->
+    <!-- 11. Data Safety Summary -->
     <article class="policy-card" id="data-safety">
-      <h2><span class="section-icon">✅</span> 10. Google Play Data Safety Summary</h2>
+      <h2><span class="section-icon">✅</span> 11. Google Play Data Safety Summary</h2>
       <p>
         To assist users and comply with Google Play's Data Safety declaration requirements, here is a concise summary of how data is handled:
       </p>
@@ -455,6 +516,13 @@
               <td data-label="Primary Purpose">Ad Analytics &amp; Fraud Prevention</td>
               <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
+            <tr>
+              <td data-label="Data Type"><strong>Text You Type Into an AI Field</strong></td>
+              <td data-label="Collected?">Only when you use an AI feature (see section 5)</td>
+              <td data-label="Shared with 3rd Parties?">Processed by Google LLC; not stored by us</td>
+              <td data-label="Primary Purpose">Turning your words into a habit suggestion</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -465,9 +533,9 @@
       </ul>
     </article>
 
-    <!-- 11. Policy Updates -->
+    <!-- 12. Policy Updates -->
     <article class="policy-card" id="policy-updates">
-      <h2><span class="section-icon">🔄</span> 11. Policy Updates</h2>
+      <h2><span class="section-icon">🔄</span> 12. Policy Updates</h2>
       <p>
         We may update this Privacy Policy from time to time to reflect modifications to Habits Assistant's features, changes in legal or regulatory standards, or updates to Google Play Developer policies.
       </p>
@@ -476,9 +544,9 @@
       </p>
     </article>
 
-    <!-- 12. Contact Us -->
+    <!-- 13. Contact Us -->
     <article class="policy-card" id="contact">
-      <h2><span class="section-icon">✉️</span> 12. Contact &amp; Developer Support</h2>
+      <h2><span class="section-icon">✉️</span> 13. Contact &amp; Developer Support</h2>
       <p>
         Habits Assistant is published by <strong>Privatepappain</strong>. If you have any questions, feedback, or requests regarding this Privacy Policy or your data, please contact us:
       </p>
