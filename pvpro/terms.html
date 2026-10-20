@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>PrivateVault PRO Terms of Service</title>
-<meta name="description" content="Terms of Service for PrivateVault PRO, the fully offline, ad-free encrypted vault by Privatepappain." />
+<meta name="description" content="Terms of Service for PrivateVault PRO by Privatepappain. Covers offline encrypted vault features, free ad-supported plan, and Pro yearly ad-free subscription." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -48,7 +48,7 @@
 <main class="page legal-page app--pro">
   <section class="page-title">
     <h1>PrivateVault PRO Terms of Service</h1>
-    <p>Last updated: October 16, 2026</p>
+    <p>Last updated: October 20, 2026</p>
     <p>Use PrivateVault PRO only if you accept these terms of service.</p>
   </section>
 
@@ -57,9 +57,10 @@
     <nav class="toc-nav">
       <ul>
         <li><a href="#acceptance">Acceptance of Terms</a></li>
-        <li><a href="#description">App Description</a></li>
+        <li><a href="#description">App Description &amp; Architecture</a></li>
         <li><a href="#features">Key Features</a></li>
-        <li><a href="#purchase">Purchase</a></li>
+        <li><a href="#plans-and-subscriptions">Plans &amp; Subscriptions</a></li>
+        <li><a href="#advertising">Advertisements on Free Plan</a></li>
         <li><a href="#limitations">Limitations</a></li>
         <li><a href="#responsibility">User Responsibility</a></li>
         <li><a href="#third-party">Third-Party Native Components</a></li>
@@ -78,37 +79,46 @@
     </article>
 
     <article class="policy-card" id="description">
-      <h2>App Description</h2>
-      <p>PrivateVault PRO is a fully offline encrypted vault app for Android, published by Privatepappain. It helps you store, view, and manage personal files locally on your device, with no cloud accounts, telemetry, ads, or network permission. The app uses industry-standard AES-256 encryption in GCM mode; encryption keys are generated and stored securely on your device using key derivation functions like PBKDF2 or Argon2. This local-only architecture means your files are never transmitted off your device.</p>
-      <p>Some advanced viewing, scanning, and document features depend on bundled native components such as PDFium and OpenCV.</p>
+      <h2>App Description &amp; Architecture</h2>
+      <p>PrivateVault PRO is an offline-first encrypted vault app for Android, published by Privatepappain. It helps you store, view, and manage personal files securely on your device, with no cloud accounts, cloud sync, or remote servers. All encryption and storage operate locally using authenticated AES-256-GCM encryption with Argon2id v1.3 key derivation.</p>
+      <p>Internet access is requested solely to load Google AdMob advertisements on the Free plan and verify Google Play subscriptions. The core vault engine and your personal data remain 100% offline and isolated from network communication.</p>
     </article>
 
     <article class="policy-card" id="features">
       <h2>Key Features</h2>
       <ul>
-        <li>Fully offline encrypted file vault (AES-256-GCM); no network permission</li>
-        <li>In-app viewers for image, video, audio, PDF, documents, archives and code/text</li>
-        <li>Scan-to-PDF with basic crop</li>
-        <li>Folders, move, rename, star/unstar, advanced file actions</li>
-        <li>Backup creation and restore</li>
-        <li>Encrypted file / vault health check</li>
-        <li>Text/code editing with autosave and preserve-originals</li>
-        <li>Dark and auto theme, tile/list views</li>
-        <li>Panic Lock and screenshot protection for sensitive screens</li>
-        <li>Completely ad-free; no telemetry or analytics</li>
+        <li>100% offline encrypted file storage (AES-256-GCM, Argon2id v1.3) with local-only keys</li>
+        <li>Free plan with Google AdMob ad support and full vault functionality</li>
+        <li>Optional Pro annual subscription for a completely ad-free, instant-unlock experience</li>
+        <li>In-app viewers for images, videos, audio, PDFs, documents, archives, text, and code</li>
+        <li>Scan-to-PDF, encrypted notes, and local file organization</li>
+        <li>Streamed encrypted backup creation and verification</li>
+        <li>Panic Lock, biometric authentication, and screenshot prevention</li>
+        <li>Strict network isolation between advertising libraries and vault contents</li>
       </ul>
     </article>
 
-    <article class="policy-card" id="purchase">
-      <h2>Purchase</h2>
-      <p>PrivateVault PRO is a paid app distributed through Google Play. Pricing, taxes, payment, and refunds are handled by Google Play under its own terms. Please review Google Play's refund policy before purchasing.</p>
+    <article class="policy-card" id="plans-and-subscriptions">
+      <h2>Plans &amp; Subscriptions</h2>
+      <p>PrivateVault PRO offers two access tiers:</p>
+      <ul>
+        <li><strong>Free Plan:</strong> Provides access to all vault features supported by advertisements. Internet connectivity is required to load verified ads for vault access.</li>
+        <li><strong>Pro Subscription (Ad-Free):</strong> An optional yearly subscription ("Ad-Free Plan") purchased through Google Play In-App Billing that permanently removes all advertisements and ad network requests for an instant, uninterrupted unlock experience.</li>
+      </ul>
+      <p>All subscription fees, renewals, cancellations, and refunds are managed directly by Google Play under Google's Terms of Service. Subscriptions automatically renew on an annual basis unless cancelled prior to the end of the current billing cycle through your Google Play Store account settings.</p>
+    </article>
+
+    <article class="policy-card" id="advertising">
+      <h2>Advertisements on Free Plan</h2>
+      <p>On the Free plan, PrivateVault PRO displays advertisements served by Google AdMob. To access the vault for free, an active internet connection is required to load verified ads. Users can choose between personalized and non-personalized ads via the built-in <strong>"Interest-based ads"</strong> toggle in <strong>Settings &gt; General</strong>.</p>
+      <p>Attempting to bypass, alter, or manipulate ad delivery mechanisms or network reachability checks on the Free plan is prohibited and may prevent access to vault features until an ad is legitimately verified or an Ad-Free subscription is active.</p>
     </article>
 
     <article class="policy-card" id="limitations">
       <h2>Limitations</h2>
       <p>PrivateVault PRO cannot guarantee that every file type will preview or render perfectly. Unsupported, corrupted, extremely large, unusual, or password-protected files may fail to open, preview, or process. Scan-related features depend on image quality, lighting, document angle, and supported native components.</p>
       <p>Screenshot protection and app obfuscation reduce risk but cannot provide absolute protection against rooted devices, compromised systems, external cameras, screen mirroring bypasses, malware, or advanced reverse engineering.</p>
-      <p>PrivateVault PRO does not provide cloud recovery, server-side password reset, or developer recovery access. If a vault password is forgotten or lost, encrypted files may be permanently inaccessible.</p>
+      <p>PrivateVault PRO does not provide cloud recovery, server-side password reset, or developer recovery access. If a vault password and recovery code are lost, encrypted files cannot be recovered by the developer.</p>
       <p>Encryption itself does not damage files. The real risk is an interrupted or incomplete write — caused by the phone powering off, storage running out, the app being force-closed, or cleaner apps modifying vault data. PrivateVault PRO uses authenticated encryption, which means even one altered byte will cause the app to block access to that file as a safety feature.</p>
     </article>
 
