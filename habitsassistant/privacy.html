@@ -280,9 +280,9 @@
 
     <!-- 5. AI Features -->
     <article class="policy-card" id="ai-features">
-      <h2><span class="section-icon">âœ¨</span> 5. AI Features &amp; What They Send</h2>
+      <h2><span class="section-icon">✨</span> 5. AI Features &amp; What They Send</h2>
       <p>
-        Habits Assistant has a few optional features that use Google's Gemini models to turn what you write into a habit suggestion. They are the only part of the app that sends anything off your device, and they only ever run when you use them &mdash; there is no background AI processing, and no AI feature touches your habit history.
+        Habits Assistant has optional features that use Google's Gemini models. Most of them turn something you write into a habit suggestion. One of them, the <strong>Assistant</strong>, is an open-ended chat: you can ask it about anything, and it can also build a habit for you from a description. These features are the only part of the app that sends anything off your device. Most run only when you use them; three of them &mdash; the habit ideas on your home screen, the reminder nudges and the daily encouragement line &mdash; run on their own, at most once a day each, and the table below says exactly what each one sends. None of them sends your check-in calendar or your notes. The Assistant is additionally told how your habits are set up and how far along you are in the current period, because that is what lets it answer questions about them and change their settings when you ask it to.
       </p>
 
       <p><strong>Exactly what is sent, and when:</strong></p>
@@ -297,6 +297,11 @@
           </thead>
           <tbody>
             <tr>
+              <td data-label="Feature"><strong>Assistant chat</strong></td>
+              <td data-label="What Leaves Your Device">Whatever you type into the chat, on any subject, plus the recent messages in that conversation so replies follow on, and a summary of the habits you already track: each habit's name, how often it repeats and its target, what time it reminds you, how much of the current period is already done, and the current streak. That summary is what lets it answer "have I finished today?" and change a habit's settings when you ask. Not sent: your check-in dates, your calendar history, your date notes or your reminder notes.</td>
+              <td data-label="When">Each time you send a message.</td>
+            </tr>
+            <tr>
               <td data-label="Feature"><strong>Describe a habit in words</strong></td>
               <td data-label="What Leaves Your Device">Only the sentence you type into that field, for example "save from salary every 1st".</td>
               <td data-label="When">When you tap to fill the form.</td>
@@ -307,9 +312,14 @@
               <td data-label="When">When you tap to get suggestions.</td>
             </tr>
             <tr>
-              <td data-label="Feature"><strong>Suggest more habit ideas</strong></td>
-              <td data-label="What Leaves Your Device">The <em>names</em> of habits you already track, so suggestions don't repeat them. No check-in dates, no streaks, no notes.</td>
-              <td data-label="When">Only when you tap "Suggest ideas for me".</td>
+              <td data-label="Feature"><strong>Habit ideas on the home screen</strong></td>
+              <td data-label="What Leaves Your Device">The <em>names</em> of habits you already track, so suggestions don't repeat them, and your own recent chat messages so the ideas follow what you have been talking about. No check-in dates, no streaks, no notes.</td>
+              <td data-label="When">Once a day, on its own, and again if you tap to refresh the ideas. The card itself is always on screen, but the ideas behind it are only fetched once a day.</td>
+            </tr>
+            <tr>
+              <td data-label="Feature"><strong>Reminder nudges</strong></td>
+              <td data-label="What Leaves Your Device">For habits that have a reminder but no note of your own: the habit's <em>name</em> and how often it repeats, so a line can be written for its notification. Nothing for habits where you wrote your own note &mdash; yours is used instead. No check-in dates, no streaks.</td>
+              <td data-label="When">Once a day, on its own. The lines are written ahead of time and stored on your device, because a reminder has to appear instantly even with no connection.</td>
             </tr>
             <tr>
               <td data-label="Feature"><strong>Daily encouragement line</strong></td>
@@ -320,9 +330,11 @@
         </table>
       </div>
 
+      <p><strong>Where your conversation is kept:</strong> the chat is saved on your device, in the app's private storage, under the Google Account you are signed in to &mdash; so signing out and back in brings it back, and two accounts on one phone never see each other's. It is <em>not</em> uploaded to Google or to us: like your habit backup, it lives only on the device, and it travels in that backup so a restore brings it back with your habits. You can erase it at any time with <strong>Clear chat</strong> in the chat's own menu, and clearing the app's data or uninstalling removes it along with everything else.</p>
+
       <p><strong>What is never sent:</strong></p>
       <ul>
-        <li>Your habit list, check-in dates, streak history or calendar logs (apart from the habit <em>names</em> in the one feature named above, and the counts in the encouragement line).</li>
+        <li>Your check-in dates and calendar logs &mdash; the day-by-day record of what you did and when never leaves the device. The Assistant chat is told how each habit is set up, this period's progress and the current streak, exactly as the table above sets out; the other AI features send only habit <em>names</em>, or counts.</li>
         <li>Your daily date notes or reminder notes.</li>
         <li>Your account backup, which stays in the app's private storage on your device.</li>
         <li>Your name, email address, Google ID or profile picture. AI requests are not tied to your identity.</li>
@@ -333,10 +345,10 @@
       </div>
 
       <div class="callout-box orange">
-        <p><strong>Suggestions are suggestions:</strong> an AI suggestion only fills in a form or offers a tile. Nothing is saved to your habits until you accept it, and you can edit every detail first. Generated text can occasionally be wrong or unhelpful &mdash; if a suggestion is offensive, the "Report" button beside it opens an email to <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a> so we can look into it.</p>
+        <p><strong>Suggestions are suggestions:</strong> an AI suggestion only fills in a form, offers a tile or shows a habit card. Nothing is saved to your habits until you tap to add it, and you can edit every detail first. A change the Assistant offers to make to a habit you already keep works the same way: it appears as a card spelling out what the habit would look like afterwards, and nothing is altered until you tap <strong>Apply change</strong>. Deleting a habit is not something the Assistant can do at all. Generated text can be wrong, and the Assistant is not a doctor, lawyer or financial adviser &mdash; please do not treat it as one. If a reply or a suggestion is offensive or harmful, the <strong>Report</strong> option beside it, or in the chat's menu, opens an email to <a href="mailto:reply@privatepappa.in">reply@privatepappa.in</a> so we can look into it.</p>
       </div>
 
-      <p><strong>Turning it off:</strong> these features are only ever triggered by you, so simply not using them means nothing is sent. They also require a network connection and are unavailable offline, in which case the app falls back to its own built-in habit templates and encouragement.</p>
+      <p><strong>Turning it off:</strong> these features are only ever triggered by you, so simply not using them means nothing is sent. They also require a network connection and are unavailable offline, in which case the app falls back to its own built-in habit templates and encouragement. There is a limit on how many AI requests the app will make in a day; once it is reached, the AI features stop until the following day and the rest of the app carries on as normal.</p>
     </article>
     <!-- 6. Android Permissions -->
     <article class="policy-card" id="permissions">
@@ -475,7 +487,7 @@
           </thead>
           <tbody>
             <tr>
-              <td data-label="Data Type"><strong>Personal Habits &amp; Notes</strong></td>
+              <td data-label="Data Type"><strong>Your Check-ins, Calendar History &amp; Notes</strong></td>
               <td data-label="Collected?">Stored Locally</td>
               <td data-label="Shared with 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
               <td data-label="Primary Purpose">Core App Functionality (Habit Tracking)</td>
@@ -517,10 +529,31 @@
               <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
             <tr>
-              <td data-label="Data Type"><strong>Text You Type Into an AI Field</strong></td>
+              <td data-label="Data Type"><strong>Text You Type Into an AI Field or the Assistant Chat</strong></td>
               <td data-label="Collected?">Only when you use an AI feature (see section 5)</td>
               <td data-label="Shared with 3rd Parties?">Processed by Google LLC; not stored by us</td>
-              <td data-label="Primary Purpose">Turning your words into a habit suggestion</td>
+              <td data-label="Primary Purpose">Answering your question, or turning your words into a habit suggestion</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+            </tr>
+            <tr>
+              <td data-label="Data Type"><strong>Your Habit Names, Schedules &amp; Current Progress</strong></td>
+              <td data-label="Collected?">When you message the Assistant, and once a day for home-screen ideas and reminder nudges (see section 5)</td>
+              <td data-label="Shared with 3rd Parties?">Processed by Google LLC; not stored by us</td>
+              <td data-label="Primary Purpose">Letting the Assistant answer about your habits and change their settings on your say-so; writing habit ideas and reminder lines</td>
+              <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
+            </tr>
+            <tr>
+              <td data-label="Data Type"><strong>Your Assistant Chat History</strong></td>
+              <td data-label="Collected?">Stored Locally (per signed-in account)</td>
+              <td data-label="Shared with 3rd Parties?"><span class="data-tag data-tag-green">Never Shared</span></td>
+              <td data-label="Primary Purpose">Continuing the conversation; clearable in the chat menu</td>
+              <td data-label="Encrypted in Transit?">N/A (Stored On-Device)</td>
+            </tr>
+            <tr>
+              <td data-label="Data Type"><strong>Subscription Status (Habits Assistant Pro)</strong></td>
+              <td data-label="Collected?">Read from Google Play when the app opens</td>
+              <td data-label="Shared with 3rd Parties?">Handled entirely by Google Play; we never see your card or payment details</td>
+              <td data-label="Primary Purpose">Unlocking the higher daily assistant allowance and removing ads</td>
               <td data-label="Encrypted in Transit?"><span class="data-tag data-tag-violet">Yes (TLS/HTTPS)</span></td>
             </tr>
           </tbody>
