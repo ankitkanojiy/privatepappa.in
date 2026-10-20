@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>PrivateVault PRO Privacy Policy</title>
-<meta name="description" content="Privacy Policy for PrivateVault PRO, a fully offline, ad-free encrypted vault by Privatepappain. PRO has no network permission, no ads, and collects no data." />
+<meta name="description" content="Privacy Policy for PrivateVault PRO by Privatepappain. All vault encryption and storage operate 100% offline on-device. Internet access is used strictly for Google AdMob ads on the Free plan and Google Play subscriptions." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Privatepappain" />
 <meta property="og:url" content="https://privatepappa.in/pvpro/privacy.html" />
 <meta property="og:title" content="PrivateVault PRO Privacy Policy" />
-<meta property="og:description" content="PrivateVault PRO has no network permission, no ads, and collects no data." />
+<meta property="og:description" content="PrivateVault PRO stores all vault files 100% offline on-device. Internet is used strictly for ads on the Free tier and subscription billing." />
 <meta property="og:image" content="https://privatepappa.in/assets/pvpro-icon.png" />
 <link rel="canonical" href="https://privatepappa.in/pvpro/privacy.html" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926854774624965" crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@
 <main class="page legal-page app--pro">
   <section class="page-title">
     <h1>PrivateVault PRO Privacy Policy</h1>
-    <p>Last updated: October 16, 2026</p>
+    <p>Last updated: October 20, 2026</p>
   </section>
 
   <article class="policy-card toc-card">
@@ -56,11 +56,12 @@
     <nav class="toc-nav">
       <ul>
         <li><a href="#overview">Overview</a></li>
+        <li><a href="#plans-and-ads">Plans, Subscriptions &amp; Ads</a></li>
         <li><a href="#data-collection">Data Collection</a></li>
-        <li><a href="#permissions">Permissions &amp; File Access</a></li>
+        <li><a href="#permissions">Permissions &amp; Network Access</a></li>
         <li><a href="#data-usage">How Data Is Used</a></li>
         <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
-        <li><a href="#security">Security</a></li>
+        <li><a href="#security">Security &amp; Encryption</a></li>
         <li><a href="#children">Children's Privacy</a></li>
         <li><a href="#summary">Data Safety Summary</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -71,45 +72,83 @@
   <section class="content-stack">
     <article class="policy-card" id="overview">
       <h2>Overview</h2>
-      <p>PrivateVault PRO is a fully offline encrypted vault app for Android, published by Privatepappain. It has <strong>no network permission</strong>, contains no ads, and uses no analytics, advertising, or tracking SDKs. Your vault contents are encrypted and managed entirely on your device and are never collected, uploaded, or shared.</p>
+      <p>PrivateVault PRO is an offline-first encrypted vault application for Android, published by Privatepappain. All file encryption, vault operations, and storage function <strong>100% offline and locally on your device</strong> without user accounts, cloud synchronization, or remote servers. Your encrypted files, passwords, and cryptographic keys never leave your device.</p>
+      <p>Internet permission is used <strong>strictly and solely</strong> to display Google AdMob advertisements on the Free plan and to verify Google Play subscriptions. No vault data, file metadata, or decryption keys are ever transmitted over the network.</p>
+    </article>
+
+    <article class="policy-card" id="plans-and-ads">
+      <h2>Plans, Subscriptions &amp; Advertisements</h2>
+      <p>PrivateVault PRO offers two access tiers:</p>
+      <ul>
+        <li><strong>Free Plan (Ad-Supported):</strong> Provides complete access to all vault security features, encryption tools, and local file management at no monetary charge, supported by Google AdMob advertisements. An active network connection is required solely to load verified ads for vault access.</li>
+        <li><strong>Pro Subscription (100% Ad-Free):</strong> An optional annual subscription purchased securely through Google Play In-App Billing that permanently removes all advertisements, ad network requests, and ad gates for an instant, uninterrupted experience.</li>
+      </ul>
+      <h3>Personalized (Interest-Based) Ads Control</h3>
+      <p>On the Free plan, users maintain full control over advertising personalization. PrivateVault PRO includes a dedicated <strong>"Interest-based ads"</strong> toggle in <strong>Settings &gt; General</strong>:</p>
+      <ul>
+        <li><strong>Enabled (Default):</strong> Google AdMob serves personalized ads tailored to your interests in accordance with your Google Advertising ID preferences.</li>
+        <li><strong>Disabled:</strong> The app immediately signals Google AdMob to serve non-personalized ads (<code>npa=1</code>).</li>
+      </ul>
+      <p>You can also reset or opt out of your Google Advertising ID at any time via Android system settings (<strong>Settings &gt; Privacy &gt; Ads</strong>).</p>
+      <h3>Strict Isolation Between Ads and Vault Data</h3>
+      <p>The Google Mobile Ads SDK and Google Play Billing operate strictly in isolation from your vault. Third-party advertising libraries have zero access to your encrypted vault blobs, decrypted previews, file paths, file contents, passwords, recovery codes, or vault metadata.</p>
     </article>
 
     <article class="policy-card" id="data-collection">
       <h2>Data Collection</h2>
-      <p>PrivateVault PRO collects no user data. There is no cloud sync, no telemetry, and no network permission, so there is no mechanism for the app to transmit anything off your device. In particular, the app does not collect:</p>
+      <h3>Vault Content &amp; Personal Data (Zero Collection)</h3>
+      <p>PrivateVault PRO collects no user files or personal credentials. Because all vault encryption and storage are strictly local, the app never collects, stores, or transmits:</p>
       <ul>
-        <li>Photos, videos, audio, or documents stored in your vault</li>
-        <li>Vault passwords or encryption keys</li>
-        <li>Contacts, messages, or call logs</li>
-        <li>Location of any kind</li>
-        <li>Advertising identifiers (there are no ads)</li>
-        <li>Behavioral analytics, usage tracking, or crash analytics</li>
+        <li>Photos, videos, audio recordings, PDFs, or documents stored in your vault</li>
+        <li>Master passwords, PINs, biometrics, or recovery codes</li>
+        <li>Cryptographic keys (Vault Master Keys, AES-256 keys, Argon2 parameters)</li>
+        <li>Contacts, messages, phone state, or call logs</li>
+        <li>Precise or approximate device location</li>
+        <li>Vault activity logs or internal file names</li>
       </ul>
+
+      <h3>Advertising &amp; Diagnostic Data (Free Plan Only)</h3>
+      <p>When using the Free plan, third-party advertising services (Google AdMob) may collect standard identifiers and diagnostic telemetry as governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>:</p>
+      <ul>
+        <li><strong>Device or Other Identifiers:</strong> Google Advertising ID (AD_ID) for ad serving, frequency capping, fraud prevention, and compliance.</li>
+        <li><strong>Diagnostic &amp; Performance Telemetry:</strong> Ad loading latency, error reports, and general SDK performance metrics.</li>
+      </ul>
+
+      <h3>Financial &amp; Purchase Data</h3>
+      <p>All in-app subscription purchases are processed directly by Google Play In-App Billing. PrivateVault PRO does not collect, receive, or store credit card numbers, bank details, or billing addresses.</p>
     </article>
 
     <article class="policy-card" id="permissions">
-      <h2>Permissions &amp; File Access</h2>
-      <p>PrivateVault PRO requests only permissions needed for user-selected features:</p>
+      <h2>Permissions &amp; Network Access</h2>
+      <p>PrivateVault PRO requests only permissions strictly necessary for its features:</p>
       <ul>
-        <li>File and folder import uses Android's Storage Access Framework (the system document/folder picker), so no broad media or storage read permissions are requested.</li>
-        <li><code>CAMERA</code> is requested only when you choose in-app document scanning.</li>
-        <li><strong>No <code>INTERNET</code> or network-state permission is requested.</strong> The app cannot connect to the internet.</li>
+        <li><strong><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>:</strong> Used solely to load Google AdMob advertisements on the Free plan and verify Google Play subscription status. The vault engine itself does not connect to the internet.</li>
+        <li><strong>Storage Access Framework (SAF):</strong> File and folder import/export uses Android's system document picker. The app does not request broad media read or external storage permissions.</li>
+        <li><strong><code>CAMERA</code> (Optional):</strong> Requested only if you use document scanning to PDF or the optional Intruder Selfie feature. Captured images remain strictly on-device.</li>
+        <li><strong><code>USE_BIOMETRIC</code>:</strong> Used locally via Android Keystore for fingerprint or face authentication. Biometric data never leaves the device's secure hardware.</li>
       </ul>
     </article>
 
     <article class="policy-card" id="data-usage">
       <h2>How Data Is Used</h2>
-      <p>Files you select are used locally to provide vault features, including encryption, decryption, local preview and viewers, local thumbnails, local search, scan-to-PDF, export, sharing, and organization. Nothing is sent to the developer or any server because the app has no network access.</p>
+      <p>Files imported into PrivateVault PRO are processed exclusively on-device to provide vault functionality, including Argon2id key derivation, AES-256-GCM chunked encryption (PVL2), local thumbnail generation, authenticated metadata indexing (PVMD), encrypted note editing, scan-to-PDF, and encrypted backup generation. Nothing is sent to the developer or any remote server.</p>
     </article>
 
     <article class="policy-card" id="sharing">
       <h2>Sharing &amp; Disclosure</h2>
-      <p>PrivateVault PRO shares no data. Files leave the app only when you explicitly export or share decrypted files using your device's storage picker or the Android share sheet.</p>
+      <p>PrivateVault PRO does not sell, rent, monetize, or share your personal data or vault contents. Files leave the app only when you explicitly export or share decrypted files using Android's system share sheet.</p>
+      <p>Advertising identifiers on the Free tier are processed directly by Google AdMob in accordance with Google's Privacy Policy. Upgrading to the Pro subscription stops all ad requests and third-party ad sharing.</p>
     </article>
 
     <article class="policy-card" id="security">
-      <h2>Security</h2>
-      <p>The app uses industry-standard AES-256 encryption applied in secure modes such as AES-GCM, providing both confidentiality and integrity. Encryption keys are derived locally using hardened key derivation functions such as PBKDF2 or Argon2. All encryption, decryption, and key storage happen entirely on your device. Additional layers include secure vault sessions, protected previews and viewers, screenshot blocking on sensitive screens, Panic Lock, and temporary file cleanup.</p>
+      <h2>Security &amp; Encryption</h2>
+      <p>PrivateVault PRO implements defense-in-depth cryptography:</p>
+      <ul>
+        <li><strong>Argon2id v1.3:</strong> Memory-hard key derivation (64 MiB, 3 passes, parallelism 4) with 256-bit output.</li>
+        <li><strong>AES-256-GCM:</strong> Authenticated encryption protecting vault master envelopes, file chunks (PVL2), and metadata (PVMD). Modified ciphertext fails authentication.</li>
+        <li><strong>Hardware-Backed Android Keystore:</strong> Secures biometric unlock keys and recovery-code wrappers.</li>
+        <li><strong>Security Controls:</strong> Rate-limiting against brute-force guessing, Panic Lock with immediate memory wiping, screenshot prevention on sensitive screens, and automatic temporary file cleanup.</li>
+      </ul>
     </article>
 
     <article class="policy-card" id="children">
@@ -120,17 +159,18 @@
     <article class="policy-card" id="summary">
       <h2>Data Safety Summary</h2>
       <ul>
-        <li>Data collected: None</li>
-        <li>Data shared: None</li>
-        <li>Data sold: No</li>
-        <li>Cloud sync: None</li>
-        <li>Ads: None — the app has no network permission</li>
+        <li><strong>Vault Content Collection:</strong> None — all files, media, notes, and keys remain strictly offline on-device</li>
+        <li><strong>Data Sold:</strong> No</li>
+        <li><strong>Cloud Sync:</strong> None (100% local encrypted storage)</li>
+        <li><strong>Advertising (Free Tier):</strong> Google AdMob displays ads using Google Advertising ID; controllable via in-app "Interest-based ads" toggle and system settings</li>
+        <li><strong>Pro Subscription:</strong> 100% ad-free experience with zero ads or ad network requests</li>
+        <li><strong>Encryption in Transit:</strong> Ad and subscription verification traffic uses secure HTTPS; vault data never leaves the device</li>
       </ul>
     </article>
 
     <article class="policy-card" id="contact">
       <h2>Contact</h2>
-      <p>For privacy questions, contact:</p>
+      <p>For privacy questions or inquiries regarding PrivateVault PRO, contact:</p>
       <a class="contact-box" href="mailto:reply@privatepappa.in">reply@privatepappa.in</a>
     </article>
   </section>
