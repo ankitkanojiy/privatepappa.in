@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>PrivateVault PRO FAQ</title>
-<meta name="description" content="Frequently asked questions about PrivateVault PRO: fully offline operation, in-app viewers, scan-to-PDF, restore, and how it differs from the free version." />
+<meta name="description" content="Frequently asked questions about PrivateVault PRO: offline-first operation, the optional end-to-end-encrypted Cloud Vault, in-app viewers, scan-to-PDF, restore, and how it differs from the free version." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -49,7 +49,7 @@
 <main class="page app--pro">
   <section class="page-title">
     <h1>PrivateVault PRO FAQ</h1>
-    <p>Answers about PrivateVault PRO: fully offline operation, in-app viewers, scanning, restore, and more.</p>
+    <p>Answers about PrivateVault PRO: offline-first operation, the optional Cloud Vault, in-app viewers, scanning, restore, and more.</p>
     <div class="faq-tools">
       <input class="search-input" data-faq-search type="search" placeholder="Search FAQs..." aria-label="Search FAQs" />
     </div>
@@ -58,18 +58,23 @@
   <section class="faq-grid">
     <article class="faq-card" data-faq-card>
       <span class="label">Offline</span>
-      <h3>Is PrivateVault PRO really fully offline?</h3>
-      <p>Yes. PRO ships without the INTERNET permission, so it cannot connect to the network at all. There is no ad SDK and no cloud sync. Your vault never leaves your device because the app has no way to transmit it.</p>
+      <h3>Is PrivateVault PRO offline?</h3>
+      <p>PRO is offline-first and ad-free: there is no ad SDK, and your vault is encrypted and stored on your device by default. The only time it uses the network is the <strong>optional Cloud Vault</strong> — if you turn it on, it backs up end-to-end-encrypted data to your own Google Drive. Your files are encrypted on-device before any upload, and the developer can never read them. If you never enable Cloud Vault, the app never contacts the network with your data.</p>
     </article>
     <article class="faq-card" data-faq-card>
       <span class="label">Free vs PRO</span>
       <h3>How is PRO different from the free PrivateVault?</h3>
-      <p>Both use the same AES-256-GCM encryption. PRO adds in-app viewers for all file types, scan-to-PDF, folders, move/rename, starred files, restore, vault health, dark theme, text/code editing, and Panic Lock — and it removes ads and the network permission. See the <a href="/privatevault/home.html">free version</a> for the baseline.</p>
+      <p>Both use the same AES-256-GCM encryption. PRO adds in-app viewers for all file types, scan-to-PDF, folders, move/rename, starred files, restore, vault health, dark theme, text/code editing, Panic Lock, and an optional end-to-end-encrypted Cloud Vault — and it removes ads. See the <a href="/privatevault/home.html">free version</a> for the baseline.</p>
     </article>
     <article class="faq-card" data-faq-card>
       <span class="label">Ads</span>
       <h3>Does PRO show ads?</h3>
       <p>No. PRO is completely ad-free and contains no advertising SDK.</p>
+    </article>
+    <article class="faq-card" data-faq-card>
+      <span class="label">Cloud Vault</span>
+      <h3>What is Cloud Vault, and is my Google Drive safe?</h3>
+      <p>Cloud Vault is an optional backup that is off by default. When you enable it, you connect your own Google account and PRO backs up your vault to the app's private folder in <strong>your</strong> Google Drive. It uses only the <code>drive.appdata</code> scope, so it cannot see or touch any other file in your Drive. Everything is end-to-end encrypted on your device first, with keys that never leave your device — so Google and the developer cannot read it. You can delete backups or unlink your account at any time.</p>
     </article>
     <article class="faq-card" data-faq-card>
       <span class="label">Viewers</span>
@@ -99,7 +104,7 @@
     <article class="faq-card" data-faq-card>
       <span class="label">Security</span>
       <h3>What if I forget my vault password?</h3>
-      <p>The password is required to unlock the vault. PRO has no servers and no network, so there is no server-side recovery. Keep your password safe and maintain your own encrypted backups.</p>
+      <p>The password is required to unlock the vault. The developer runs no servers that can decrypt your data — even your Cloud Vault backup is end-to-end encrypted — so there is no server-side recovery. Keep your password and recovery key safe and maintain your own encrypted backups.</p>
     </article>
     <article class="faq-card" data-faq-card>
       <span class="label">Data safety</span>

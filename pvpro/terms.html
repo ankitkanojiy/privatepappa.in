@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>PrivateVault PRO Terms of Service</title>
-<meta name="description" content="Terms of Service for PrivateVault PRO by Privatepappain. Covers offline encrypted vault features, free ad-supported plan, and Pro yearly ad-free subscription." />
+<meta name="description" content="Terms of Service for PrivateVault PRO by Privatepappain. Covers offline-first encrypted vault features, the optional end-to-end-encrypted Cloud Vault backup to your own Google Drive, the free ad-supported plan, and the Pro yearly ad-free subscription." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -48,7 +48,7 @@
 <main class="page legal-page app--pro">
   <section class="page-title">
     <h1>PrivateVault PRO Terms of Service</h1>
-    <p>Last updated: October 20, 2026</p>
+    <p>Last updated: October 27, 2026</p>
     <p>Use PrivateVault PRO only if you accept these terms of service.</p>
   </section>
 
@@ -59,6 +59,7 @@
         <li><a href="#acceptance">Acceptance of Terms</a></li>
         <li><a href="#description">App Description &amp; Architecture</a></li>
         <li><a href="#features">Key Features</a></li>
+        <li><a href="#cloud-vault">Cloud Vault &amp; Google Account (Optional)</a></li>
         <li><a href="#plans-and-subscriptions">Plans &amp; Subscriptions</a></li>
         <li><a href="#advertising">Advertisements on Free Plan</a></li>
         <li><a href="#limitations">Limitations</a></li>
@@ -80,21 +81,34 @@
 
     <article class="policy-card" id="description">
       <h2>App Description &amp; Architecture</h2>
-      <p>PrivateVault PRO is an offline-first encrypted vault app for Android, published by Privatepappain. It helps you store, view, and manage personal files securely on your device, with no cloud accounts, cloud sync, or remote servers. All encryption and storage operate locally using authenticated AES-256-GCM encryption with Argon2id v1.3 key derivation.</p>
-      <p>Internet access is requested solely to load Google AdMob advertisements on the Free plan and verify Google Play subscriptions. The core vault engine and your personal data remain 100% offline and isolated from network communication.</p>
+      <p>PrivateVault PRO is an offline-first encrypted vault app for Android, published by Privatepappain. It helps you store, view, and manage personal files securely on your device. All encryption and storage operate locally using authenticated AES-256-GCM encryption with Argon2id v1.3 key derivation, and your encryption keys never leave your device.</p>
+      <p>The app does not require any account to use its core features. An optional Cloud Vault lets you connect your own Google account to back up end-to-end-encrypted vault data to your own Google Drive; it is off by default and described below.</p>
+      <p>Internet access is requested to load ads on the Free plan, verify Google Play subscriptions, and — only if you enable Cloud Vault — synchronize your encrypted backups with your Google Drive. The vault engine encrypts your data on-device before anything is uploaded.</p>
     </article>
 
     <article class="policy-card" id="features">
       <h2>Key Features</h2>
       <ul>
-        <li>100% offline encrypted file storage (AES-256-GCM, Argon2id v1.3) with local-only keys</li>
-        <li>Free plan with Google AdMob ad support and full vault functionality</li>
+        <li>Offline-first encrypted file storage (AES-256-GCM, Argon2id v1.3) with on-device-only keys</li>
+        <li>Optional end-to-end-encrypted Cloud Vault backup to your own Google Drive (off by default)</li>
+        <li>Free plan with ad support and full vault functionality</li>
         <li>Optional Pro annual subscription for a completely ad-free, instant-unlock experience</li>
         <li>In-app viewers for images, videos, audio, PDFs, documents, archives, text, and code</li>
         <li>Scan-to-PDF, encrypted notes, and local file organization</li>
         <li>Streamed encrypted backup creation and verification</li>
         <li>Panic Lock, biometric authentication, and screenshot prevention</li>
-        <li>Strict network isolation between advertising libraries and vault contents</li>
+      </ul>
+    </article>
+
+    <article class="policy-card" id="cloud-vault">
+      <h2>Cloud Vault &amp; Google Account (Optional)</h2>
+      <p>Cloud Vault is an optional feature that is disabled by default. You may enable it to back up your vault to your own Google Drive so you can restore it on another device. By enabling it, you agree to the following:</p>
+      <ul>
+        <li>You connect <strong>your own Google account</strong>, and you grant the app access only to its private Drive <em>Application Data Folder</em> (the <code>drive.appdata</code> scope). The app cannot access any other file in your Drive.</li>
+        <li>Only <strong>end-to-end-encrypted</strong> vault data is uploaded. Encryption keys are derived from your vault password and recovery key and never leave your device. <strong>The developer cannot decrypt, read, or recover your Cloud Vault data</strong>, and cannot reset your password or restore your backup for you.</li>
+        <li>Cloud backups are stored in, and count against, <strong>your</strong> Google Drive storage. You are responsible for maintaining access to your Google account.</li>
+        <li>You can disable Cloud Vault, delete your cloud backups, and unlink your Google account from within the app at any time. Use of Google services is also governed by Google's own terms.</li>
+        <li>The app's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
       </ul>
     </article>
 
@@ -110,7 +124,7 @@
 
     <article class="policy-card" id="advertising">
       <h2>Advertisements on Free Plan</h2>
-      <p>On the Free plan, PrivateVault PRO displays advertisements served by Google AdMob. To access the vault for free, an active internet connection is required to load verified ads. Users can choose between personalized and non-personalized ads via the built-in <strong>"Interest-based ads"</strong> toggle in <strong>Settings &gt; General</strong>.</p>
+      <p>On the Free plan, PrivateVault PRO displays advertisements. To access the vault for free, an active internet connection is required to load verified ads. Users can choose between personalized and non-personalized ads via the built-in <strong>"Interest-based ads"</strong> toggle in <strong>Settings &gt; General</strong>.</p>
       <p>Attempting to bypass, alter, or manipulate ad delivery mechanisms or network reachability checks on the Free plan is prohibited and may prevent access to vault features until an ad is legitimately verified or an Ad-Free subscription is active.</p>
     </article>
 

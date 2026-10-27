@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>PrivateVault PRO</title>
-<meta name="description" content="PrivateVault PRO is a fully offline, ad-free encrypted vault for Android. The same AES-256-GCM vault with no network permission at all, plus in-app viewers for video, audio, PDF, documents and code, scan-to-PDF, folders and more." />
+<meta name="description" content="PrivateVault PRO is an offline-first, ad-free encrypted vault for Android. The same AES-256-GCM vault with an optional end-to-end-encrypted Cloud Vault backup to your own Google Drive, plus in-app viewers for video, audio, PDF, documents and code, scan-to-PDF, folders and more." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Privatepappain" />
 <meta property="og:url" content="https://privatepappa.in/pvpro/home.html" />
-<meta property="og:title" content="PrivateVault PRO — Fully offline, ad-free encrypted vault" />
-<meta property="og:description" content="The same AES-256-GCM vault with no network permission at all, plus in-app viewers for video, audio, PDF, documents and code, scan-to-PDF and folders." />
+<meta property="og:title" content="PrivateVault PRO — Offline-first, ad-free encrypted vault" />
+<meta property="og:description" content="The same AES-256-GCM vault with an optional end-to-end-encrypted Cloud Vault backup to your own Google Drive, plus in-app viewers for video, audio, PDF, documents and code, scan-to-PDF and folders." />
 <meta property="og:image" content="https://privatepappa.in/assets/pvpro-icon.png" />
 <meta property="og:image:width" content="240" />
 <meta property="og:image:height" content="240" />
@@ -38,7 +38,7 @@
   "operatingSystem": "Android",
   "applicationCategory": "UtilitiesApplication",
   "publisher": { "@type": "Organization", "name": "Privatepappain", "url": "https://privatepappa.in" },
-  "description": "Fully offline, ad-free encrypted file vault for Android with in-app viewers, scan-to-PDF and folders."
+  "description": "Offline-first, ad-free encrypted file vault for Android with in-app viewers, scan-to-PDF, folders, and an optional end-to-end-encrypted Cloud Vault backup to your own Google Drive."
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926854774624965" crossorigin="anonymous"></script>
@@ -68,15 +68,17 @@
     <div class="app-hero-top">
       <img class="hero-icon" src="/assets/pvpro-icon.png" alt="PrivateVault PRO app icon" width="92" height="92" />
       <div style="min-width:0;">
-        <span class="hero-kind">Paid · 100% Offline · Android</span>
+        <span class="hero-kind">Paid · Offline-first · Android</span>
         <h1>PrivateVault PRO</h1>
       </div>
     </div>
     <p class="hero-lead">
       PrivateVault PRO is the paid upgrade to PrivateVault: the same AES-256-GCM encrypted vault, but
-      completely ad-free and with <strong>no network permission at all</strong>. Nothing it stores can
-      leave your device over the internet, because it cannot reach the internet. On top of that, PRO
-      adds in-app viewers for almost every file type, scan-to-PDF, folders, and advanced file tools.
+      completely ad-free. It is <strong>offline-first</strong> — your vault lives on your device and is
+      encrypted there — with an <strong>optional Cloud Vault</strong> you can switch on to back up only
+      <strong>end-to-end-encrypted</strong> data to your own Google Drive, so you can restore it on a new
+      device. On top of that, PRO adds in-app viewers for almost every file type, scan-to-PDF, folders,
+      and advanced file tools.
     </p>
     <div class="app-cta-row">
       <a class="btn btn-app" href="https://play.google.com/store/apps/details?id=com.privatepappain.privatevault.pro" target="_blank" rel="noopener">
@@ -96,14 +98,19 @@
   <section class="section" id="features">
     <h2>What you get in PRO</h2>
     <p class="section-lead">
-      Everything in PrivateVault, with ads removed, the network permission removed entirely, and a
+      Everything in PrivateVault, with ads removed, an optional end-to-end-encrypted Cloud Vault, and a
       full set of in-app viewing and management tools.
     </p>
     <div class="grid">
       <article class="card">
         <div class="feature-icon">🚫</div>
-        <h3>No ads, no network</h3>
-        <p>PRO ships without the internet permission. There is no ad SDK and no way for the app to transmit your vault — offline is enforced, not just promised.</p>
+        <h3>Ad-free &amp; private</h3>
+        <p>No ads and no ad SDK. Your files are encrypted on-device, and the developer never receives or can read your vault contents.</p>
+      </article>
+      <article class="card">
+        <div class="feature-icon">☁️</div>
+        <h3>Optional Cloud Vault</h3>
+        <p>Off by default. When you turn it on, only end-to-end-encrypted data is backed up to your own Google Drive (a private app folder) so you can restore on a new device. Keys never leave your device — the developer cannot decrypt it.</p>
       </article>
       <article class="card">
         <div class="feature-icon">🎬</div>
@@ -171,7 +178,8 @@
         <h3>PrivateVault PRO</h3>
         <ul class="comparison-list">
           <li>Everything in the free version</li>
-          <li>Completely ad-free and fully offline (no network permission)</li>
+          <li>Completely ad-free</li>
+          <li>Optional end-to-end-encrypted Cloud Vault backup to your own Google Drive</li>
           <li>In-app viewers for video, audio, PDF, documents, archives and code/text</li>
           <li>Scan-to-PDF with basic crop</li>
           <li>Folders, move, rename, star/unstar</li>
@@ -194,7 +202,8 @@
     <p class="section-lead">
       Already using PrivateVault? In the free app, create a password-protected encrypted backup and
       save it to your device. Then in PrivateVault PRO choose Restore, select that backup, and enter
-      the same backup password. Everything stays offline and encrypted — there is no cloud step.
+      the same backup password. Everything stays encrypted end to end — and if you later enable the
+      optional Cloud Vault, only that already-encrypted data is backed up to your own Google Drive.
     </p>
   </section>
 

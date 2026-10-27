@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 <title>PrivateVault PRO Privacy Policy</title>
-<meta name="description" content="Privacy Policy for PrivateVault PRO by Privatepappain. All vault encryption and storage operate 100% offline on-device. Internet access is used strictly for Google AdMob ads on the Free plan and Google Play subscriptions." />
+<meta name="description" content="Privacy Policy for PrivateVault PRO by Privatepappain. Your vault is encrypted on your device. The optional Cloud Vault backs up only end-to-end-encrypted data to your own Google Drive app-data folder. Internet is used for that optional backup, ads on the Free plan, and Google Play subscriptions." />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Privatepappain" />
 <meta property="og:url" content="https://privatepappa.in/pvpro/privacy.html" />
 <meta property="og:title" content="PrivateVault PRO Privacy Policy" />
-<meta property="og:description" content="PrivateVault PRO stores all vault files 100% offline on-device. Internet is used strictly for ads on the Free tier and subscription billing." />
+<meta property="og:description" content="PrivateVault PRO encrypts your vault on-device. The optional Cloud Vault backs up only end-to-end-encrypted data to your own Google Drive app-data folder; the developer cannot read it." />
 <meta property="og:image" content="https://privatepappa.in/assets/pvpro-icon.png" />
 <link rel="canonical" href="https://privatepappa.in/pvpro/privacy.html" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6926854774624965" crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@
 <main class="page legal-page app--pro">
   <section class="page-title">
     <h1>PrivateVault PRO Privacy Policy</h1>
-    <p>Last updated: October 20, 2026</p>
+    <p>Last updated: October 27, 2026</p>
   </section>
 
   <article class="policy-card toc-card">
@@ -58,10 +58,13 @@
         <li><a href="#overview">Overview</a></li>
         <li><a href="#plans-and-ads">Plans, Subscriptions &amp; Ads</a></li>
         <li><a href="#data-collection">Data Collection</a></li>
+        <li><a href="#cloud-vault">Cloud Vault &amp; Google Drive (Optional)</a></li>
+        <li><a href="#google-api">Google API Services &amp; Limited Use</a></li>
         <li><a href="#permissions">Permissions &amp; Network Access</a></li>
         <li><a href="#data-usage">How Data Is Used</a></li>
         <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
         <li><a href="#security">Security &amp; Encryption</a></li>
+        <li><a href="#data-deletion">Data Retention &amp; Deletion</a></li>
         <li><a href="#children">Children's Privacy</a></li>
         <li><a href="#summary">Data Safety Summary</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -72,22 +75,22 @@
   <section class="content-stack">
     <article class="policy-card" id="overview">
       <h2>Overview</h2>
-      <p>PrivateVault PRO is an offline-first encrypted vault application for Android, published by Privatepappain. All file encryption, vault operations, and storage function <strong>100% offline and locally on your device</strong> without user accounts, cloud synchronization, or remote servers. Your encrypted files, passwords, and cryptographic keys never leave your device.</p>
-      <p>Internet permission is used <strong>strictly and solely</strong> to display Google AdMob advertisements on the Free plan and to verify Google Play subscriptions. No vault data, file metadata, or decryption keys are ever transmitted over the network.</p>
+      <p>PrivateVault PRO is an <strong>offline-first</strong> encrypted vault application for Android, published by Privatepappain. All file encryption and vault operations happen <strong>locally on your device</strong>. By default your vault is stored only on your device, with no user account and no cloud. Your passwords, recovery key, and cryptographic keys never leave your device.</p>
+      <p>Internet access is used only for three clearly-scoped, opt-in purposes: (1) the <strong>optional Cloud Vault</strong>, which backs up <em>only end-to-end-encrypted data</em> to <strong>your own Google Drive</strong> at your request; (2) ads on the Free plan; and (3) verifying Google Play subscriptions. Your plaintext files, their contents, and your decryption keys are <strong>never</strong> transmitted — only data that is already encrypted on your device with keys the developer does not hold.</p>
     </article>
 
     <article class="policy-card" id="plans-and-ads">
       <h2>Plans, Subscriptions &amp; Advertisements</h2>
       <p>PrivateVault PRO offers two access tiers:</p>
       <ul>
-        <li><strong>Free Plan (Ad-Supported):</strong> Provides complete access to all vault security features, encryption tools, and local file management at no monetary charge, supported by Google AdMob advertisements. An active network connection is required solely to load verified ads for vault access.</li>
-        <li><strong>Pro Subscription (100% Ad-Free):</strong> An optional annual subscription purchased securely through Google Play In-App Billing that permanently removes all advertisements, ad network requests, and ad gates for an instant, uninterrupted experience.</li>
+        <li><strong>Free Plan (Ad-Supported):</strong> Provides complete access to all vault security features, encryption tools, and local file management at no monetary charge, supported by ads. An active network connection is required solely to load verified ads for vault access.</li>
+        <li><strong>Pro Subscription (Ad-Free):</strong> An optional annual subscription purchased securely through Google Play In-App Billing that permanently removes all advertisements, ad network requests, and ad gates for an instant, uninterrupted experience.</li>
       </ul>
       <h3>Personalized (Interest-Based) Ads Control</h3>
       <p>On the Free plan, users maintain full control over advertising personalization. PrivateVault PRO includes a dedicated <strong>"Interest-based ads"</strong> toggle in <strong>Settings &gt; General</strong>:</p>
       <ul>
-        <li><strong>Enabled (Default):</strong> Google AdMob serves personalized ads tailored to your interests in accordance with your Google Advertising ID preferences.</li>
-        <li><strong>Disabled:</strong> The app immediately signals Google AdMob to serve non-personalized ads (<code>npa=1</code>).</li>
+        <li><strong>Enabled (Default):</strong> The ad network serves personalized ads tailored to your interests in accordance with your advertising ID preferences.</li>
+        <li><strong>Disabled:</strong> The app immediately signals the ad network to serve non-personalized ads (<code>npa=1</code>).</li>
       </ul>
       <p>You can also reset or opt out of your Google Advertising ID at any time via Android system settings (<strong>Settings &gt; Privacy &gt; Ads</strong>).</p>
       <h3>Strict Isolation Between Ads and Vault Data</h3>
@@ -108,7 +111,7 @@
       </ul>
 
       <h3>Advertising &amp; Diagnostic Data (Free Plan Only)</h3>
-      <p>When using the Free plan, third-party advertising services (Google AdMob) may collect standard identifiers and diagnostic telemetry as governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>:</p>
+      <p>When using the Free plan, third-party advertising services may collect standard identifiers and diagnostic telemetry as governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>:</p>
       <ul>
         <li><strong>Device or Other Identifiers:</strong> Google Advertising ID (AD_ID) for ad serving, frequency capping, fraud prevention, and compliance.</li>
         <li><strong>Diagnostic &amp; Performance Telemetry:</strong> Ad loading latency, error reports, and general SDK performance metrics.</li>
@@ -116,13 +119,59 @@
 
       <h3>Financial &amp; Purchase Data</h3>
       <p>All in-app subscription purchases are processed directly by Google Play In-App Billing. PrivateVault PRO does not collect, receive, or store credit card numbers, bank details, or billing addresses.</p>
+
+      <h3>Cloud Vault Data (Only if You Enable It)</h3>
+      <p>If — and only if — you turn on the optional Cloud Vault, the following is processed. Nothing here is collected by the developer; it is stored in your own Google Drive and the developer cannot read it:</p>
+      <ul>
+        <li><strong>Google account identity:</strong> your email address and, if available, your profile picture, shown in the app to indicate which account is connected. This is not uploaded to any developer server.</li>
+        <li><strong>End-to-end-encrypted vault data:</strong> encrypted file blobs and an encrypted, signed manifest, stored in the app's private Drive Application Data Folder. File contents, names, and folder names are encrypted on your device first; the decryption keys never leave your device.</li>
+        <li><strong>A Drive access token</strong> held on your device to perform backups you request. It is removed when you unlink the account.</li>
+      </ul>
+    </article>
+
+    <article class="policy-card" id="cloud-vault">
+      <h2>Cloud Vault &amp; Google Drive (Optional)</h2>
+      <p><strong>Cloud Vault is entirely optional and off by default.</strong> A vault is created as a local vault unless you explicitly choose Cloud Vault, and you can connect a Google account to an existing local vault only by your own deliberate action. If you never turn it on, PrivateVault PRO never contacts Google Drive and never requests access to your Google account.</p>
+
+      <h3>What it does</h3>
+      <p>When you enable Cloud Vault, PrivateVault PRO backs up your vault to <strong>your own Google Drive</strong> so you can restore it on a new device or after reinstalling. To do this, the app:</p>
+      <ul>
+        <li>Lets you sign in with your Google account using Android's <strong>Credential Manager</strong> (we receive only your basic account identity — your email address and, if available, your profile picture — to show which account is connected).</li>
+        <li>Requests the Google Drive <strong><code>drive.appdata</code></strong> scope. This grants access <strong>only</strong> to the app's private <em>Application Data Folder</em> — a hidden, app-specific area of your Drive. PrivateVault PRO <strong>cannot see, read, list, or modify any other file in your Google Drive</strong>, and cannot access files created by you or any other app.</li>
+      </ul>
+
+      <h3>What is stored in your Drive, and how it is protected</h3>
+      <ul>
+        <li>Only <strong>end-to-end-encrypted</strong> vault blobs and a signed, encrypted manifest are uploaded. File contents, file names, and folder names are encrypted on your device <strong>before</strong> upload using AES-256-GCM with keys derived (Argon2id) from your vault password and recovery key.</li>
+        <li>The encryption keys <strong>never leave your device</strong> and are never uploaded. <strong>The developer has no ability to decrypt, read, or recover your Cloud Vault data</strong> — it is zero-knowledge. Restoring a backup requires your own vault password and recovery key.</li>
+        <li>The data lives in <strong>your</strong> Google Drive storage quota, under your control. No copy is sent to the developer or any third-party server.</li>
+      </ul>
+
+      <h3>Your control</h3>
+      <ul>
+        <li>You can turn Cloud Vault on or off, keep or remove the local copy, and choose Wi-Fi-only or mobile-data backups.</li>
+        <li>You can view and <strong>delete</strong> individual cloud backups, or all of them, from within the app, and you can <strong>unlink</strong> your Google account at any time, which removes the stored access token from the device.</li>
+        <li>Revoking the app's access at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">your Google Account permissions</a> immediately stops all Drive access.</li>
+      </ul>
+    </article>
+
+    <article class="policy-card" id="google-api">
+      <h2>Google API Services &amp; Limited Use</h2>
+      <p>PrivateVault PRO's use of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements. Specifically:</p>
+      <ul>
+        <li>We request only the <code>drive.appdata</code> scope and the minimal account identity needed, and we use Google user data <strong>solely to provide and improve the Cloud Vault backup and restore feature</strong> that you explicitly enable.</li>
+        <li>We do <strong>not</strong> transfer Google user data to others except as necessary to provide or improve this feature, to comply with applicable law, or as part of a merger/acquisition with user notice and consent.</li>
+        <li>We do <strong>not</strong> use Google user data for serving advertising, and we do <strong>not</strong> sell it.</li>
+        <li>We do <strong>not</strong> allow humans to read your Google user data, and in any case we cannot — Cloud Vault data is end-to-end encrypted with keys we never receive. The limited exceptions permitted by Google's policy (your explicit consent, security/abuse investigations, or compliance with law) do not change the fact that the stored data is encrypted and unreadable to us.</li>
+      </ul>
     </article>
 
     <article class="policy-card" id="permissions">
       <h2>Permissions &amp; Network Access</h2>
       <p>PrivateVault PRO requests only permissions strictly necessary for its features:</p>
       <ul>
-        <li><strong><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>:</strong> Used solely to load Google AdMob advertisements on the Free plan and verify Google Play subscription status. The vault engine itself does not connect to the internet.</li>
+        <li><strong><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>:</strong> Used to load ads on the Free plan, verify your Google Play subscription status, and — only if you turn on the optional Cloud Vault — back up and restore your end-to-end-encrypted vault to your own Google Drive. Your files and encryption keys are processed on-device; nothing readable ever leaves your device.</li>
+        <li><strong>Google account &amp; Drive (Optional):</strong> Requested only if you enable Cloud Vault, to sign in and access the app's private Drive Application Data Folder for encrypted backups. See <a href="#cloud-vault">Cloud Vault &amp; Google Drive</a> above.</li>
         <li><strong>Storage Access Framework (SAF):</strong> File and folder import/export uses Android's system document picker. The app does not request broad media read or external storage permissions.</li>
         <li><strong><code>CAMERA</code> (Optional):</strong> Requested only if you use document scanning to PDF or the optional Intruder Selfie feature. Captured images remain strictly on-device.</li>
         <li><strong><code>USE_BIOMETRIC</code>:</strong> Used locally via Android Keystore for fingerprint or face authentication. Biometric data never leaves the device's secure hardware.</li>
@@ -131,13 +180,13 @@
 
     <article class="policy-card" id="data-usage">
       <h2>How Data Is Used</h2>
-      <p>Files imported into PrivateVault PRO are processed exclusively on-device to provide vault functionality, including Argon2id key derivation, AES-256-GCM chunked encryption (PVL2), local thumbnail generation, authenticated metadata indexing (PVMD), encrypted note editing, scan-to-PDF, and encrypted backup generation. Nothing is sent to the developer or any remote server.</p>
+      <p>Files imported into PrivateVault PRO are processed exclusively on-device to provide vault functionality, including Argon2id key derivation, AES-256-GCM chunked encryption (PVL2), local thumbnail generation, authenticated metadata indexing (PVMD), encrypted note editing, scan-to-PDF, and encrypted backup generation. Nothing is sent to the developer or any developer-controlled server. If you enable Cloud Vault, only already-encrypted vault data is uploaded to your own Google Drive.</p>
     </article>
 
     <article class="policy-card" id="sharing">
       <h2>Sharing &amp; Disclosure</h2>
       <p>PrivateVault PRO does not sell, rent, monetize, or share your personal data or vault contents. Files leave the app only when you explicitly export or share decrypted files using Android's system share sheet.</p>
-      <p>Advertising identifiers on the Free tier are processed directly by Google AdMob in accordance with Google's Privacy Policy. Upgrading to the Pro subscription stops all ad requests and third-party ad sharing.</p>
+      <p>Advertising identifiers on the Free tier are processed by the ad provider to display ads. Upgrading to the Pro subscription stops all ad requests and third-party ad sharing. Cloud Vault data stored in your Google Drive is end-to-end encrypted and is never shared with, or readable by, the developer.</p>
     </article>
 
     <article class="policy-card" id="security">
@@ -151,6 +200,25 @@
       </ul>
     </article>
 
+    <article class="policy-card" id="data-deletion">
+      <h2>Data Retention &amp; Deletion</h2>
+      <p>You are always in control of your data and can delete it at any time. Because your vault is stored on your device (and, only if you enable Cloud Vault, in your own Google Drive), the developer holds no copy to delete on your behalf.</p>
+      <h3>Delete your on-device vault data</h3>
+      <ul>
+        <li><strong>Delete individual items:</strong> remove any file, folder, or note inside the app; deleted items are permanently removed from the vault.</li>
+        <li><strong>Reset the vault:</strong> use <strong>Settings &gt; Reset Vault</strong> to erase all vault contents, keys, and logs from the device.</li>
+        <li><strong>Uninstall the app:</strong> removing PrivateVault PRO deletes all of its on-device data, including the encrypted vault and cached keys.</li>
+      </ul>
+      <h3>Delete your Cloud Vault data (if you enabled it)</h3>
+      <ul>
+        <li><strong>Delete cloud backups:</strong> in the app's Cloud Vault settings you can delete individual backups or all of them from your Google Drive.</li>
+        <li><strong>Unlink your Google account:</strong> unlinking removes the stored Drive access token from your device and stops further backups.</li>
+        <li><strong>Revoke access in Google:</strong> you can remove the app's access entirely at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">your Google Account permissions</a>, and you can delete the app's Application Data Folder contents from your Google Drive storage.</li>
+      </ul>
+      <h3>Advertising &amp; subscription data</h3>
+      <p>Advertising identifiers (Free plan) are managed by Google and can be reset or limited in <strong>Android Settings &gt; Privacy &gt; Ads</strong>; the Pro subscription removes ads entirely. Google Play purchase records are controlled by Google Play. For any question about data deletion, contact us at the address below.</p>
+    </article>
+
     <article class="policy-card" id="children">
       <h2>Children's Privacy</h2>
       <p>PrivateVault PRO is not directed to children under 13 and does not knowingly collect personal information from children.</p>
@@ -159,12 +227,13 @@
     <article class="policy-card" id="summary">
       <h2>Data Safety Summary</h2>
       <ul>
-        <li><strong>Vault Content Collection:</strong> None — all files, media, notes, and keys remain strictly offline on-device</li>
+        <li><strong>Vault Content Collection:</strong> None — the developer never receives your files, media, notes, or keys; everything is encrypted on-device</li>
         <li><strong>Data Sold:</strong> No</li>
-        <li><strong>Cloud Sync:</strong> None (100% local encrypted storage)</li>
-        <li><strong>Advertising (Free Tier):</strong> Google AdMob displays ads using Google Advertising ID; controllable via in-app "Interest-based ads" toggle and system settings</li>
-        <li><strong>Pro Subscription:</strong> 100% ad-free experience with zero ads or ad network requests</li>
-        <li><strong>Encryption in Transit:</strong> Ad and subscription verification traffic uses secure HTTPS; vault data never leaves the device</li>
+        <li><strong>Cloud Sync:</strong> Optional. Off by default. When you enable Cloud Vault, only end-to-end-encrypted data is backed up to your own Google Drive (Application Data Folder); keys never leave your device and the developer cannot decrypt it</li>
+        <li><strong>Advertising (Free Tier):</strong> Ads are shown on the free plan and may use an advertising identifier; controllable via in-app "Interest-based ads" toggle and system settings</li>
+        <li><strong>Pro Subscription:</strong> Ad-free experience with zero ads or ad network requests</li>
+        <li><strong>Encryption in Transit:</strong> Ads, subscription verification, and Cloud Vault traffic use secure HTTPS; vault contents are additionally end-to-end encrypted before any upload</li>
+        <li><strong>Data Deletion:</strong> Delete items or reset the vault in-app, delete cloud backups and unlink your Google account at any time, or uninstall to remove all on-device data — see <a href="#data-deletion">Data Retention &amp; Deletion</a></li>
       </ul>
     </article>
 
