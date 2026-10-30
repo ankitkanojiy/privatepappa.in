@@ -106,7 +106,7 @@
         <li><a href="#ai-features">5. AI Features &amp; What They Send</a></li>
         <li><a href="#advertising-data">6. Rewarded Ads &amp; Advertising Data</a></li>
         <li><a href="#subscriptions">7. Subscriptions &amp; Purchases</a></li>
-        <li><a href="#usage-record">8. AI Usage Record &amp; App Verification</a></li>
+        <li><a href="#usage-record">8. AI Usage Record &amp; Security Checks</a></li>
         <li><a href="#permissions">9. Android Permissions &amp; Purpose</a></li>
         <li><a href="#third-party">10. Third-Party Services</a></li>
         <li><a href="#data-retention">11. Data Retention &amp; Deletion</a></li>
@@ -189,7 +189,7 @@
             </tr>
             <tr>
               <td data-label="Google Account Data"><strong>Sign-in token</strong></td>
-              <td data-label="How It Is Used">Confirms the sign-in on the phone. It is not stored afterwards; the app keeps an internal account ID derived from your email instead.</td>
+              <td data-label="How It Is Used">Confirms the sign-in on the phone, and is not stored afterwards.</td>
               <td data-label="Leaves Your Phone?"><span class="data-tag data-tag-green">Not sent to us or third parties</span></td>
             </tr>
           </tbody>
@@ -350,7 +350,7 @@
         </table>
       </div>
 
-      <p>The app also reads two things back from each ad you watch: whether it played to the end, and the revenue value Google reports for it. The app uses these on your phone to decide whether to unlock the request and how many ads the next one needs. See section 8.</p>
+      <p>An ad unlocks AI only once it has played to the end.</p>
 
       <div class="callout-box">
         <p><strong>Kept apart from your habits:</strong> the ads SDK cannot read your habits, check-ins, notes or chat, and none of them are shared with advertisers. See <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use its services</a>.</p>
@@ -369,15 +369,9 @@
 
     <!-- 8. AI usage record -->
     <article class="policy-card" id="usage-record">
-      <h2><span class="section-icon">🧮</span> 8. AI Usage Record &amp; App Verification</h2>
-      <p><strong>AI usage record:</strong> AI costs money for each request, so the app counts how much each Google account uses. This record holds only:</p>
-      <ul>
-        <li>Today's and this month's AI usage on a paid plan.</li>
-        <li>This month's ads watched, the revenue value Google reported for them, and the AI they paid for.</li>
-        <li>Requests already unlocked by ads but not yet used.</li>
-      </ul>
-      <p>It does not include your habits, notes, messages or email. It is stored in the app on your phone and, so that reinstalling the app doesn't reset it, also in Google Play services' <strong>Block Store</strong> under an internal ID derived from your account. If your phone's Google backup is on, Google includes this small record in that backup so it carries over to a new phone. It is kept for this abuse-prevention purpose and is not sent to us.</p>
-      <p><strong>App verification:</strong> AI requests are protected by <strong>Firebase App Check</strong> with Google's <strong>Play Integrity API</strong>. Google checks that a request comes from a genuine copy of the app on a genuine Android device, so others can't use the app's AI access. To do this, Google Play services send app and device integrity signals to Google, and Firebase may create an app instance identifier. These are used only for security and are handled by Google under its terms.</p>
+      <h2><span class="section-icon">🧮</span> 8. AI Usage Record &amp; Security Checks</h2>
+      <p><strong>AI usage record:</strong> every AI request has a real cost, so the app keeps a small record of how much AI each Google account uses. It uses the record to apply plan allowances and ad unlocks fairly. The record holds only counts, such as AI used today and this month and ads watched this month. It never includes your habits, notes, messages or email, it is not sent to us, and it is used for nothing else.</p>
+      <p><strong>Security checks:</strong> to protect the AI service from misuse, Google's security services check that AI requests come from a genuine copy of the app. These checks send technical app and device information to Google, which uses it only for security under its own terms.</p>
     </article>
 
     <!-- 9. Android Permissions -->
@@ -465,10 +459,9 @@
         <li><strong>Sign in with Google (Credential Manager) and Google Identity authorization:</strong> signing in and granting backup access.</li>
         <li><strong>Google Drive API:</strong> storing your backups in your own Drive.</li>
         <li><strong>Firebase AI Logic and the Gemini API:</strong> the AI features. See the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase privacy information</a>.</li>
-        <li><strong>Firebase App Check and the Play Integrity API:</strong> protecting AI access from misuse.</li>
+        <li><strong>Google Play services and Firebase:</strong> security checks for AI requests.</li>
         <li><strong>Google Mobile Ads (AdMob) and the User Messaging Platform:</strong> rewarded ads and ad consent. See <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use its services</a>.</li>
         <li><strong>Google Play Billing:</strong> subscriptions.</li>
-        <li><strong>Google Play services Block Store:</strong> the AI usage record (section 8).</li>
       </ul>
       <p>Each is covered by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>. The app contains no analytics or crash-reporting SDKs, and no trackers from other companies.</p>
     </article>
@@ -480,7 +473,7 @@
         <li><strong>On your phone:</strong> kept until you delete it. Delete habits one by one, use <strong>Reset all progress</strong> in the menu, <strong>Clear chat</strong> in the AI chat, or clear the app's storage or uninstall it to remove everything.</li>
         <li><strong>Google Drive backups:</strong> kept in your Drive until you delete them in the app's backup settings or in Google Drive's <em>Manage apps</em>. Signing out or uninstalling does not delete them, so you can restore them later.</li>
         <li><strong>AI requests:</strong> not stored by us. Google keeps them only as its terms allow (section 5).</li>
-        <li><strong>AI usage record:</strong> kept in Block Store to prevent abuse. It holds only counts, never your habits or messages.</li>
+        <li><strong>AI usage record:</strong> kept to apply AI limits fairly. It holds only counts, never your habits or messages.</li>
         <li><strong>Advertising data:</strong> kept by Google under its own policies. You can reset your advertising ID at any time.</li>
         <li><strong>Google account access:</strong> remove it at <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer">myaccount.google.com/connections</a>.</li>
       </ul>
@@ -551,7 +544,7 @@
               <td data-label="Optional?">No</td>
             </tr>
             <tr>
-              <td data-label="Data Type"><strong>Device or other IDs</strong> (advertising ID; app instance ID for App Check)</td>
+              <td data-label="Data Type"><strong>Device or other IDs</strong> (advertising ID; app instance ID for security checks)</td>
               <td data-label="Collected?">Yes</td>
               <td data-label="Shared?">Advertising ID: yes, with Google for ads</td>
               <td data-label="Purpose">Advertising, analytics, fraud prevention and security, app functionality</td>
